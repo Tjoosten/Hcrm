@@ -24,6 +24,21 @@ class CustomerController extends Controller
     }
 
     /**
+     * Update some customer in the database.
+     *
+     * @url    POST: /customer/update/{id}
+     * @param  Requests\CustomerValidator $input
+     * @param  int $id The customer id in the database.
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function update(Requests\CustomerValidator $input, $id)
+    {
+        Customer::find($id)->update($input->except('_token'));
+        session()->flash('message', 'The Customer has been updated');
+        return redirect()->back();
+    }
+
+    /**
      * Delete a customer.
      *
      * @url    GET: /customer/destroy/{id}
@@ -34,7 +49,6 @@ class CustomerController extends Controller
     {
         Customers::destroy($id);
         session()->flash('message', 'customer has been deleted');
-
         return redirect()->back();
     }
 }
