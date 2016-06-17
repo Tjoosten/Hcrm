@@ -10,6 +10,20 @@ use App\Http\Requests;
 class CustomerController extends Controller
 {
     /**
+     * Create a new customer.
+     *
+     * @url    POST: /customer/create
+     * @param  Requests\CustomerValidator $input
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function create(Requests\CustomerValidator $input)
+    {
+        Customer::create($input->except('_token'));
+        session()->flash('message', 'The customer has been created');
+        return redirect()->back();
+    }
+
+    /**
      * Delete a customer.
      *
      * @url    GET: /customer/destroy/{id}

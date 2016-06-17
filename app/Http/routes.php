@@ -20,4 +20,5 @@ Route::auth();
 Route::get('/home', 'HomeController@index');
 
 // Customer routes.
+Route::post('/customer/create', 'CustomerController@create')->name('customer.insert');
 Route::get('/customer/destroy/{id}', 'CustomerController@destroy')->name('customer.destroy');
