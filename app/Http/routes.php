@@ -19,6 +19,10 @@ Route::auth();
 
 Route::get('/home', 'HomeController@index');
 
+// Account info routes.
+Route::post('/account/update/information', 'AccountController@updateAccountInformation')->name('account.update.info');
+Route::post('/account/update/password', 'AccountController@updateAccountSecurity')->name('account.update.pass');
+
 // Customer routes.
 Route::post('/customer/update/{id}', 'CustomerController@update')->name('customer.update');
 Route::post('/customer/create', 'CustomerController@create')->name('customer.insert');
