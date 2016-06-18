@@ -18,6 +18,20 @@ class AccountController extends Controller
     }
 
     /**
+     * Get the updateview for the account
+     *
+     * @url    GET: /account/update
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function Account()
+    {
+        $userId = auth()->user()->id;
+        $data['account'] = User::find($userId);
+
+        return view('auth.update', $data);
+    }
+
+    /**
      * Update the account information.
      *
      * @url    POST: /account/update/information
