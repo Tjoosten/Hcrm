@@ -3,9 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Laravel\Cashier\Billable;
 
 class Customers extends Model
 {
+    use Billable;
+
     /**
      * Mass assign fields.
      * @var array

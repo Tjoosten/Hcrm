@@ -27,6 +27,12 @@ class CreateCustomersTable extends Migration
             $table->string('mobile');
             $table->string('company');
             $table->string('vat');
+
+            // Stripe
+            $table->string('stripe_id')->nullable();
+            $table->string('card_brand')->nullable();
+            $table->string('card_last_four')->nullable();
+            $table->timestamp('trial_ends_at')->nullable();
             $table->timestamps();
         });
     }

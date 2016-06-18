@@ -9,6 +9,12 @@ use App\Http\Requests;
 
 class CustomerController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('lang');
+    }
+
     /**
      * Create a new customer.
      *
