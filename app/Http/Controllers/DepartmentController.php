@@ -17,6 +17,12 @@ class DepartmentController extends Controller
         $this->middleware('auth');
     }
 
+    /**
+     * Get all the departments.
+     * 
+     * @url    GET: /departments
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function index()
     {
         $data['departments'] = Departments::paginate(15);
