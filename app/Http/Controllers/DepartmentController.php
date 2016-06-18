@@ -17,6 +17,12 @@ class DepartmentController extends Controller
         $this->middleware('auth');
     }
 
+    public function index()
+    {
+        $data['departments'] = Departments::paginate(15);
+        return view('departments.index', $data);
+    }
+
     /**
      * Create a new department.
      *
