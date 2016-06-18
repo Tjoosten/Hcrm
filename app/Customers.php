@@ -24,4 +24,14 @@ class Customers extends Model
      * @var array
      */
     protected $hidden = ['updated_at', 'created_at'];
+
+    /**
+     * Tax rate for cashier.
+     *
+     * @return string
+     */
+    public function taxPercentage()
+    {
+        return 20;
+    }
 }
