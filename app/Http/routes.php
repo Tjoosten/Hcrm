@@ -21,6 +21,7 @@ Route::get('/home', 'HomeController@index');
 
 // Department routes.
 Route::post('/departments/create', 'DepartmentController@create')->name('department.store');
+Route::get('/departments/update/{id}', 'DepartmentController@update')->name('department.update');
 Route::get('/departments/delete/{id}', 'DepartmentController@destroy')->name('department.destroy');
 
 // Account info routes.

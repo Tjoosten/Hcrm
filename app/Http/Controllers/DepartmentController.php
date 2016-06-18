@@ -16,8 +16,7 @@ class DepartmentController extends Controller
     {
         $this->middleware('auth');
     }
-
-
+    
     /**
      * Create a new department.
      *
@@ -29,6 +28,21 @@ class DepartmentController extends Controller
     {
         Departments::create($input->except('_token'));
         session()->flash('message', 'Department has been created');
+        return redirect()->back();
+    }
+
+    /**
+     * Update a department in the database.
+     *
+     * @url    POST: /departments/update/{id}
+     * @param  Requests\DepartmentValidator $input
+     * @param  int $id The department id in the database.
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function update(Requests\DepartmentValidator $input, $id)
+    {
+        Departments::find($id)->update($input->except('_token'));
+        session()->flash('message', 'Department has been updated.');
         return redirect()->back();
     }
 
