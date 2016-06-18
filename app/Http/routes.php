@@ -19,6 +19,9 @@ Route::auth();
 
 Route::get('/home', 'HomeController@index');
 
+// Department routes
+Route::get('/departments/delete/{id}', 'DepartmentController@destroy')->name('department.destroy');
+
 // Account info routes.
 Route::post('/account/update/information', 'AccountController@updateAccountInformation')->name('account.update.info');
 Route::post('/account/update/password', 'AccountController@updateAccountSecurity')->name('account.update.pass');
