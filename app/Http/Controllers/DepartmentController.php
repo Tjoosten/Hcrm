@@ -16,7 +16,7 @@ class DepartmentController extends Controller
     {
         $this->middleware('auth');
     }
-    
+
     /**
      * Create a new department.
      *
@@ -29,6 +29,12 @@ class DepartmentController extends Controller
         Departments::create($input->except('_token'));
         session()->flash('message', 'Department has been created');
         return redirect()->back();
+    }
+
+    public function show($id)
+    {
+        $data['department'] = Departments::find($id);
+        return view('departments.show', $data);
     }
 
     /**
