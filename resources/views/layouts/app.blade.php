@@ -21,8 +21,9 @@
             font-size: 14px;
             line-height: 1.5;
             color: gray;
+            background: #efefef;
             }
-                       
+
         /* Bootstrap adjustments */
         
         h1,h2,h3,h4,h5,h6{font-family:inherit;font-weight:700;color:inherit;margin:0}
@@ -38,6 +39,44 @@
         
         .full_width .container {max-width:1680px}
         .navbar-fixed-top {margin:0;padding:0;min-height:50px}
+        .navbar-default{background-color: #45484d; color: #fff;}
+        /* title */
+        .navbar-default .navbar-brand {color: #e1e1e1;}
+        .navbar-default .navbar-brand:hover,
+        .navbar-default .navbar-brand:focus {color: #fff;}
+         /* link */
+        .navbar-default .navbar-nav > li > a {color: #e1e1e1;}
+        .navbar-default .navbar-nav > li > a:hover,
+        .navbar-default .navbar-nav > li > a:focus {color: #fff;}
+        .navbar-default .navbar-nav > .active > a, 
+        .navbar-default .navbar-nav > .active > a:hover, 
+        .navbar-default .navbar-nav > .active > a:focus {color: #fff; background-color: #383b3f;}
+        .navbar-default .navbar-nav > .open > a, 
+        .navbar-default .navbar-nav > .open > a:hover, 
+        .navbar-default .navbar-nav > .open > a:focus { color: #fff; background-color: #383b3f;}
+
+        .navbar-default .navbar-nav .open .dropdown-menu a:hover{color:#494949; background-color: #bfc4cc;}
+        
+        /* caret */
+        .navbar-default .navbar-nav > .dropdown > a .caret {border-top-color: #e1e1e1; border-bottom-color: #e1e1e1;}
+        .navbar-default .navbar-nav > .dropdown > a:hover .caret,
+        .navbar-default .navbar-nav > .dropdown > a:focus .caret { border-top-color: #fff; border-bottom-color: #fff;}
+        .navbar-default .navbar-nav > .open > a .caret, 
+        .navbar-default .navbar-nav > .open > a:hover .caret, 
+        .navbar-default .navbar-nav > .open > a:focus .caret { border-top-color: #e1e1e1; border-bottom-color: #e1e1e1; }
+        /* mobile version */
+        .navbar-default .navbar-toggle {border-color: #DDD;}
+        .navbar-default .navbar-toggle:hover,
+        .navbar-default .navbar-toggle:focus {background-color: #DDD;}
+        .navbar-default .navbar-toggle .icon-bar {background-color: #CCC;}
+       @media (max-width: 767px) {
+        .navbar-default .navbar-nav .open .dropdown-menu > li > a {color: #777;}
+        .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+        .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {color: #333;}
+         }
+
+         .panel-default { box-shadow: 0 10px 13px 0 $panel-default-color;}
+         .panel-default .panel-heading{ background-color: #fff; border-bottom-color: #f1f1f1;}         
     </style>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
@@ -80,8 +119,8 @@
                     <li class="dropdown">
                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ trans('customers.index') }} <span class="caret"></span></a>
                       <ul class="dropdown-menu">
-                       <li><a href="#">{{ trans('customers.register') }}</a></li>
-                       <li><a href="#">{{ trans('customers.search') }}</a></li>
+                       <li><a href="{{url('customers/register')}}">{{ trans('customers.register') }}</a></li>
+                       <li><a href="{{url('customers')}}">{{ trans('customers.search') }}</a></li>
                       </ul>
                     </li>
 
