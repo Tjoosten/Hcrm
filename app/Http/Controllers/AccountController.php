@@ -27,7 +27,7 @@ class AccountController extends Controller
     public function Account()
     {
         $userId = auth()->user()->id;
-        $data['account'] = User::find($userId);
+        $data['query'] = User::find($userId);
 
         return view('auth.update', $data);
     }
