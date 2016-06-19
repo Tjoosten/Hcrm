@@ -138,7 +138,7 @@
                     <li class="dropdown">
                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ trans('support.index') }} <span class="caret"></span></a>
                       <ul class="dropdown-menu">
-                       <li><a href="#">{{ trans('support.tickets') }}</a></li>
+                       <li><a href={!! route('tickets.index') !!}#">{{ trans('support.tickets') }}</a></li>
                        <li><a href="#">{{ trans('support.kb') }}</a></li>
                       </ul>
                     </li>
