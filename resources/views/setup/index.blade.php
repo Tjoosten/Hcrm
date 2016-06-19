@@ -42,18 +42,15 @@
               </ul>
 
               <ul class="col-md-3 list-unstyled">
-               <li>Payments</li>
-               <li><a href="#">Currencies</a></li>
-               <li><a href="#">Payment Gateways</a></li>
-               <li><a href="#">TAX Rules</a></li>
-               <li><a href="#">Promotions</a></li>
+               <li><strong>Support</strong></li>
+               <li><a href="#">knowledge base categories</a></li>
+               <li><a href="#">Ticket routing</a></li>
+               <li><a href="#">Ticket statuses</a></li>
               </ul>
 
               <ul class="col-md-3 list-unstyled">
-               <li>Product management</li>
-               <li><a href="#">Domain pricing</a></li>
-               <li><a href="#">Domain Registrars</a></li>
-               <li><a href="#">Server Providers</a></li>
+               <li>Other</li>
+               <li><a href="#">HCRM manual</a></li>
               </ul>
              </div>
 
