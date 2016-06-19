@@ -12,7 +12,7 @@ class CustomerController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
-        $this->middleware('lang');
+       // $this->middleware('lang');
     }
 
     /**
@@ -56,5 +56,10 @@ class CustomerController extends Controller
         Customers::destroy($id);
         session()->flash('message', 'customer has been deleted');
         return redirect()->back();
+    }
+
+    public function list()
+    {
+        return view('customers.index');
     }
 }
