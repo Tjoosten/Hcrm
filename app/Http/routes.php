@@ -11,13 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
+Route::get('/', 'HomeController@index')->name('index');
 Route::auth();
 
-Route::get('/home', 'HomeController@index');
+Route::get('/home', 'HomeController@index')->name('index');
 
 // Department routes.
 Route::get('departments', 'DepartmentController@index')->name('department.index');
