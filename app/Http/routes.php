@@ -28,7 +28,7 @@ Route::post('/account/update/information', 'AccountController@updateAccountInfor
 Route::post('/account/update/password', 'AccountController@updateAccountSecurity')->name('account.update.pass');
 
 // Customer routes.
-Route::get('/customers', 'CustomerController@list')->name('customers.list');
+Route::get('/customers', 'CustomerController@index')->name('customers.list');
 Route::post('/customer/update/{id}', 'CustomerController@update')->name('customer.update');
 Route::post('/customer/create', 'CustomerController@create')->name('customer.insert');
 Route::get('/customer/destroy/{id}', 'CustomerController@destroy')->name('customer.destroy');

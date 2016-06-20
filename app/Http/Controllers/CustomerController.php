@@ -16,6 +16,22 @@ class CustomerController extends Controller
     }
 
     /**
+     * Get a nice table overview from the customers.
+     *
+     * @url    GET: /customers
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function index()
+    {
+        // TODO: Connect search form to some handling.
+        // TODO: Make the customer table dynamic.
+        // TODO: Enable the pagination buttons in the view.
+
+        $data['customers'] = Customers::paginate(15);
+        return view('customers.index', $data);
+    }
+
+    /**
      * Create a new customer.
      *
      * @url    POST: /customer/create
@@ -56,10 +72,5 @@ class CustomerController extends Controller
         Customers::destroy($id);
         session()->flash('message', 'customer has been deleted');
         return redirect()->back();
-    }
-
-    public function list()
-    {
-        return view('customers.index');
     }
 }

@@ -37,6 +37,13 @@ $factory->define(App\Customers::class, function (Faker\Generator $faker) {
     ];
 });
 
+$factory->define(App\Status::class, function (Faker\Generator $faker) {
+    return [
+        'name'        => 'Status nname',
+        'description' => 'Status description'
+    ];
+});
+
 $factory->define(App\Departments::class, function (Faker\Generator $faker) {
     return [
         'name'        => $faker->name,

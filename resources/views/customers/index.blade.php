@@ -8,11 +8,20 @@
   Search customer
 </a>
 
+    <a class="btn btn-default">New Customer.</a>
+
 <div class="clearfix">&nbsp;</div>
 
 <div class="collapse" id="search">
   <div class="well">
-    TODO: add searchform
+      <form class="form-inline" action="POST" action="">
+          <div class="form-group">
+              <input type="email" class="form-control" placeholder="Customer name">
+          </div>
+          <button type="submit" class="btn btn-danger">
+            <span class="fa fa-search"></span>
+          </button>
+      </form>
   </div>
 </div>
 </div>
