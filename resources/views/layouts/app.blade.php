@@ -38,6 +38,7 @@
         
         .full_width .container {max-width:1680px}
         .navbar-fixed-top {margin:0;padding:0;min-height:50px}
+        .navbar{margin-bottom: 1px;}
         .navbar-default{background-color: #45484d; color: #fff;}
         /* title */
         .navbar-default .navbar-brand {color: #e1e1e1;}
@@ -54,7 +55,7 @@
         .navbar-default .navbar-nav > .open > a:hover, 
         .navbar-default .navbar-nav > .open > a:focus { color: #fff; background-color: #383b3f;}
 
-        .navbar-default .navbar-nav .open .dropdown-menu a:hover{color:#494949; background-color: #bfc4cc;}
+        .navbar-default .navbar-nav .open .dropdown-menu a:hover{color:#fff; background-color: #5c778a;}
         
         /* caret */
         .navbar-default .navbar-nav > .dropdown > a .caret {border-top-color: #e1e1e1; border-bottom-color: #e1e1e1;}
@@ -75,7 +76,20 @@
          }
 
          .panel-default { box-shadow: 0 10px 13px 0 $panel-default-color;}
-         .panel-default .panel-heading{ background-color: #fff; border-bottom-color: #f1f1f1;}         
+         .panel-default .panel-heading{ background-color: #fff; border-bottom-color: #f1f1f1;}
+
+         .input-group-addon{background-color: #fff; border: 0px;}
+
+         .list-group-item.active, .list-group-item.active:hover {
+          background-color: #5c778a;
+          border-color: #5c778a; 
+          }
+
+          .btn-primary, .btn-primary:hover, .btn-primary:focus, .btn-primary:active,
+          .btn-primary.active, .open .dropdown-toggle.btn-primary { background-color: #5c778a;  border-color: #5c778a; }
+
+          .btn-success, .btn-success:hover, .btn-success:focus, .btn-success:active,
+          .btn-success.active, .open .dropdown-toggle.btn-primary { background-color: #3c9363;  border-color: #3c9363; }
     </style>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
@@ -169,6 +183,7 @@
             </div>
         </div>
     </nav>
+
 
     @yield('content')
 <script>
