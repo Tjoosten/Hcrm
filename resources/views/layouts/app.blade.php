@@ -21,9 +21,29 @@
             line-height: 1.5;
             color: gray;
             background: #efefef;
+            padding: 0;
+            overflow-x:hidden;
             }
 
-        /* Bootstrap adjustments */
+        html,body {height:100%}
+
+          .full_width .container {max-width:1680px}
+
+
+  /* main content */
+    .row + .row {margin-top:20px}
+    #maincontainer {min-height:94%}
+    #contentwrapper{width: 100%}
+    .main_content{
+      padding: 64px 30px 0px;
+      background:#fff;
+      border-left:1px solid transparent;
+      margin-left:10px}
+    .main_content li{line-height:22px}
+    .main_content .page-header{margin-top: -10px !important; padding-bottom: 20px;}
+
+
+  /* Bootstrap adjustments */
         
         h1,h2,h3,h4,h5,h6{font-family:inherit;font-weight:700;color:inherit;margin:0}
         h1 small,h2 small,h3 small,h4 small,h5 small,h6 small{font-weight:400;color:#999}
@@ -36,90 +56,124 @@
         h3 small,h4{font-size:14px}
         h4 small,h5{font-size:12px}
         
-        .full_width .container {max-width:1680px}
-        .navbar-fixed-top {margin:0;padding:0;min-height:50px}
-        .navbar{margin-bottom: 1px;}
-        .navbar-default{background-color: #45484d; color: #fff;}
-        /* title */
-        .navbar-default .navbar-brand {color: #e1e1e1;}
-        .navbar-default .navbar-brand:hover,
-        .navbar-default .navbar-brand:focus {color: #fff;}
-         /* link */
-        .navbar-default .navbar-nav > li > a {color: #e1e1e1;}
-        .navbar-default .navbar-nav > li > a:hover,
-        .navbar-default .navbar-nav > li > a:focus {color: #fff;}
-        .navbar-default .navbar-nav > .active > a, 
-        .navbar-default .navbar-nav > .active > a:hover, 
-        .navbar-default .navbar-nav > .active > a:focus {color: #fff; background-color: #383b3f;}
-        .navbar-default .navbar-nav > .open > a, 
-        .navbar-default .navbar-nav > .open > a:hover, 
-        .navbar-default .navbar-nav > .open > a:focus { color: #fff; background-color: #383b3f;}
+    .full_width .container {max-width:1680px}
+    .navbar-fixed-top {min-height:40px}
+    .navbar-default{background-color: #45484d; color: #fff;}
 
-        .navbar-default .navbar-nav .open .dropdown-menu a:hover{color:#fff; background-color: #5c778a;}
-        
-        /* caret */
-        .navbar-default .navbar-nav > .dropdown > a .caret {border-top-color: #e1e1e1; border-bottom-color: #e1e1e1;}
-        .navbar-default .navbar-nav > .dropdown > a:hover .caret,
-        .navbar-default .navbar-nav > .dropdown > a:focus .caret { border-top-color: #fff; border-bottom-color: #fff;}
-        .navbar-default .navbar-nav > .open > a .caret, 
-        .navbar-default .navbar-nav > .open > a:hover .caret, 
-        .navbar-default .navbar-nav > .open > a:focus .caret { border-top-color: #e1e1e1; border-bottom-color: #e1e1e1; }
-        /* mobile version */
-        .navbar-default .navbar-toggle {border-color: #DDD;}
-        .navbar-default .navbar-toggle:hover,
-        .navbar-default .navbar-toggle:focus {background-color: #DDD;}
-        .navbar-default .navbar-toggle .icon-bar {background-color: #CCC;}
-       @media (max-width: 767px) {
-        .navbar-default .navbar-nav .open .dropdown-menu > li > a {color: #777;}
-        .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
-        .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {color: #333;}
-         }
+    /* header */
+    .navbar .brand {
+      width: 200px;
+      padding-bottom:0;
+      padding-top:0;
+      font: 100 18px/38px 'PT Sans', sans-serif;
+      text-decoration:none;
+      color: #fff;
+      text-shadow:none
+    }
+    .navbar .nav > li > a {text-shadow:none;padding:10px 10px 9px}
+    .navbar .nav li.dropdown.open > .dropdown-toggle,
+    .navbar .nav li.dropdown.active > .dropdown-toggle,
+    .navbar .nav li.dropdown.open.active > .dropdown-toggle {background:none; color:#fff }
+    .navbar-inner {  background: #45484d; color:#fff}
 
-         .panel-default { box-shadow: 0 10px 13px 0 $panel-default-color;}
-         .panel-default .panel-heading{ background-color: #fff; border-bottom-color: #f1f1f1;}
+    /* link */
+    .navbar-default .navbar-nav > li > a {color: #e1e1e1; text-shadow:none;padding:10px 10px 9px}
+    .navbar-default .navbar-nav > li > a:hover,
+    .navbar-default .navbar-nav > li > a:focus {color: #fff;}
+    .navbar-default .navbar-nav > .active > a, 
+    .navbar-default .navbar-nav > .active > a:hover, 
+    .navbar-default .navbar-nav > .active > a:focus {color: #fff; background-color: #383b3f;}
 
-         .input-group-addon{background-color: #fff; border: 0px;}
+    .navbar-default .navbar-nav > .open > a, 
+    .navbar-default .navbar-nav > .open > a:hover, 
+    .navbar-default .navbar-nav > .open > a:focus { color: #fff; background-color: #383b3f;}    
+    
+    .dropdown-menu li > a:hover,
+    .dropdown-menu li > a:focus,
+    .dropdown-menu .active > a,
+    .dropdown-menu .active > a:hover,
+    .nav-pills > .active > a, .nav-pills > .active > a:hover,
+    span.dynatree-active a {
+        background: #5c778a !important;
+        color: #e1e1e1;
+    }
 
-         .list-group-item.active, .list-group-item.active:hover {
+     .form-horizontal .control-label{text-align:left;}
+     .form-horizontal .formSep {margin-bottom:12px;padding-bottom:12px;border-bottom:1px dashed #dcdcdc}
+
+     .panel-default { box-shadow: 0 10px 13px 0 $panel-default-color;}
+     .panel-default .panel-heading{ background-color: #fff; border-bottom-color: #f1f1f1;}
+     .input-group-addon{background-color: #fff; border: 0px;}
+
+     .list-group-item.active, .list-group-item.active:hover {
           background-color: #5c778a;
           border-color: #5c778a; 
           }
 
-          .btn-primary, .btn-primary:hover, .btn-primary:focus, .btn-primary:active,
-          .btn-primary.active, .open .dropdown-toggle.btn-primary { background-color: #5c778a;  border-color: #5c778a; }
+     .btn-primary, .btn-primary:hover, .btn-primary:focus, .btn-primary:active,
+     .btn-primary.active, .open .dropdown-toggle.btn-primary { background-color: #5c778a;  border-color: #5c778a; }
 
-          .btn-success, .btn-success:hover, .btn-success:focus, .btn-success:active,
-          .btn-success.active, .open .dropdown-toggle.btn-primary { background-color: #3c9363;  border-color: #3c9363; }
+     .btn-success, .btn-success:hover, .btn-success:focus, .btn-success:active,
+     .btn-success.active, .open .dropdown-toggle.btn-primary { background-color: #3c9363;  border-color: #3c9363; }
+
+/* media queries */
+
+    @media (max-width: 979px) {
+      #maincontainer {background: #fff}
+      .main_content {margin:0 !important;border:none !important;padding:56px 14px 20px}
+      .main_content .row + .row {margin-top:20px}
+      .row > [class*="span"],.navbar-fixed-top {margin:0 !important}
+      .navbar-fixed-top .container {padding:0 !important}
+      .navbar .brand {width:auto;line-height:18px;margin:9px 0 9px 34px}
+      .navbar .user_menu .dropdown-menu {margin:10px 10px 0 0;left:0 !important;right:auto}
+      .navbar-nav .open .dropdown-menu > li > a, .navbar-nav .open .dropdown-menu .dropdown-header {padding:5px 10px}
+      .navbar .user_menu > li > a {padding:0 10px 0 0}
+      .navbar-inner {position:relative;z-index:990;min-height:28px}
+      .nav-collapse a {color:#fff !important}
+      .nav-collapse .dropdown-menu li {padding:0}
+      .nav-collapse .dropdown-menu li a {font-weight:400}
+      .nav-collapse .sub-menu {display:block;left:0;right:auto;position:relative;visibility:visible}
+      .nav-collapse .caret-right {display:none}
+      .navbar-nav > li {display:inline-block;vertical-align:bottom;float: none}
+
+    }
+    
+    @media (max-width: 767px) {
+      .main_content {padding-top:20px}
+      .navbar-fixed-top {position:static}
+      .navbar .nav.pull-right {float:left !important;clear:both;margin:6px 10px 10px}
+      .navbar-nav .open .dropdown-menu {background:#fff;border:1px solid rgba(0, 0, 0, 0.15);position:absolute;-webkit-box-shadow:0 6px 12px rgba(0, 0, 0, 0.176);-moz-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.176);box-shadow: 0 6px 12px rgba(0, 0, 0, 0.176);float:left}
+      .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {color:#fff}
+      .row > [class*="span"] + [class*="span"] {margin-top:20px}
+      .row input[class*="span"],.row textarea[class*="span"],.row select[class*="span"] {width:80%}
+
+    }
+       
+    @media (min-width: 1681px) {
+      body {max-width:1680px;margin:0 auto !important;}
+      header .container-fluid, header .container {max-width:1680px;margin:30 auto}
+      #maincontainer {border-right:1px solid #ccc;border-left:1px solid #ccc; background-color: #fff;}
+      .main_content {border-left:none}
+    }
     </style>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-Knob/1.2.13/jquery.knob.min.js"></script>
 </head>
-<body id="app-layout">
-    <nav class="navbar navbar-default navbar-static-top">
-        <div class="container">
-            <div class="navbar-header">
+<body class="full_width" id="app-layout">
+<div id="maincontainer" class="clearfix">
+           <header>
 
-                <!-- Collapsed Hamburger -->
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
-                    <span class="sr-only">Toggle Navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-
-                <!-- Branding Image -->
-                <a class="navbar-brand" href="{{ url('/') }}">WebHosting CRM</a>
-            </div>
-
-            <div class="collapse navbar-collapse" id="app-navbar-collapse">
-                <ul class="nav navbar-nav">
-                     @if (Auth::guest())
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+          <div class="navbar-inner">
+            <div class="container-fluid">
+              <a class="brand pull-left" href="{{url('')}}">Hosting CRM <small>v1.0</small></a>
+              <ul class="nav navbar-nav" id="mobile-nav">
+                @if (Auth::guest())
                     
-                     @else
-
-                    <li><a href="{{ url('/home') }}">Home</a></li>
+                @else
+                <li><a href="{{ url('/home') }}">Home</a></li>
                     <li class="dropdown">
                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ trans('billing.index') }} <span class="caret"></span></a>
                       <ul class="dropdown-menu">
@@ -157,9 +211,8 @@
                     </li>
                     @endif
                 </ul>
-
-                <ul class="nav navbar-nav navbar-right">
-                    @if (Auth::guest())
+              <ul class="nav navbar-nav user_menu pull-right">
+              @if (Auth::guest())
                      
                     @else
                        <li><a href="{!! url('setup') !!}" data-toggle="tooltip" data-placement="bottom" title="Setup"><span class="fa fa-wrench"></span></a></li>
@@ -179,13 +232,21 @@
                             </ul>
                         </li>
                     @endif
-                </ul>
+              </ul>
             </div>
-        </div>
-    </nav>
+          </div>
+        </nav>
+     </header>
 
+
+            <div id="contentwrapper">
+                <div class="main_content">
 
     @yield('content')
+     </div>
+    </div>
+    </div>
+
 <script>
 $(document).ready(function(){
     $('[data-toggle="tooltip"]').tooltip(); 

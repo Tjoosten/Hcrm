@@ -30,6 +30,17 @@ class TicketsController extends Controller
     }
 
     /**
+     * Show the form to creat a new ticket
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function create()
+    {
+        
+        return view('tickets.create');
+    }
+
+    /**
      * Get the tickets assigned to the logged in staff member.
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View

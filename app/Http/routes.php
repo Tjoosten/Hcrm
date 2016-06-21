@@ -35,6 +35,7 @@ Route::get('/customer/destroy/{id}', 'CustomerController@destroy')->name('custom
 
 // Tickets routes
 Route::get('/tickets', 'TicketsController@index')->name('tickets.index');
+Route::get('/tickets/create', 'TicketsController@create')->name('tickets.created');
 Route::get('/tickets/assigned', 'TicketsController@assigned')->name('tickets.assigned');
 
 

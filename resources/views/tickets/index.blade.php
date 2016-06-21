@@ -1,7 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+<div class="page-header">
+ <h2>{{trans('support.tickets')}}</h2>
+</div>
+
         <div class="row">
             <div class="col-sm-12 col-xs-12 col-md-12 col-lg-12">
             <div class="panel panel-default">
@@ -42,30 +45,30 @@
         <div class="clearfix">&nbsp;</div>
         <div class="row">
             <div class="col-sm-12 col-xs-12 col-md-12 col-lg-12">
-                <div class="panel panel-default">
-                    <div class="panel-body">
-                        <table class="table table-striped table-condensed">
-                            <thead>
-                             <th>ID</th>
-                             <th>Subject</th>
-                             <th>Type</th>
-                             <th>Priority</th>
-                             <th>Status</th>
-                             <th>Date created</th>
-                             <th>Last updated</th>
-                            </thead>
-                            <tbody>
-                                @foreach($tickets as $ticket)
+            <pre>
+            <?php print_r($tickets); ?>
+            </pre>
+              <table class="table table-striped table-condensed">
+                <thead>
+                  <th>ID</th>
+                  <th>Subject</th>
+                  <th>Type</th>
+                  <th>Priority</th>
+                  <th>Status</th>
+                  <th>Date created</th>
+                  <th>Last updated</th>
+                </thead>
+                <tbody>
+                  @foreach($tickets as $ticket)
 
 
-                                @endforeach
-                            </tbody>
-                        </table>
-
-                        {{ $tickets->render() }}
+                     @endforeach
+                 </tbody>
+               </table>
+                   {{ $tickets->render() }}
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+
 @endsection
