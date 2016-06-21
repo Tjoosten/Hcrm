@@ -8,13 +8,13 @@
                 <div class="panel panel-default">
                     <div class="panel-heading"><span class="fa fa-cogs"></span> Settings</div>
                     <div class="list-group">
-                        <a href="#info" class="active list-group-item" aria-controls="tab" role="tab" data-toggle="tab">
+                        <a href="#info" class="@if($tab == 'info') active @endif list-group-item" aria-controls="tab" role="tab" data-toggle="tab">
                             Information
                         </a>
-                        <a href="#sec" class="list-group-item" aria-controls="sec" role="tab" data-toggle="tab">
+                        <a href="#security" class="@if($tab == 'security') active @endif list-group-item" aria-controls="sec" role="tab" data-toggle="tab">
                             Security
                         </a>
-                        <a href="#api" class="list-group-item" aria-controls="api" role="tab" data-toggle="tab">
+                        <a href="#api" class="@if($tab == 'api') active @endif list-group-item" aria-controls="api" role="tab" data-toggle="tab">
                             API
                         </a>
                     </div>
@@ -29,7 +29,7 @@
                 <div class="tab-content">
 
                     {{-- Account information tab --}}
-                    <div role="tabpanel" class="tab-pane fade in active" id="info">
+                    <div role="tabpanel" class="tab-pane fade in @if($tab == 'info') active @endif" id="info">
                         <div class="panel panel-default">
                             <div class="panel-heading"> Account information </div>
                             <div class="panel-body">
@@ -80,11 +80,11 @@
 
 
                     {{-- Security tab --}}
-                    <div role="tabpanel" class="tab-pane fadein" id="sec">
+                    <div role="tabpanel" class="tab-pane fade in @if($tab == 'security') active @endif" id="security">
                         <div class="panel panel-default">
                             <div class="panel-heading"> Account security </div>
                             <div class="panel-body">
-                                <form class="form-horizontal" action="{!! route('account.update.pass') !!}" method="POST"></form>
+                                <form class="form-horizontal" action="{!! route('account.update.pass') !!}" method="POST">
                                     {{-- CSRF TOKEN --}}
                                     {{ csrf_field() }}
 
@@ -130,13 +130,64 @@
                     {{-- END security tab --}}
 
                     {{-- API Tab --}}
-                    <div role="tabpanel" class="tab-pane fade in" id="api">
+                    <div role="tabpanel" class="tab-pane fade in @if($tab == 'api') active @endif" id="api">
+
                         <div class="panel panel-default">
-                            <div class="panel-heading"> Account api keys. </div>
-                            <div class="panel panel-body">
-                                <p> Coming soon </p>
+                            <div class="panel-heading"> Create a new key. </div>
+                            <div class="panel-body">
+                                <form class="form-inline" method="POST" action="{{ route('account.create.api') }}">
+                                    {{-- CSRF TOKEN --}}
+                                    {{ csrf_field() }}
+
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="service" placeholder="Service name">
+                                    </div>
+                                    <button type="submit" class="btn btn-success">
+                                        Create token
+                                    </button>
+                                </form>
                             </div>
                         </div>
+
+                        @if(count($keys) === 0)
+                            <div class="alert alert-danger">
+                                You don't have any registered services for the API.
+                            </div>
+                        @else
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Service(s):</div>
+
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th> Service: </th>
+                                        <th> API key: </th>
+                                        <th></th> {{-- Functions --}}
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach($keys as $key)
+                                            <tr>
+                                                <td>{{ $key->service }}</td>
+                                                <td><code>{{ $key->key }}</code></td>
+                                                <td>
+                                                    <a href="#" style="margin-right: 3px" class="label label-info">
+                                                        Info
+                                                    </a>
+                                                    <a style="margin-right: 3px;" href="{!! route('account.api.logs', ['id' => $key->id]) !!}" class="label label-info">
+                                                        Logs
+                                                    </a>
+                                                    <a href="{!! route('account.api.destroy', ['id' => $key->id]) !!}" class="label label-danger">
+                                                        Remove
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                        @endif
+
                     </div>
                     {{-- END API tab --}}
 

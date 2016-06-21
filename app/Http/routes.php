@@ -23,9 +23,11 @@ Route::get('/departments/update/{id}', 'DepartmentController@update')->name('dep
 Route::get('/departments/delete/{id}', 'DepartmentController@destroy')->name('department.destroy');
 
 // Account info routes.
-Route::get('/account/update', 'AccountController@Account')->name('account.info');
-Route::post('/account/update/information', 'AccountController@updateAccountInformation')->name('account.update.info');
+Route::get('/account/update/{tab}', 'AccountController@Account')->name('account.info');
+Route::get('/account/api/removeKey/{id}', 'AccountController@removeApiKey')->name('account.api.destroy');
 Route::post('/account/update/password', 'AccountController@updateAccountSecurity')->name('account.update.pass');
+Route::post('/account/api/newKey', 'AccountController@createApiKey')->name('account.create.api');
+Route::post('/account/update/information', 'AccountController@updateAccountInformation')->name('account.update.info');
 
 // Customer routes.
 Route::get('/customers', 'CustomerController@index')->name('customers.list');
@@ -40,6 +42,8 @@ Route::get('/tickets', 'TicketsController@index')->name('tickets.index');
 Route::get('/tickets/create', 'TicketsController@create')->name('tickets.created');
 Route::get('/tickets/assigned', 'TicketsController@assigned')->name('tickets.assigned');
 
+// API settings routes 
+Route::get('/api/key/logs/{id}', 'AccountController@getApiLogs')->name('account.api.logs');
 
 // Setup routes
 Route::get('/setup', 'SetupController@index')->name('setup.index');

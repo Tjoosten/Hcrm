@@ -235,7 +235,7 @@
 
                             <ul class="dropdown-menu dropdown-menu-right" role="menu">
                                 <li>
-                                    <a href="{{ route('account.info') }}">
+                                    <a href="{{ route('account.info', ['tab' => 'info']) }}">
                                         <span class="fa fa-btn fa-cogs"></span> Account settings.
                                     </a>
                                 </li>
