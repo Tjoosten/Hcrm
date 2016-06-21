@@ -101,7 +101,7 @@
 
                         @if($errors->has('state'))
                             <span class="help-block">
-                                <strong> {{ $errors->first('state') }}
+                                <strong> {{ $errors->first('state') }} </strong>
                             </span>
                         @endif
                     </div>
