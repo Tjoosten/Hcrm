@@ -211,7 +211,7 @@
                     </li>
                     @endif
                 </ul>
-              <ul class="nav navbar-nav user_menu pull-right">
+              <ul class="nav navbar-nav pull-right">
               @if (Auth::guest())
                      
                     @else
@@ -221,7 +221,7 @@
                                <i class="fa fa-user"></i> {{ Auth::user()->name }} <span class="caret"></span>
                            </a>
 
-                            <ul class="dropdown-menu" role="menu">
+                            <ul class="dropdown-menu dropdown-menu-right" role="menu">
                                 <li>
                                     <a href="{{ route('account.info') }}">
                                         <span class="fa fa-btn fa-cogs"></span> Account settings.
