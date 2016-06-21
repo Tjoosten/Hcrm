@@ -1,5 +1,6 @@
 <?php
 
+use App\Status;
 use Illuminate\Database\Seeder;
 
 class StatusTableSeeder extends Seeder
@@ -11,21 +12,22 @@ class StatusTableSeeder extends Seeder
      */
     public function run()
     {
-        \DB::table('statuses')->delete();
 
-        $data = [
-            [
-                'name'        => 'New',
-                'description' => 'Used for indicating new issues.',
-            ], [
-                'name'        => 'Open',
-                'description' => 'Used for indicating open tickets.',
-            ], [
-                'name'        => 'Closed',
-                'description' => 'Used for indicating closed tickets.',
-            ]
-        ];
+       \DB::table('statuses')->delete();
 
-        Status::create($data);
+        Status::create([
+            'name'        => 'New',
+            'description' => 'Used for indicating new issues.',
+        ]);
+
+        Status::create([
+            'name'        => 'Open',
+            'description' => 'Used for indicating open tickets.',
+        ]);
+
+        Status::create([
+            'name'        => 'Closed',
+            'description' => 'Used for indicating closed tickets.',
+        ]);
     }
 }
