@@ -33,7 +33,7 @@ $factory->define(App\Customers::class, function (Faker\Generator $faker) {
         'phone'   => $faker->phoneNumber,
         'mobile'  => $faker->phoneNumber,
         'company' => $faker->company,
-        'vat'     => $faker->vat,
+        'vat'     => 'vat number',
     ];
 });
 

@@ -132,7 +132,7 @@
                     <li class="dropdown">
                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ trans('customers.index') }} <span class="caret"></span></a>
                       <ul class="dropdown-menu">
-                       <li><a href="{{url('customers/register')}}">{{ trans('customers.register') }}</a></li>
+                       <li><a href="{{ route('customer.create') }}">{{ trans('customers.register') }}</a></li>
                        <li><a href="{{url('customers')}}">{{ trans('customers.search') }}</a></li>
                       </ul>
                     </li>
