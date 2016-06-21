@@ -10,8 +10,6 @@ use App\Http\Requests;
 
 class CustomerController extends Controller
 {
-    // TODO: IMPORTANT -> needs phpunit testing.
-
     /**
      * CustomerController constructor.
      */
@@ -30,8 +28,6 @@ class CustomerController extends Controller
     public function index()
     {
         // TODO: Connect search form to some handling.
-        // TODO: Make the customer table dynamic.
-        // TODO: Enable the pagination buttons in the view.
 
         $data['customers'] = Customers::paginate(15);
         return view('customers.index', $data);

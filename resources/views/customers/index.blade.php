@@ -43,17 +43,22 @@
                     <th>{{trans('customers.status')}}</th>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>iDevelopment</td>
-                        <td>Demo client</td>
-                        <td>blah@blah.com</td>
-                        <td>+32</td>
-                        <td>19-06-2016 08:00</td>
-                        <td></td>
-                    </tr>
+                    @foreach($customers as $customer)
+                        <tr>
+                            <td><code>#C{{ $customer->id }}</code></td>
+                            <td>{{ $customer->company }}</td>
+                            <td>{{ $customer->fname }} {{ $customer->name }}</td>
+                            <td>{{ $customer->email }}</td>
+                            <td>{{ $customer->phone }}</td>
+                            <td>{{ $customer->created_at }}</td>
+                            <td>Open</td>
+                        </tr>
+                    @endforeach
                 </tbody>
                 </table>
+
+                    {{-- Pagination --}}
+                    {{ $customers->render() }}
      </div>
     </div>
    </div>
