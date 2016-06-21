@@ -216,7 +216,18 @@
               @if (Auth::guest())
                      
                     @else
-                       <li><a href="{!! url('setup') !!}" data-toggle="tooltip" data-placement="bottom" title="Setup"><span class="fa fa-wrench"></span></a></li>
+                       <li>
+                           <a href="{!! url('setup') !!}" data-toggle="tooltip" data-placement="bottom" title="Setup">
+                               <span class="fa fa-wrench"></span>
+                           </a>
+                       </li>
+
+                        <li>
+                            <a href="#" data-toggle="tooltip" data-placement="bottom" title="Notifications">
+                                <span class="fa fa-bell"></span>
+                            </a>
+                        </li>
+
                         <li class="dropdown">
                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                <i class="fa fa-user"></i> {{ Auth::user()->name }} <span class="caret"></span>
