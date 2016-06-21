@@ -29,9 +29,10 @@ Route::post('/account/update/password', 'AccountController@updateAccountSecurity
 
 // Customer routes.
 Route::get('/customers', 'CustomerController@index')->name('customers.list');
+Route::get('/customers/create', 'CustomerController@newCustomer')->name('customer.create');
+Route::get('/customer/destroy/{id}', 'CustomerController@destroy')->name('customer.destroy');
 Route::post('/customer/update/{id}', 'CustomerController@update')->name('customer.update');
 Route::post('/customer/create', 'CustomerController@create')->name('customer.insert');
-Route::get('/customer/destroy/{id}', 'CustomerController@destroy')->name('customer.destroy');
 
 // Tickets routes
 Route::get('/tickets', 'TicketsController@index')->name('tickets.index');

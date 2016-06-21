@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Countries;
 use App\Customers;
 use Illuminate\Http\Request;
 
@@ -9,10 +10,15 @@ use App\Http\Requests;
 
 class CustomerController extends Controller
 {
+    // TODO: IMPORTANT -> needs phpunit testing.
+
+    /**
+     * CustomerController constructor.
+     */
     public function __construct()
     {
         $this->middleware('auth');
-       // $this->middleware('lang');
+        $this->middleware('lang');
     }
 
     /**
@@ -32,6 +38,18 @@ class CustomerController extends Controller
     }
 
     /**
+     * Create view for a new customer.
+     *
+     * @url    GET /customers/create
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function newCustomer()
+    {
+        $data['countries'] = Countries::all();
+        return view('customers.create', $data);
+    }
+
+    /**
      * Create a new customer.
      *
      * @url    POST: /customer/create
@@ -40,7 +58,7 @@ class CustomerController extends Controller
      */
     public function create(Requests\CustomerValidator $input)
     {
-        Customer::create($input->except('_token'));
+        Customers::create($input->except('_token'));
         session()->flash('message', 'The customer has been created');
         return redirect()->back();
     }
@@ -55,7 +73,7 @@ class CustomerController extends Controller
      */
     public function update(Requests\CustomerValidator $input, $id)
     {
-        Customer::find($id)->update($input->except('_token'));
+        Customers::find($id)->update($input->except('_token'));
         session()->flash('message', 'The Customer has been updated');
         return redirect()->back();
     }
