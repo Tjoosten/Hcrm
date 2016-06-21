@@ -14,9 +14,10 @@
 
 <div class="collapse" id="search">
   <div class="well">
-      <form class="form-inline" action="POST" action="">
+      <form class="form-inline" method="GET" action="{!! route('customer.search') !!}">
+          {{csrf_field()}}
           <div class="form-group">
-              <input type="email" class="form-control" placeholder="Customer name">
+              <input type="text" name="term" class="form-control" placeholder="Customer lastname">
           </div>
           <button type="submit" class="btn btn-danger">
             <span class="fa fa-search"></span>

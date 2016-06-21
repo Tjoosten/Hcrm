@@ -25,6 +25,23 @@ class WebCustomerTest extends TestCase
     }
 
     /**
+     * GET: customers/search
+     *
+     * @group all
+     * @group customers
+     */
+    public function testCustomerSearch()
+    {
+        $user = factory(App\User::class)->create();
+
+        $this->actingAs($user)
+            ->seeIsAuthenticatedAs($user)
+            ->visit('/customers/search', ['term' => $customer->name])
+            ->see($customer->name)
+            ->seeStatusCode(200);
+    }
+
+    /**
      * GET: /customer/create
      *
      * @group all

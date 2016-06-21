@@ -7,6 +7,7 @@ use App\Customers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Stripe\Customer;
 
 class CustomerController extends Controller
 {
@@ -22,14 +23,21 @@ class CustomerController extends Controller
     /**
      * Get a nice table overview from the customers.
      *
-     * @url    GET: /customers
+     * @url    GET: /customers          -> Normal view with aal the users
+     * @url    POST: /customers/search  -> The search result view.
+     * @param  Request $input
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function index()
+    public function index(Request $input)
     {
-        // TODO: Connect search form to some handling.
+        $term = $input->get('term');
 
-        $data['customers'] = Customers::paginate(15);
+        if (empty($term)) {
+            $data['customers'] = Customers::paginate(15);
+        } else {
+            $data['customers'] = Customers::where('name', 'LIKE', "%$term%")->paginate(15);
+        }
+
         return view('customers.index', $data);
     }
 
