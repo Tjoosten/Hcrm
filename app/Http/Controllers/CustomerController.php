@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Countries;
 use App\Customers;
 use App\Jobs\NotifyNewCustomer;
+use App\Jobs\NotifyUpdateCustomer;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Http\Request;
 
@@ -83,6 +84,7 @@ class CustomerController extends Controller
     public function update(Requests\CustomerValidator $input, $id)
     {
         Customers::find($id)->update($input->except('_token'));
+        $this->dispatch(new NotifyUpdateCustomer(auth()->user()));
         session()->flash('message', 'The Customer has been updated');
         return redirect()->back();
     }

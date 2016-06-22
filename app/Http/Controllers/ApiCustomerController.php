@@ -66,11 +66,11 @@ class ApiCustomerController extends ApiGuardController
         $validator = Validator::make($input->all(), $this->validation);
 
         if ($validator->fails()) {
-            $this->dispatch(new NotifyNewCustomer);
             return $this->response->errorWrongArgs();
         }
 
         if (Customers::create($input->all())) {
+            $this->dispatch(new NotifyNewCustomer(auth()->user()));
             return $this->response->withArray('Customer has been added');
         } else {
             return $this->response->errorUnprocessable();
@@ -98,7 +98,7 @@ class ApiCustomerController extends ApiGuardController
             }
 
             if ($customer->update($input->all())) {
-                $this->dispatch(new NotifyUpdateCustomer);
+                $this->dispatch(new NotifyUpdateCustomer(auth()->user()));
                 return $this->response->withArray(['Customer has been updated.']);
             } else {
                 return $this->response->errorUnprocessable();

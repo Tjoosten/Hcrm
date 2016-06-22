@@ -12,11 +12,18 @@ class NotifyUpdateCustomer extends Job implements ShouldQueue
     use InteractsWithQueue, SerializesModels;
 
     /**
-     * Create a new job instance.
+     * @var array
      */
-    public function __construct()
+    protected $data;
+
+    /**
+     * Create a new job instance.
+     * @param $data
+     */
+    public function __construct($data)
     {
         //
+        $this->data = $data;
     }
 
     /**
@@ -26,6 +33,12 @@ class NotifyUpdateCustomer extends Job implements ShouldQueue
      */
     public function handle()
     {
-        //
+        $users = User::all();
+
+        Notifynder::loop($users, function(NotifynderBuilder $builder, $user) {
+            $builder->category('customer.update')
+                ->from($this->data['id'])
+                ->to($user->id);
+        })->send();
     }
 }

@@ -23,11 +23,9 @@ class NotifyNewCustomer extends Job implements ShouldQueue
      * Create a new job instance.
      *
      * @param $data
-     * @internal param Notifynder $notifynder
      */
     public function __construct($data)
     {
-
         $this->data = $data;
     }
 
