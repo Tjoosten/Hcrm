@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Customers;
+use App\Jobs\NotifyNewCustomer;
+use App\Jobs\NotifyUpdateCustomer;
 use App\Transformers\CustomerTransformer;
 use Chrisbjr\ApiGuard\Http\Controllers\ApiGuardController;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
@@ -64,6 +66,7 @@ class ApiCustomerController extends ApiGuardController
         $validator = Validator::make($input->all(), $this->validation);
 
         if ($validator->fails()) {
+            $this->dispatch(new NotifyNewCustomer);
             return $this->response->errorWrongArgs();
         }
 
@@ -95,6 +98,7 @@ class ApiCustomerController extends ApiGuardController
             }
 
             if ($customer->update($input->all())) {
+                $this->dispatch(new NotifyUpdateCustomer);
                 return $this->response->withArray(['Customer has been updated.']);
             } else {
                 return $this->response->errorUnprocessable();

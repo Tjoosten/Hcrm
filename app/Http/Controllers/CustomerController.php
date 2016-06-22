@@ -4,13 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Countries;
 use App\Customers;
+use App\Jobs\NotifyNewCustomer;
+use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use Stripe\Customer;
 
 class CustomerController extends Controller
 {
+    use DispatchesJobs;
+
     /**
      * CustomerController constructor.
      */
@@ -63,6 +66,8 @@ class CustomerController extends Controller
     public function create(Requests\CustomerValidator $input)
     {
         Customers::create($input->except('_token'));
+        $this->dispatch(new NotifyNewCustomer(auth()->user()));
+
         session()->flash('message', 'The customer has been created');
         return redirect()->back();
     }

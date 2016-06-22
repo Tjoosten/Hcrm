@@ -157,6 +157,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         Laravel\Cashier\CashierServiceProvider::class,
         Chrisbjr\ApiGuard\Providers\ApiGuardServiceProvider::class,
+        Fenos\Notifynder\NotifynderServiceProvider::class,
 
     ],
 
@@ -204,6 +205,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'ApiGuardAuth' => \Chrisbjr\ApiGuard\Facades\ApiGuardAuth::class,
+        'Notifynder' => Fenos\Notifynder\Facades\Notifynder::class,
 
     ],
 
