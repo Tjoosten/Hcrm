@@ -224,7 +224,14 @@
 
                         <li>
                             <a href="#" data-toggle="tooltip" data-placement="bottom" title="Notifications">
-                                <span class="fa fa-bell"></span>
+                                @if(count(Auth::user()->getNotificationsNotRead()) === 0)
+                                    <span class="fa fa-bell"></span>
+                                @elseif(count(Auth::user()->getNotificationsNotRead()) > 0)
+                                    <span class="fa fa-bell"></span>
+                                    <span class="label label-danger">
+                                        {{ count(Auth::user()->getNotificationsNotRead()) }}
+                                    </span>
+                                @endif
                             </a>
                         </li>
 
