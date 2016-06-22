@@ -13,7 +13,7 @@ class EditApiKeys extends Migration
     public function up()
     {
         Schema::table('api_keys', function (Blueprint $table) {
-            $table->string('service');
+            $table->string('service')->nullable();
         });
     }
 
@@ -24,6 +24,8 @@ class EditApiKeys extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('api_keys', function ($table) {
+            $table->dropColumn('service');
+        });
     }
 }

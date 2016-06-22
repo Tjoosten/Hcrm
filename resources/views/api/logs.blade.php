@@ -15,7 +15,7 @@
                 <table class="table table-condensed table-hover">
                     <thead>
                         <tr>
-                            <th>#<th>
+                            <th>#</th>
                             <th>Date:</th>
                             <th>Route:</th>
                             <th>Params:</th>
@@ -28,7 +28,15 @@
                                 <td> <strong>#{!! $log->id !!}</strong> </td>
                                 <td> {!! $log->created_at !!} </td>
                                 <td> {!! $log->method !!} {!! $log->route !!} </td>
-                                <td> {!! $log->params !!} </td>
+
+                                <td>
+                                    @if(empty($log->params))
+                                        &lt;none&gt;
+                                    @else
+                                        {!! $log->params !!}
+                                    @endif
+                                </td>
+
                                 <td> {!! $log->ip_address !!}</td>
                             </tr>
                         @endforeach

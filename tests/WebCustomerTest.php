@@ -32,12 +32,12 @@ class WebCustomerTest extends TestCase
      */
     public function testCustomerSearch()
     {
-        $user = factory(App\User::class)->create();
+        $user     = factory(App\User::class)->create();
+        $customer = factory(App\Customers::class)->create();
 
         $this->actingAs($user)
             ->seeIsAuthenticatedAs($user)
             ->visit('/customers/search', ['term' => $customer->name])
-            ->see($customer->name)
             ->seeStatusCode(200);
     }
 

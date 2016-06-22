@@ -11,6 +11,12 @@
 |
 */
 
+// API ROUTES.
+Route::group(['prefix' => 'api/v1'], function () {
+    Route::get('customers', 'ApiCustomerController@index');
+});
+
+// WBE ROUTES.
 Route::get('/', 'HomeController@index')->name('index');
 Route::auth();
 

@@ -25,7 +25,8 @@ class AccountController extends Controller
     {
         $this->middleware('auth');
         $this->middleware('lang');
-        $this->userId = auth()->user()->id;
+
+        $this->userId = auth()->check() ? auth()->user()->id : 0;
     }
 
     /**
