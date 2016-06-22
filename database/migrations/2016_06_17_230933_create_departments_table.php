@@ -38,7 +38,7 @@ class CreateDepartmentsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('departments');
         Schema::drop('departments_user');
+        Schema::drop('departments');
     }
 }

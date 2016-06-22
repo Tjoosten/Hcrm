@@ -14,6 +14,11 @@
 // API ROUTES.
 Route::group(['prefix' => 'api/v1'], function () {
     Route::get('customers', 'ApiCustomerController@index');
+    Route::get('customers/{id}', 'ApiCustomerController@show');
+    Route::put('/api/v1/customers/{id}', 'ApiCustomerController@update');
+    Route::post('/api/v1/customers', 'ApiCustomerController@insert');
+    Route::patch('/api/v1/customers/{id}', 'ApiCustomerController@update');
+    Route::delete('customers/{id}', 'ApiCustomerController@destroy');
 });
 
 // WBE ROUTES.
