@@ -15,13 +15,13 @@
 Route::group(['prefix' => 'api/v1'], function () {
     Route::get('customers', 'ApiCustomerController@index');
     Route::get('customers/{id}', 'ApiCustomerController@show');
-    Route::put('/api/v1/customers/{id}', 'ApiCustomerController@update');
-    Route::post('/api/v1/customers', 'ApiCustomerController@insert');
-    Route::patch('/api/v1/customers/{id}', 'ApiCustomerController@update');
+    Route::put('customers/{id}', 'ApiCustomerController@update');
+    Route::post('customers', 'ApiCustomerController@insert');
+    Route::patch('customers/{id}', 'ApiCustomerController@update');
     Route::delete('customers/{id}', 'ApiCustomerController@destroy');
 });
 
-// WBE ROUTES.
+// WEB ROUTES.
 Route::get('/', 'HomeController@index')->name('index');
 Route::auth();
 
@@ -29,9 +29,9 @@ Route::get('/home', 'HomeController@index')->name('index');
 
 // Department routes.
 Route::get('departments', 'DepartmentController@index')->name('department.index');
-Route::post('/departments/create', 'DepartmentController@create')->name('department.store');
-Route::get('/departments/update/{id}', 'DepartmentController@update')->name('department.update');
 Route::get('/departments/delete/{id}', 'DepartmentController@destroy')->name('department.destroy');
+Route::post('/departments/create', 'DepartmentController@create')->name('department.store');
+Route::post('/departments/update/{id}', 'DepartmentController@update')->name('department.update');
 
 // Account info routes.
 Route::get('/account/update/{tab}', 'AccountController@Account')->name('account.info');
