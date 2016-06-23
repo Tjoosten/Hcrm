@@ -82,7 +82,7 @@ class CustomerController extends Controller
      */
     public function edit($id)
     {
-        $data['customer']  = Customers::find($id);
+        $data['customer']  = Customers::findOrFail($id);
         $data['countries'] = Countries::all();
         return view('customers.update', $data);
     }
@@ -99,6 +99,7 @@ class CustomerController extends Controller
     {
         Customers::find($id)->update($input->except('_token'));
         $this->dispatch(new NotifyUpdateCustomer(auth()->user()));
+
         session()->flash('message', 'The Customer has been updated');
         return redirect()->back();
     }

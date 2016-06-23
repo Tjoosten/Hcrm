@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-sm-12 col-md-12 col-lg-12 col-xs-12">
             <div class="page-header">
-                <h2> Create a new customer </h2>
+                <h2> Update a new customer </h2>
             </div>
 
             <form action="{!! route('customer.insert') !!}" method="POST" class="form-horizontal">
