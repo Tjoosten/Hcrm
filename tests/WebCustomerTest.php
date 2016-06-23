@@ -78,6 +78,35 @@ class WebCustomerTest extends TestCase
     }
 
     /**
+     * GET: /customer/update/{id}
+     *
+     * @group all
+     * @group customers
+     */
+    public function testCustomerEditView()
+    {
+        $user     = factory(App\User::class)->create();
+        $customer = factory(App\Customers::class)->create();
+
+        $this->actingAs($user)
+            ->seeIsAuthenticatedAs($user)
+            ->visit('/customer/update/' . $customer->id)
+            ->see($customer->name)
+            ->see($customer->fname)
+            ->see($customer->street)
+            ->see($customer->zipcode)
+            ->see($customer->city)
+            ->see($customer->state)
+            ->see($customer->country)
+            ->see($customer->email)
+            ->see($customer->phone)
+            ->see($customer->mobile)
+            ->see($customer->company)
+            ->see($customer->vat)
+            ->seeStatusCode(200);
+    }
+
+    /**
      * POST: /customer/update/{id}
      * - without validation errors
      *

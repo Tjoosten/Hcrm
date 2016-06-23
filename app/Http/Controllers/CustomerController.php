@@ -74,6 +74,20 @@ class CustomerController extends Controller
     }
 
     /**
+     * Update view for a customer.
+     *
+     * @url    GET: /customer/update/{id}
+     * @param  int $id the database id for the customer.
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function edit($id)
+    {
+        $data['customer']  = Customers::find($id);
+        $data['countries'] = Countries::all();
+        return view('customers.update', $data);
+    }
+
+    /**
      * Update some customer in the database.
      *
      * @url    POST: /customer/update/{id}

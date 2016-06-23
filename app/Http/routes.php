@@ -45,6 +45,7 @@ Route::get('/customers', 'CustomerController@index')->name('customers.list');
 Route::get('/customers/search', 'CustomerController@index')->name('customer.search');
 Route::get('/customers/create', 'CustomerController@newCustomer')->name('customer.create');
 Route::get('/customer/destroy/{id}', 'CustomerController@destroy')->name('customer.destroy');
+Route::get('/customer/update/{id}', 'CustomerController@edit')->name('customer.edit');
 Route::post('/customer/update/{id}', 'CustomerController@update')->name('customer.update');
 Route::post('/customer/create', 'CustomerController@create')->name('customer.insert');
 

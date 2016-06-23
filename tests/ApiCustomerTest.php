@@ -19,6 +19,7 @@ class ApiCustomerTest extends TestCase
      */
     public function testApiCustomerIndex()
     {
+        $this->withoutMiddleware();
         $apiKey = factory(ApiKey::class)->create();
         $headers['X-Authorization'] = $apiKey->key;
         
