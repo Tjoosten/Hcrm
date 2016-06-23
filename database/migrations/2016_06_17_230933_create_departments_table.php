@@ -29,6 +29,15 @@ class CreateDepartmentsTable extends Migration
             $table->foreign('departments_id')->references('id')->on('departments')->onDelete('cascade');
             $table->timestamps();
         });
+
+        Schema::create('departments_managers', function(Blueprint $table) {
+            $table->increments('id');
+            $table->integer('user_id')->unsigned()->index();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->integer('departments_id')->unsigned()->index();
+            $table->foreign('departments_id')->references('id')->on('departments')->onDelete('cascade');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -38,6 +47,7 @@ class CreateDepartmentsTable extends Migration
      */
     public function down()
     {
+        Schema::drop('departments_managers');
         Schema::drop('departments_user');
         Schema::drop('departments');
     }
