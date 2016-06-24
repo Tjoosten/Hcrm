@@ -92,7 +92,11 @@ class DepartmentController extends Controller
      */
     public function destroy($id)
     {
-        Departments::destroy($id);
+        $department = Departments::findOrFail($id);
+        $department->users()->sync([]);
+        $department->managers()->sync([]);
+        $department->delete();
+
         session()->flash('message', 'Department deleted');
         return redirect()->back();
     }
