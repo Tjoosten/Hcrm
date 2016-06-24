@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Departments;
+use App\User;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -31,6 +32,18 @@ class DepartmentController extends Controller
     }
 
     /**
+     * Create form for registering new departments
+     *
+     * @url    GET: /departments/create
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function new()
+    {
+        $data['users'] = User::all(['id', 'name']);
+        return view('departments.create', $data);
+    }
+
+    /**
      * Create a new department.
      *
      * @url    POST: /departments/create
@@ -39,7 +52,12 @@ class DepartmentController extends Controller
      */
     public function create(Requests\DepartmentValidator $input)
     {
-        Departments::create($input->except('_token'));
+        $depId = Departments::create($input->except('_token'))->id;
+
+        $department = Departments::findOrFail($depId);
+        $department->users()->attach($input->users);
+        $department->managers()->attach($input->managers);
+
         session()->flash('message', 'Department has been created');
         return redirect()->back();
     }

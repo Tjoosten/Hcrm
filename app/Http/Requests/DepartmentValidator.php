@@ -4,6 +4,10 @@ namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
 
+/**
+ * @property mixed managers The department managers relationship.
+ * @property mixed users    The department users relationship.
+ */
 class DepartmentValidator extends Request
 {
     /**
@@ -26,7 +30,8 @@ class DepartmentValidator extends Request
         return [
             'name'        => 'required',
             'description' => 'required',
-            'manager_id'  => 'required'
+            'managers'    => 'required',
+            'users'       => 'required'
         ];
     }
 }

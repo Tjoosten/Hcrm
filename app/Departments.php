@@ -10,7 +10,7 @@ class Departments extends Model
      * Mass-assign fields.
      * @var array
      */
-    protected $fillable = [];
+    protected $fillable = ['name', 'description'];
 
     /**
      * Hidden fields.

@@ -9,7 +9,7 @@
                     Search department
                 </a>
 
-                <a class="btn btn-default">New Department.</a>
+                <a href="{{ route('department.new') }}" class="btn btn-default">New Department.</a>
 
                 <div class="clearfix">&nbsp;</div>
 
