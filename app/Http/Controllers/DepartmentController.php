@@ -26,7 +26,7 @@ class DepartmentController extends Controller
      */
     public function index()
     {
-        $data['departments'] = Departments::paginate(15);
+        $data['departments'] = Departments::with('users', 'managers')->paginate(15);
         return view('departments.index', $data);
     }
 

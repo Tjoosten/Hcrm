@@ -17,7 +17,6 @@ class CreateDepartmentsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('description');
-            $table->integer('manager_id')->comment('relation with the user table.');
             $table->timestamps();
         });
 
