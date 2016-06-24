@@ -31,7 +31,7 @@ class DepartmentController extends Controller
         $rels = ['users', 'managers'];
         $term = $request->get('term');
 
-        if (empty($term)) {
+        if (! $term) {
             $data['departments'] = Departments::with($rels)->paginate(15);
         } else {
             $data['departments'] = Departments::with($rels)
@@ -48,9 +48,8 @@ class DepartmentController extends Controller
      * @url    GET: /departments/create
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function register()
+    public function new()
     {
-        dd('test');
         $data['users'] = User::all(['id', 'name']);
         return view('departments.create', $data);
     }

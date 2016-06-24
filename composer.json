@@ -10,7 +10,8 @@
         "laravel/cashier": "^6.0",
         "chrisbjr/api-guard": "3.1.*",
         "doctrine/dbal": "^2.5",
-        "fenos/notifynder": "3.2.12.1"
+        "fenos/notifynder": "3.2.12.1",
+        "barryvdh/laravel-debugbar": "^2.2"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

@@ -158,6 +158,7 @@ return [
         Laravel\Cashier\CashierServiceProvider::class,
         Chrisbjr\ApiGuard\Providers\ApiGuardServiceProvider::class,
         Fenos\Notifynder\NotifynderServiceProvider::class,
+        Barryvdh\Debugbar\ServiceProvider::class,
 
     ],
 
@@ -206,6 +207,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'ApiGuardAuth' => \Chrisbjr\ApiGuard\Facades\ApiGuardAuth::class,
         'Notifynder' => Fenos\Notifynder\Facades\Notifynder::class,
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
 
     ],
 
