@@ -44,7 +44,7 @@
 
 
   /* Bootstrap adjustments */
-        
+
         h1,h2,h3,h4,h5,h6{font-family:inherit;font-weight:700;color:inherit;margin:0}
         h1 small,h2 small,h3 small,h4 small,h5 small,h6 small{font-weight:400;color:#999}
         h1{font-size:30px;line-height:36px}
@@ -55,7 +55,7 @@
         h1 small,h2 small{font-size:18px}
         h3 small,h4{font-size:14px}
         h4 small,h5{font-size:12px}
-        
+
     .full_width .container {max-width:1680px}
     .navbar-fixed-top {min-height:40px}
     .navbar-default{background-color: #45484d; color: #fff;}
@@ -80,14 +80,14 @@
     .navbar-default .navbar-nav > li > a {color: #e1e1e1; text-shadow:none;padding:10px 10px 9px}
     .navbar-default .navbar-nav > li > a:hover,
     .navbar-default .navbar-nav > li > a:focus {color: #fff;}
-    .navbar-default .navbar-nav > .active > a, 
-    .navbar-default .navbar-nav > .active > a:hover, 
+    .navbar-default .navbar-nav > .active > a,
+    .navbar-default .navbar-nav > .active > a:hover,
     .navbar-default .navbar-nav > .active > a:focus {color: #fff; background-color: #383b3f;}
 
-    .navbar-default .navbar-nav > .open > a, 
-    .navbar-default .navbar-nav > .open > a:hover, 
-    .navbar-default .navbar-nav > .open > a:focus { color: #fff; background-color: #383b3f;}    
-    
+    .navbar-default .navbar-nav > .open > a,
+    .navbar-default .navbar-nav > .open > a:hover,
+    .navbar-default .navbar-nav > .open > a:focus { color: #fff; background-color: #383b3f;}
+
     .dropdown-menu li > a:hover,
     .dropdown-menu li > a:focus,
     .dropdown-menu .active > a,
@@ -107,7 +107,7 @@
 
      .list-group-item.active, .list-group-item.active:hover {
           background-color: #5c778a;
-          border-color: #5c778a; 
+          border-color: #5c778a;
           }
 
      .btn-primary, .btn-primary:hover, .btn-primary:focus, .btn-primary:active,
@@ -137,7 +137,7 @@
       .navbar-nav > li {display:inline-block;vertical-align:bottom;float: none}
 
     }
-    
+
     @media (max-width: 767px) {
       .main_content {padding-top:20px}
       .navbar-fixed-top {position:static}
@@ -148,7 +148,7 @@
       .row input[class*="span"],.row textarea[class*="span"],.row select[class*="span"] {width:80%}
 
     }
-       
+
     @media (min-width: 1681px) {
       body {max-width:1680px;margin:0 auto !important;}
       header .container-fluid, header .container {max-width:1680px;margin:30 auto}
