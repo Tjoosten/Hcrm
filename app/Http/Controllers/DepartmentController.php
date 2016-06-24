@@ -65,7 +65,7 @@ class DepartmentController extends Controller
     /**
      * Show The information about a specific department.
      *
-     * @url   /departments/{id} -> TODO: register route
+     * @url   /departments/{id}
      * @param int $id The department id in the database.
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */

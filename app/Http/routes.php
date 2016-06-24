@@ -29,6 +29,7 @@ Route::get('/home', 'HomeController@index')->name('index');
 
 // Department routes.
 Route::get('departments', 'DepartmentController@index')->name('department.index');
+Route::get('/departments/{id}', 'DepartmentController@show')->name('department.specific');
 Route::get('/departments/create', 'DepartmentController@new')->name('department.new');
 Route::get('/departments/delete/{id}', 'DepartmentController@destroy')->name('department.destroy');
 Route::post('/departments/create', 'DepartmentController@create')->name('department.store');
