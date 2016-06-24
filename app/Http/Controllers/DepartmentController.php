@@ -62,6 +62,13 @@ class DepartmentController extends Controller
         return redirect()->back();
     }
 
+    /**
+     * Show The information about a specific department.
+     *
+     * @url   /departments/{id} -> TODO: register route
+     * @param int $id The department id in the database.
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function show($id)
     {
         $data['department'] = Departments::find($id);
