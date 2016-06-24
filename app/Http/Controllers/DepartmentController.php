@@ -21,13 +21,24 @@ class DepartmentController extends Controller
 
     /**
      * Get all the departments.
-     * 
+     *
      * @url    GET: /departments
+     * @param  Request $request
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function index()
+    public function index(Request $request)
     {
-        $data['departments'] = Departments::with('users', 'managers')->paginate(15);
+        $rels = ['users', 'managers'];
+        $term = $request->get('term');
+
+        if (empty($term)) {
+            $data['departments'] = Departments::with($rels)->paginate(15);
+        } else {
+            $data['departments'] = Departments::with($rels)
+                ->where('name', 'LIKE', "%$term%")
+                ->paginate(15);
+        }
+
         return view('departments.index', $data);
     }
 
@@ -39,6 +50,7 @@ class DepartmentController extends Controller
      */
     public function register()
     {
+        dd('test');
         $data['users'] = User::all(['id', 'name']);
         return view('departments.create', $data);
     }

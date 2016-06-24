@@ -9,13 +9,13 @@
                     Search department
                 </a>
 
-                <a href="{{ route('department.new') }}" class="btn btn-default">New Department.</a>
+                <a href="{{ route('department.register') }}" class="btn btn-default">New Department.</a>
 
                 <div class="clearfix">&nbsp;</div>
 
                 <div class="collapse" id="search">
                     <div class="well">
-                        <form class="form-inline" method="GET" action="">
+                        <form class="form-inline" method="GET" action="{{ route('department.search') }}">
                             {{ csrf_field() }}
                             <div class="form-group">
                                 <input type="text" name="term" class="form-control" placeholder="Department name">
