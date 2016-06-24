@@ -48,8 +48,5 @@ $factory->define(App\Departments::class, function (Faker\Generator $faker) {
     return [
         'name'        => $faker->name,
         'description' => $faker->text(200),
-        'manager_id'  => function () {
-            return factory(App\User::class)->create()->id;
-        }
     ];
 });
