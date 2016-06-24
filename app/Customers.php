@@ -32,6 +32,6 @@ class Customers extends Model
      */
     public function taxPercentage()
     {
-        return 20;
+        return config('crm.tax');
     }
 }
