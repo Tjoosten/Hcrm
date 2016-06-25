@@ -67,7 +67,7 @@ class CustomerController extends Controller
     public function create(Requests\CustomerValidator $input)
     {
         Customers::create($input->except('_token'));
-        $this->dispatch(new NotifyNewCustomer(auth()->user()));
+        // $this->dispatch(new NotifyNewCustomer(auth()->user()));
 
         session()->flash('message', 'The customer has been created');
         return redirect()->back();
@@ -98,7 +98,7 @@ class CustomerController extends Controller
     public function update(Requests\CustomerValidator $input, $id)
     {
         Customers::find($id)->update($input->except('_token'));
-        $this->dispatch(new NotifyUpdateCustomer(auth()->user()));
+        // $this->dispatch(new NotifyUpdateCustomer(auth()->user()));
 
         session()->flash('message', 'The Customer has been updated');
         return redirect()->back();

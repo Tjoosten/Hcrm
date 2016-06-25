@@ -19,3 +19,4 @@ bootstrap/cache/
 .rocketeer/
 /Vagrantfile
 /.vagrant/
+/offline-issues/
