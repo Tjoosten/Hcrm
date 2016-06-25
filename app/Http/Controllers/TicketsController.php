@@ -25,7 +25,7 @@ class TicketsController extends Controller
      */
     public function index()
     {
-        $data['tickets'] = Tickets::paginate(15);
+        $data['tickets'] = Tickets::paginate(10);
         return view('tickets.index', $data);
     }
 
@@ -36,7 +36,7 @@ class TicketsController extends Controller
      */
     public function create()
     {
-        
+
         return view('tickets.create');
     }
 
@@ -51,5 +51,17 @@ class TicketsController extends Controller
         $data['tickets'] = Tickets::where('assigned_id', $userId)->paginate(15);
 
         return view('tickets.index', $data);
+    }
+
+    /**
+     * Display the ticket details
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function details($id)
+    {
+      $data['ticket']  = Tickets::findOrFail($id);
+
+      return view('tickets.details', $data);
     }
 }

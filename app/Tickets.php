@@ -22,12 +22,12 @@ class Tickets extends Model
 
     /**
      * Status relation form the ticket.
-     * 
+     *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function status()
     {
-        return $this->belongsTo('App\Status', 'id', 'status_id');
+        return $this->belongsTo('App\Status', 'status_id', 'id');
     }
 
     /**
@@ -37,7 +37,7 @@ class Tickets extends Model
      */
     public function customer()
     {
-        return $this->belongsTo('App\Customers', 'id', 'customer_id');
+        return $this->belongsTo('App\Customers', 'customer_id', 'id');
     }
 
     /**

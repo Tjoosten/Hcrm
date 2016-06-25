@@ -29,12 +29,12 @@
 
             <div class="checkbox">
              <label>
-              <input id="userAssigned" name="userAssigned" type="checkbox"> Assigned to me
+              <input id="userAssigned" name="userAssigned" type="checkbox"> {{trans('tickets.owned')}}
              </label>
              </div>
 
             <span class="pull-right">
-             <a href="{{ url('tickets/create') }}" class="btn btn-success">Create ticket</a>
+             <a href="{{ url('tickets/create') }}" class="btn btn-success">{{trans('tickets.register')}}</a>
             </span>
            </form>
         </div>
@@ -45,27 +45,36 @@
         <div class="clearfix">&nbsp;</div>
         <div class="row">
             <div class="col-sm-12 col-xs-12 col-md-12 col-lg-12">
-            <pre>
-            <?php print_r($tickets); ?>
-            </pre>
               <table class="table table-striped table-condensed">
                 <thead>
                   <th>ID</th>
-                  <th>Subject</th>
-                  <th>Type</th>
-                  <th>Priority</th>
-                  <th>Status</th>
-                  <th>Date created</th>
-                  <th>Last updated</th>
+                  <th>{{trans('tickets.requester')}}</th>
+                  <th>{{trans('tickets.type')}}</th>
+                  <th class="col-xs-5 col-sm-5 col-md-5 col-lg-4">{{trans('tickets.subject')}}</th>
+                  <th>{{trans('tickets.priority')}}</th>
+                  <th>{{trans('tickets.status')}}</th>
+                  <th>{{trans('tickets.created')}}</th>
+                  <th>{{trans('tickets.updated')}}</th>
                 </thead>
                 <tbody>
                   @foreach($tickets as $ticket)
+                  <tr>
+                    <td><a href="{{url('tickets/read')}}"{!! $ticket->id !!}</td>
+                    <td>{!! $ticket->customer->fname !!} {!! $ticket->customer->name !!}</td>
+                    <td>{!! $ticket->type !!}</td>
+                    <td>{!! $ticket->subject !!}</td>
 
-
-                     @endforeach
+                    <td>{!! $ticket->priority !!}</td>
+                    <td>{!! $ticket->status->name !!}</td>
+                    <td>{!! $ticket->created_at !!}</td>
+                    <td>{!! $ticket->updated_at !!}</td>
+                  </tr>
+                  @endforeach
                  </tbody>
                </table>
+               <div class="text-right">
                    {{ $tickets->render() }}
+                 </div>
                     </div>
                 </div>
             </div>

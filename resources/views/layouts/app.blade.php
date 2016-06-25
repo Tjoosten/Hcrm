@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}" />
-    
+
     <title>Hosting CRM</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
@@ -155,6 +155,24 @@
       #maincontainer {border-right:1px solid #ccc;border-left:1px solid #ccc; background-color: #fff;}
       .main_content {border-left:none}
     }
+    .dl-horizontal dt{
+    text-align: left;
+    padding-right: 1em;
+
+}
+
+.dl-horizontal dd{
+    margin-left: 0;
+    margin-bottom:12px;
+    padding-bottom:12px;
+    border-bottom:1px dashed #dcdcdc;
+}
+
+  .splitScreen{
+    height: 100%;
+    border-right:2px solid #dcdcdc;
+  }
+
     </style>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
@@ -172,7 +190,7 @@
               <a class="brand pull-left" href="{{url('')}}">Hosting CRM <small>v1.0</small></a>
               <ul class="nav navbar-nav" id="mobile-nav">
                 @if (Auth::guest())
-                    
+
                 @else
                 <li><a href="{{ url('/home') }}">Home</a></li>
                     <li class="dropdown">
@@ -182,7 +200,7 @@
                        <li><a href="#">{{ trans('billing.overdueInvoices') }}</a></li>
                        <li><a href="#">{{ trans('billing.quotes') }}</a></li>
                       </ul>
-                    </li>  
+                    </li>
 
                     <li class="dropdown">
                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ trans('customers.index') }} <span class="caret"></span></a>
@@ -198,7 +216,7 @@
                        <li><a href="#">{{ trans('orders.register') }}</a></li>
                        <li><a href="#">{{ trans('orders.list') }}</a></li>
 
-                       <li><a href="#">{{ trans('orders.productGroups') }}</a></li>                       
+                       <li><a href="#">{{ trans('orders.productGroups') }}</a></li>
                        <li><a href="#">{{ trans('orders.products') }}</a></li>
                       </ul>
                     </li>
@@ -214,7 +232,7 @@
                 </ul>
               <ul class="nav navbar-nav pull-right">
               @if (Auth::guest())
-                     
+
                     @else
                        <li>
                            <a href="{!! url('setup') !!}" data-toggle="tooltip" data-placement="bottom" title="Setup">
@@ -268,7 +286,7 @@
 
 <script>
 $(document).ready(function(){
-    $('[data-toggle="tooltip"]').tooltip(); 
+    $('[data-toggle="tooltip"]').tooltip();
 });
 </script>
 </body>
