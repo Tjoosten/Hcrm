@@ -62,7 +62,7 @@
                     <td><a href="{{url('tickets/details')}}/{!! $ticket->id !!}">{!! $ticket->id !!}</a></td>
                     <td>{!! $ticket->customer->fname !!} {!! $ticket->customer->name !!}</td>
                     <td>{!! $ticket->type !!}</td>
-                    <td>{!! $ticket->subject !!}</td>
+                    <td><a href="{{url('tickets/details')}}/{!! $ticket->id !!}">{!! $ticket->subject !!}</a></td>
 
                     <td>{!! $ticket->priority !!}</td>
                     <td>{!! $ticket->status->name !!}</td>

@@ -11,7 +11,7 @@ class Tickets extends Model
      *
      * @var array
      */
-    protected $fillable = [];
+    protected $fillable = ['subject'];
 
     /**
      * Hidden fields

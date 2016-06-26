@@ -69,6 +69,10 @@ Route::get('/tickets/assigned', 'TicketsController@assigned')->name('tickets.ass
 
 Route::get('/tickets/details/{id}', 'TicketsController@details')->name('tickets.details');
 
+// Route::post('/tickets/quickUpdateTicket', 'TicketsController@update')->name('tickets.update');
+Route::post('/tickets/quickUpdateTicket/{id}', 'TicketsController@update')->name('tickets.qupdate');
+
+
 // API settings routes
 Route::get('/api/key/logs/{id}', 'AccountController@getApiLogs')->name('account.api.logs');
 

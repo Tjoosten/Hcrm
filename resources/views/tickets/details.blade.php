@@ -4,6 +4,8 @@
  <h2>{{trans('support.ticket')}} #{!! $ticket["id"] !!}</h2>
 </div>
 
+<div id="_token" class="hidden" data-token="{{ csrf_token() }}"></div>
+
 <div class="row">
   <div class="col-md-offset-1 col-lg-10">
     <div class="btn-toolbar" role="toolbar" aria-label="...">
@@ -33,10 +35,10 @@
           <dd>#{!! $ticket->id !!}</dd>
 
           <dt>{{ trans('tickets.type') }}</dt>
-          <dd>{!! $ticket->type !!}</dd>
+          <dd><a href="#" id="ticketType" data-type="select" data-name="type" data-pk="1" data-url="{{url('tickets/update')}}">{!! $ticket->type !!}</a></dd>
 
           <dt>{{ trans('tickets.subject') }}</dt>
-          <dd>{!! $ticket->subject !!}</dd>
+          <dd><a href="#" id="ticketSubject" data-type="textarea" data-name="subject" data-pk="{!! $ticket->id !!}" data-url="{!! url('tickets/quickUpdateTicket', $ticket->id) !!}">{!! $ticket->subject !!}</a></dd>
 
           <dt>{{ trans('tickets.status') }}</dt>
           <dd>{!! $ticket->status->name !!}</dd>
@@ -49,7 +51,7 @@
             <dd><a href="{{url('customers/details')}}/{!! $ticket->customer->id !!}">{!! $ticket->customer->fname !!} {!! $ticket->customer->name !!}</a></dd>
 
             <dt>{{ trans('tickets.assigned') }}</dt>
-            <dd></dd>
+            <dd><a href="#" id="ticketType" data-type="select" data-pk="1" data-url="/post" data-title="Enter username"></a></dd>
 
             <dt>{{ trans('tickets.created') }}</dt>
             <dd>{!! $ticket->created_at !!}</dd>
@@ -188,4 +190,16 @@
     </div>
   </div>
 </div>
+
+<script>
+$(document).ready(function() {
+  $.fn.editable.defaults.mode = 'inline';
+  $.fn.editable.defaults.params = function (params) {
+    params._token = $("#_token").data("token");
+    return params;
+};
+    $('#ticketType').editable();
+    $('#ticketSubject').editable();
+});
+</script>
 @endsection
