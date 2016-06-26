@@ -33,23 +33,60 @@
   .nav-collapse .sub-menu {display:block;left:0;right:auto;position:relative;visibility:visible;}
   .nav-collapse .caret-right {display:none;}
   .navbar-nav > li {display:inline-block;vertical-align:bottom;float: none;}
-
 }
 
 @media (max-width: 767px) {
   .main_content {padding-top:20px}
   .navbar-fixed-top {position:static}
   .navbar .nav.pull-right {float:left !important;clear:both;margin:6px 10px 10px}
-  .navbar-nav .open .dropdown-menu {background:#fff;border:1px solid rgba(0, 0, 0, 0.15);position:absolute;-webkit-box-shadow:0 6px 12px rgba(0, 0, 0, 0.176);-moz-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.176);box-shadow: 0 6px 12px rgba(0, 0, 0, 0.176);float:left}
-  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {color:#fff}
-  .row > [class*="span"] + [class*="span"] {margin-top:20px}
-  .row input[class*="span"],.row textarea[class*="span"],.row select[class*="span"] {width:80%}
-
+  .navbar-nav .open .dropdown-menu
+   {
+     background:#fff;
+     border:1px solid rgba(0, 0, 0, 0.15);
+     position:absolute;
+     -webkit-box-shadow:0 6px 12px rgba(0, 0, 0, 0.176);
+     -moz-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.176);
+     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.176);
+     float:left
+    }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus
+   {
+     color:#fff
+   }
+  .row > [class*="span"] + [class*="span"]
+  {
+    margin-top:20px
+  }
+  .row input[class*="span"], .row textarea[class*="span"], .row select[class*="span"]
+  {
+    width:80%
+  }
 }
 
-@media (min-width: 1681px) {
-  body {max-width:1680px;margin:0 auto !important;}
-  header .container-fluid, header .container {max-width:1680px;margin:30 auto}
-  #maincontainer {border-right:1px solid #ccc;border-left:1px solid #ccc; background-color: $contentBackground;}
-  .main_content {border-left:none}
+@media (min-width: 1681px)
+{
+  body
+  {
+    max-width:1680px;
+    margin:0 auto !important;
+  }
+  
+  header .container-fluid, header .container
+  {
+    max-width:1680px;
+    margin:30 auto;
+  }
+
+  #maincontainer
+  {
+    border-right:1px solid #ccc;
+    border-left:1px solid #ccc;
+    background-color: $contentBackground;
+  }
+
+  .main_content
+  {
+    border-left:none;
+  }
 }
