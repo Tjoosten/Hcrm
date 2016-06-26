@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
         $this->call(UsersTableSeeder::class);
         $this->call(CountrySeeder::class);
         $this->call(NotificationSeed::class);
+        $this->call(TicketsSeeder::class);
 
         // For testing propose
         factory(App\Customers::class)->create();

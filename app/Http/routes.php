@@ -67,7 +67,9 @@ Route::get('/tickets', 'TicketsController@index')->name('tickets.index');
 Route::get('/tickets/create', 'TicketsController@create')->name('tickets.created');
 Route::get('/tickets/assigned', 'TicketsController@assigned')->name('tickets.assigned');
 
-// API settings routes 
+Route::get('/tickets/details/{id}', 'TicketsController@details')->name('tickets.details');
+
+// API settings routes
 Route::get('/api/key/logs/{id}', 'AccountController@getApiLogs')->name('account.api.logs');
 
 // Setup routes
