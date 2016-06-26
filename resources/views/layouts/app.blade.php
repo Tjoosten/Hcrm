@@ -157,7 +157,7 @@
     }
     .dl-horizontal dt{
     text-align: left;
-    padding-right: 1em;
+    padding-right: 2em;
 
 }
 
@@ -169,9 +169,24 @@
 }
 
   .splitScreen{
-    height: 100%;
-    border-right:2px solid #dcdcdc;
+      width: 1px;
+      min-height: 70px;
+      border-bottom:1px dashed #dcdcdc;
   }
+
+ .ticketDetails
+ {
+   list-style-type: none;
+ }
+
+ .ticketDetails li
+ {
+   padding-left: 0;
+   margin-left: 0;
+   margin-bottom:12px;
+   padding-bottom:12px;
+   border-bottom:1px dashed #dcdcdc;
+ }
 
     </style>
 
