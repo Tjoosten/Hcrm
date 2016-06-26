@@ -7,7 +7,7 @@
 
  <div class="clearfix">&nbsp;</div>
    <div class="row">
-      <ul class="col-md-3 col-md-offset-1 list-unstyled">
+      <ul class="col-md-3 col-md-offset-2 list-unstyled">
         <li><strong>General</strong></li>
           <li><a href="#">Application settings</a></li>
           <li><a href="#">Email notifications</a></li>
@@ -33,17 +33,18 @@
              <div class="clearfix">&nbsp;</div>
 
              <div class="row">
-              <ul class="col-md-3 col-md-offset-1 list-unstyled">
+              <ul class="col-md-3 col-md-offset-2 list-unstyled">
               <li><strong>Staff management</strong></li>
                <li><a href="#">Create employee</a></li>
                <li><a href="#">Search employee</a></li>
-               <li><a href="{{url('departments')}}">Departments</a></li>             
+               <li><a href="{{url('departments')}}">Departments</a></li>
               </ul>
 
               <ul class="col-md-3 list-unstyled">
                <li><strong>Support</strong></li>
                <li><a href="#">knowledge base categories</a></li>
                <li><a href="#">Ticket routing</a></li>
+               <li><a href="#">Ticket types</a></li>
                <li><a href="#">Ticket statuses</a></li>
               </ul>
 
