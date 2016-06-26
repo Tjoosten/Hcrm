@@ -50,3 +50,10 @@ $factory->define(App\Departments::class, function (Faker\Generator $faker) {
         'description' => $faker->text(200),
     ];
 });
+
+$factory->define(App\Knowledge::class, function (Faker\Generator $faker) {
+    return [
+        'question' => 'Is this a question?',
+        'answer'   => $faker->text(200),
+    ];
+});

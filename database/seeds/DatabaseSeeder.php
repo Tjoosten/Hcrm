@@ -19,5 +19,6 @@ class DatabaseSeeder extends Seeder
         // For testing propose
         factory(App\Customers::class)->create();
         factory(App\Departments::class)->create();
+        factory(App\Knowledge::class)->create();
     }
 }
