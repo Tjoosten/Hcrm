@@ -1,0 +1,43 @@
+.input-group-addon
+ {
+   background-color: #fff;
+   border: 0px;
+ }
+
+.list-group-item.active, .list-group-item.active:hover
+{
+  background-color: #5c778a;
+  border-color: #5c778a;
+}
+.dl-horizontal dt{
+text-align: left;
+padding-right: 2em;
+
+}
+
+.dl-horizontal dd{
+margin-left: 0;
+margin-bottom:12px;
+padding-bottom:12px;
+border-bottom:1px dashed #dcdcdc;
+}
+
+.splitScreen{
+  width: 1px;
+  min-height: 70px;
+  border-bottom:1px dashed #dcdcdc;
+}
+
+.ticketDetails
+{
+list-style-type: none;
+}
+
+.ticketDetails li
+{
+padding-left: 0;
+margin-left: 0;
+margin-bottom:12px;
+padding-bottom:12px;
+border-bottom:1px dashed #dcdcdc;
+}
