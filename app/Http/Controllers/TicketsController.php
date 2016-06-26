@@ -64,4 +64,21 @@ class TicketsController extends Controller
 
       return view('tickets.details', $data);
     }
+
+    /**
+     * Update the ticket true inline.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        $ticket = Tickets::findOrFail($id);
+        $name = $request->get('name');
+        $value = $request->get('value');
+        $ticket->$name = $value;
+        $ticket->save();
+        return  redirect()->back();
+    }
 }
