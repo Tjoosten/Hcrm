@@ -8,6 +8,9 @@ return [
     'updated'    => 'Updated on',
     'requester'  => 'Requester',
 
+    'number'     => 'Number',
+    'topic'      => 'Topic',
+    'product'    => 'Product',
     'type'       => 'Type',
     'subject'    => 'Subject',
     'priority'   => 'Priority',
@@ -24,4 +27,9 @@ return [
     'assign'   => 'Assign',
     'owned' => 'Assigned to me',
 
+    // Ticket actions
+    'reply'        => 'Reply',
+    'responses'    => 'Canned responses',
+    'merge'        => 'Merge ticket',
+    'close'         => 'Close',
     ];
