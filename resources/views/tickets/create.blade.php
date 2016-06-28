@@ -7,21 +7,17 @@
     <div class="row">
      <div class="col-sm-12 col-xs-12 col-md-12 col-lg-12">
      <form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
-      
+
        <div class="form-group formSep">
         <label for="customer" class="col-md-3 control-label ">Customer <span class="text-danger">*</span>:</label>
         <div class="col-md-6">
-          <select name="customer" class="form-control" id="ticket_requestor">
-           <option value="contact">Mr. Hermans Glenn - Contact</option>
-           <option value="billing">Mr. Hermans Glenn - Billing</option>
-           <option value="tech">Mr. Hermans Glenn - Tech</option>
-          </select>
+          <input type="text" data-provide="typeahead" class="form-control">
         </div>
        </div>
 
     <div class="form-group formSep">
         <label for="group" class="col-md-3 control-label ">
-        Ticket group <span class="text-danger">*</span></label>    
+        Ticket group <span class="text-danger">*</span></label>
     <div class="col-md-6 ">
      <select name="group" class="form-control" id="group">
       <option value="" selected="selected">-- Please select --</option>
@@ -34,8 +30,8 @@
      </select>
     </div>
    </div>
-      
-      
+
+
     <div class="form-group formSep">
      <label for="subject" class="col-md-3 control-label">Topic <span class="text-danger">*</span></label>
        <div class="col-md-6">
@@ -78,8 +74,17 @@
         <input type="submit" class="btn btn-primary" value="Send"/>
          </div>
         </div>
-        
+
     </form>
      </div>
     </div>
+
+    <script>
+    $(document).ready(function() {
+      var $input = $('.typeahead');
+      $input.typeahead({"item1","item2","item3"},
+                  autoSelect: true
+      });
+  });
+    </script>
 @endsection

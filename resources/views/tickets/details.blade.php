@@ -35,7 +35,7 @@
           <dd>#{!! $ticket->id !!}</dd>
 
           <dt>{{ trans('tickets.type') }}</dt>
-          <dd><a href="#" id="ticketType" data-type="select" data-name="type" data-pk="1" data-url="{{url('tickets/update')}}">{!! $ticket->type !!}</a></dd>
+          <dd><a href="#" id="ticketType" data-pk="{!! $ticket->id !!}" data-name="type" data-url="{!! url('tickets/quickUpdateTicket', $ticket->id) !!}">{!! $ticket->type !!}</a></dd>
 
           <dt>{{ trans('tickets.subject') }}</dt>
           <dd><a href="#" id="ticketSubject" data-type="textarea" data-name="subject" data-pk="{!! $ticket->id !!}" data-url="{!! url('tickets/quickUpdateTicket', $ticket->id) !!}">{!! $ticket->subject !!}</a></dd>
@@ -175,10 +175,9 @@
   <div class="form-group">
     <label for="topicGroup" class="col-sm-3 control-label">Topic group</label>
     <div class="col-sm-9">
-     fdsfsdf
+     <input type="text" name="merge_id" placeholder="Fill in the ticket number that you want to this ticket."  class="form-control">
     </div>
   </div>
-
 
       </div>
       <div class="modal-footer">
@@ -198,7 +197,14 @@ $(document).ready(function() {
     params._token = $("#_token").data("token");
     return params;
 };
-    $('#ticketType').editable();
+    $('#ticketType').editable({
+    type: 'select',
+            source: [
+                {value: 'Administration', text: 'Administration'},
+                {value: 'Sales', text: 'Sales'},
+                {value: 'Support', text: 'Support'}
+            ]
+  });
     $('#ticketSubject').editable();
 });
 </script>
