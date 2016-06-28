@@ -19,6 +19,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-Knob/1.2.13/jquery.knob.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.1/bootstrap3-typeahead.js"></script>
+
     <script src="{{ asset('js/bootstrap-editable.js') }}"></script>
 </head>
 <body class="full_width" id="app-layout">
@@ -80,19 +82,37 @@
                                <span class="fa fa-wrench"></span>
                            </a>
                        </li>
+                       <li class="dropdown dropdown-notifications">
+                           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                               <i data-count="{!! Auth::user()->countNotificationsNotRead() !!}" class="fa fa-bell notification-icon"></i>
+                           </a>
 
-                        <li>
-                            <a href="#" data-toggle="tooltip" data-placement="bottom" title="Notifications">
-                                @if(count(Auth::user()->getNotificationsNotRead()) === 0)
-                                    <span class="fa fa-bell"></span>
-                                @elseif(count(Auth::user()->getNotificationsNotRead()) > 0)
-                                    <span class="fa fa-bell"></span>
-                                    <span class="label label-danger">
-                                        {{ count(Auth::user()->getNotificationsNotRead()) }}
-                                    </span>
-                                @endif
-                            </a>
-                        </li>
+                           <div class="dropdown-container dropdown-menu-right">
+                               <div class="dropdown-toolbar">
+                                   <div class="dropdown-toolbar-actions">
+                                       <a href="#">{{ trans('notifications.markAll') }}</a>
+                                   </div>
+                                   <h3 class="dropdown-toolbar-title">
+                                     {{ trans('notifications.title', ['count' => Auth::user()->countNotificationsNotRead()]) }}</h3>
+                               </div>{{-- /dropdown-toolbar --}}
+
+                               <ul class="dropdown-menu">
+                                   <li class="notification">
+                                     <div class="media">
+                                           <div class="media-body">
+
+
+                                           </div>
+                                       </div>
+                                   </li>
+                               </ul>
+
+                               <div class="dropdown-footer text-center">
+                                   <a href="{{ url('notifications') }}">{{ trans('notifications.viewAll') }}</a>
+                               </div>{{-- /dropdown-footer --}}
+
+                           </div>{{-- /dropdown-container --}}
+                         </li>{{-- /dropdown --}}                       
 
                         <li class="dropdown">
                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -117,10 +137,9 @@
      </header>
 
 
-            <div id="contentwrapper">
-                <div class="main_content">
-
-    @yield('content')
+    <div id="contentwrapper">
+      <div class="main_content">
+        @yield('content')
      </div>
     </div>
     </div>

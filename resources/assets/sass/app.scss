@@ -9,6 +9,8 @@
 @import "_partials/_buttons";
 
 @import "_partials/_dropdowns";
+@import "_partials/_notifications";
+
 @import "_partials/_forms";
 
 @import "_partials/_panels";
@@ -71,7 +73,7 @@
     max-width:1680px;
     margin:0 auto !important;
   }
-  
+
   header .container-fluid, header .container
   {
     max-width:1680px;
