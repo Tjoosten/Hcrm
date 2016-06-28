@@ -16,10 +16,13 @@ class DatabaseSeeder extends Seeder
         $this->call(CountrySeeder::class);
         $this->call(NotificationSeed::class);
         $this->call(TicketsSeeder::class);
+        $this->call(AccessControlSeeder::class);
 
-        // For testing propose
-        factory(App\Customers::class)->create();
-        factory(App\Departments::class)->create();
-        factory(App\Knowledge::class)->create();
+        if (env('APP_ENV') === 'testing' || env('APP_ENV') === 'local' || env('APP_DEBUG') === 'true' ) {
+            // For testing propose
+            factory(App\Customers::class)->create();
+            factory(App\Departments::class)->create();
+            factory(App\Knowledge::class)->create();
+        }
     }
 }

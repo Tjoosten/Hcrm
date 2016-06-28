@@ -57,3 +57,19 @@ $factory->define(App\Knowledge::class, function (Faker\Generator $faker) {
         'answer'   => $faker->text(200),
     ];
 });
+
+$factory->define(App\TicketAttachments::class, function (Faker\Generator $faker) {
+    return [
+        'comment_id' => 4,
+        'file_name'  => 'File name',
+        'file_path'  => 'path/to/file/filename'
+    ];
+});
+
+$factory->define(App\FileMessages::class, function (Faker\Generator $faker) {
+    return [
+        'ticket_id' => 4,
+        'user_id'   => 1,
+        'message'   => 'This is a comment message'
+    ];
+});
