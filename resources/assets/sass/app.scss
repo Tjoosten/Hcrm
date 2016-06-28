@@ -1,4 +1,4 @@
-// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
 @import "_modules/_variables";
 
@@ -15,6 +15,8 @@
 
 @import "_partials/_panels";
 @import "_partials/_lists";
+
+@import "_partials/_x-editable";
 
 /* media queries */
 
