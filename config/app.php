@@ -159,6 +159,7 @@ return [
         Chrisbjr\ApiGuard\Providers\ApiGuardServiceProvider::class,
         Fenos\Notifynder\NotifynderServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
+        Silber\Bouncer\BouncerServiceProvider::class,
 
     ],
 
@@ -208,6 +209,7 @@ return [
         'ApiGuardAuth' => \Chrisbjr\ApiGuard\Facades\ApiGuardAuth::class,
         'Notifynder' => Fenos\Notifynder\Facades\Notifynder::class,
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
+        'Bouncer' => Silber\Bouncer\BouncerFacade::class,
 
     ],
 

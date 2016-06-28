@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
         $this->call(CountrySeeder::class);
         $this->call(NotificationSeed::class);
         $this->call(TicketsSeeder::class);
+        $this->call(AccessControlSeeder::class);
 
         if (env('APP_ENV') === 'testing' || env('APP_ENV') === 'local' || env('APP_DEBUG') === 'true' ) {
             // For testing propose
