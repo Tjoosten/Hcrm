@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\TicketGroups;
 use App\Tickets;
 use Illuminate\Http\Request;
 
@@ -36,8 +37,8 @@ class TicketsController extends Controller
      */
     public function create()
     {
-
-        return view('tickets.create');
+        $data['groups'] = TicketGroups::all();
+        return view('tickets.create', $data);
     }
 
     /**

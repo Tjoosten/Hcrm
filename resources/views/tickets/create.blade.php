@@ -21,12 +21,9 @@
     <div class="col-md-6 ">
      <select name="group" class="form-control" id="group">
       <option value="" selected="selected">-- Please select --</option>
-      <option value="support">Support</option>
-      <option value="sales">Sales</option>
-      <option value="security">Security</option>
-      <option value="administration">Administration</option>
-      <option value="feedback">Feedback</option>
-      <option value="cdn">CDN</option>
+         @foreach($groups as $group)
+            <option value="{{ $group->name }}"> {{ $group->name }} </option>
+         @endforeach
      </select>
     </div>
    </div>
