@@ -1,6 +1,7 @@
 @extends('layouts.app')
-
 @section('content')
+
+@can('list-customers')
 <div class="container">
 <div class="row">
 <div class="col-md-12">
@@ -66,4 +67,14 @@
   </div>
  </div>
 </div>
+
+@else
+<div class="container">
+<div class="col-md-12">
+  <div class="alert alert-danger">
+   <p class="text-danger">You need permission to perform this action</p>
+</div>
+</div>
+</div>
+@endcan
 @endsection
