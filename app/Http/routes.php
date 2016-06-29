@@ -36,6 +36,12 @@ Route::get('/departments/delete/{id}', 'DepartmentController@destroy')->name('de
 Route::post('/departments/create', 'DepartmentController@create')->name('department.store');
 Route::post('/departments/update/{id}', 'DepartmentController@update')->name('department.update');
 
+
+// Inbound email routes.
+Route::get('emails', 'InboundEmail@index')->name('emails.index');
+Route::get('/emails/search', 'InboundEmail@index')->name('emails.search');
+Route::get('/emails/show/{id}', 'InboundEmail@show')->name('emails.specific');
+
 // Account info routes.
 Route::get('/account/update/{tab}', 'AccountController@Account')->name('account.info');
 Route::get('/account/api/removeKey/{id}', 'AccountController@removeApiKey')->name('account.api.destroy');
@@ -78,3 +84,6 @@ Route::get('/api/key/logs/{id}', 'AccountController@getApiLogs')->name('account.
 
 // Setup routes
 Route::get('/setup', 'SetupController@index')->name('setup.index');
+Route::get('/setup/ticketrouting', 'TicketsController@manageRouting')->name('tickets.routing');
+Route::get('/setup/ticketrouting/create', 'TicketsController@addRouting')->name('tickets.addrouting');
+Route::post('/setup/ticketrouting/save', 'TicketsController@saveRouting')->name('tickets.saveRouting');
