@@ -31,7 +31,7 @@ Route::get('/home', 'HomeController@index')->name('index');
 Route::get('departments', 'DepartmentController@index')->name('department.index');
 Route::get('/departments/search', 'DepartmentController@index')->name('department.search');
 Route::get('/departments/show/{id}', 'DepartmentController@show')->name('department.specific');
-Route::get('/departments/new', 'DepartmentController@new')->name('department.register');
+Route::get('/departments/new', 'DepartmentController@register')->name('department.register');
 Route::get('/departments/delete/{id}', 'DepartmentController@destroy')->name('department.destroy');
 Route::post('/departments/create', 'DepartmentController@create')->name('department.store');
 Route::post('/departments/update/{id}', 'DepartmentController@update')->name('department.update');

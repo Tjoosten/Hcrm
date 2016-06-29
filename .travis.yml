@@ -6,8 +6,11 @@ php:
     - hhvm
 
 before_script:
+    - touch database/database.sqlite
     - travis_retry composer self-update
     - travis_retry composer install --no-interaction --prefer-source --dev
+    - php artisan key:generate
+    - php artisan migrate --database=sqlite --force
 script:
     - vendor/bin/phpunit --coverage-clover=coverage.xml
 

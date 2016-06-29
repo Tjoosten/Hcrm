@@ -48,7 +48,7 @@ class DepartmentController extends Controller
      * @url    GET: /departments/create
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function new()
+    public function register()
     {
         $data['users'] = User::all(['id', 'name']);
         return view('departments.create', $data);
