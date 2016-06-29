@@ -22,6 +22,7 @@ class TicketsController extends Controller
     /**
      * Get all the tickets
      *
+     * @url    GET: /tickets
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index()
@@ -33,6 +34,7 @@ class TicketsController extends Controller
     /**
      * Show the form to creat a new ticket
      *
+     * @url    GET: /tickets/create
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function create()
@@ -44,6 +46,7 @@ class TicketsController extends Controller
     /**
      * Get the tickets assigned to the logged in staff member.
      *
+     * @url    GET: /tickets/assigned
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function assigned()
@@ -57,6 +60,8 @@ class TicketsController extends Controller
     /**
      * Display the ticket details
      *
+     * @url    GET: /tickets/details/{id}
+     * @param  int $id the ticket id in the database.
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function details($id)
@@ -69,8 +74,9 @@ class TicketsController extends Controller
     /**
      * Update the ticket true inline.
      *
+     * @url:   POST: /tickets/quickUpdateTicket/{id}
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  int  $id the ticket id in the database.
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -81,5 +87,16 @@ class TicketsController extends Controller
         $ticket->$name = $value;
         $ticket->save();
         return  redirect()->back();
+    }
+
+    /**
+     * @url    POST: /
+     * @param  int $id The ticket id in the database.
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function ticketReply($id)
+    {
+      // TODO build up the logic.
+        return redirect()->back();
     }
 }
