@@ -32,4 +32,14 @@ return [
     'responses'    => 'Canned responses',
     'merge'        => 'Merge ticket',
     'close'         => 'Close',
+
+
+    // Ticket mailboxes
+    'mailType'      => 'Type',
+    'mailServer'    => 'Server',
+    'mailAddress'   => 'Email Address',
+    'mailFromName'  => 'From name',
+    'mailPassword'  => 'Password',
+    'mailGroup'     => 'Ticket group', 
+
     ];

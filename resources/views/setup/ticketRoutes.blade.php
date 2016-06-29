@@ -21,26 +21,18 @@
             <th>Last updated</th>
           </thead>
           <tbody>
-            <tr>
-              <td>IMAP</td>
-              <td><a href="">sales@idevelopment.be</a></td>
-              <td><span class="text-success">Active</span></td>
-              <td class="text-center"><i class="fa fa-check"></i></td>
-              <td></td>
-              <td></td>
-            </tr>
             @foreach($mailboxes as $mailbox)
             <tr>
               <td>{!! $mailbox["type"] !!}</td>
               <td><a href="#">{!!$mailbox["fromAddress"] !!}</a></td>
               <td><span class="text-success">Active</span></td>
-            @if($mailbox["ssl"] = true)
+            @if($mailbox["ssl"] == true)
               <td class="text-center"><i class="fa fa-check"></i></td>
             @else
               <td class="text-center"><i class="fa fa-times"></i></td>
             @endif
-              <td></td>
-              <td></td>
+              <td>{!!$mailbox["created_at"] !!}</td>
+              <td>{!!$mailbox["updated_at"] !!}</td>
             </tr>
             @endforeach
           </tbody>
