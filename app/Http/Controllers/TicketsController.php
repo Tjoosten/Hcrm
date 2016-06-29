@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\TicketGroups;
 use App\Tickets;
+use App\InboundMailboxes;
+
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -98,5 +100,29 @@ class TicketsController extends Controller
     {
       // TODO build up the logic.
         return redirect()->back();
+    }
+
+    public function manageRouting()
+    {
+      $data['mailboxes'] = InboundMailboxes::All();
+      return view('setup.ticketRoutes', $data);
+    }
+
+    public function addRouting()
+    {
+      $data['groups'] = TicketGroups::all();
+      return view('setup.createTicketRoute', $data);
+    }
+
+    /**
+     * Save the mailbox to the database
+     *
+     * @param  Request $input
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function saveRouting(Request $input)
+    {
+      InboundMailboxes::create($input->all());
+      return redirect()->back();
     }
 }
