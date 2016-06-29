@@ -14,6 +14,9 @@ var elixir = require('laravel-elixir');
 elixir.config.sourcemaps = false;
 
 elixir(function(mix) {
+  mix.browserSync({
+       proxy: 'homestead.app'
+   });
     mix.sass('app.scss');
     mix.scripts([
             '../../../node_modules/vue/dist/vue.js',
