@@ -3,6 +3,13 @@
 is a a complete solution for web hosts, HCRM provides everything to sell web hosting and related services.
 
 
+## Build status
+
+| Branch:  | Build:   |
+| :------- | : ------ |
+| Master   | [![Build Status](https://travis-ci.org/idevelopment/Hcrm.svg?branch=master)](https://travis-ci.org/idevelopment/Hcrm) |
+| Dvelopment | [![Build Status](https://travis-ci.org/idevelopment/Hcrm.svg?branch=development)](https://travis-ci.org/idevelopment/Hcrm) |
+
 ## Official Documentation
 
 Documentation for the application can be found on the [Github wiki](https://github.com/idevelopment/Hcrm/wiki).
