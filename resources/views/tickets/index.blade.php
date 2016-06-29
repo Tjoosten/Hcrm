@@ -50,7 +50,7 @@
                   <th>ID</th>
                   <th>{{trans('tickets.requester')}}</th>
                   <th>{{trans('tickets.type')}}</th>
-                  <th class="col-xs-5 col-sm-5 col-md-5 col-lg-4">{{trans('tickets.subject')}}</th>
+                  <th class="col-xs-5 col-sm-4 col-md-5 col-lg-4">{{trans('tickets.subject')}}</th>
                   <th>{{trans('tickets.priority')}}</th>
                   <th>{{trans('tickets.status')}}</th>
                   <th>{{trans('tickets.created')}}</th>
