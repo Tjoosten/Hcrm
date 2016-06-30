@@ -98,31 +98,44 @@ class TicketsController extends Controller
      */
     public function ticketReply($id)
     {
-      // TODO build up the logic.
+        // TODO build up the logic.
         return redirect()->back();
     }
 
+    /**
+     * Manager routing tickets.
+     *
+     * @url    GET: /setup/ticketrouting
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function manageRouting()
     {
-      $data['mailboxes'] = InboundMailboxes::All();
-      return view('setup.ticketRoutes', $data);
+        $data['mailboxes'] = InboundMailboxes::All();
+        return view('setup.ticketRoutes', $data);
     }
 
+    /**
+     * Add setup routing.
+     *
+     * @url    GET: /setup/ticketrouting/create
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function addRouting()
     {
-      $data['groups'] = TicketGroups::all();
-      return view('setup.createTicketRoute', $data);
+        $data['groups'] = TicketGroups::all();
+        return view('setup.createTicketRoute', $data);
     }
 
     /**
      * Save the mailbox to the database
      *
+     * @url    POST: /setup/ticketrouting/save
      * @param  Request $input
      * @return \Illuminate\Http\RedirectResponse
      */
     public function saveRouting(Request $input)
     {
-      InboundMailboxes::create($input->all());
-      return redirect()->back();
+        InboundMailboxes::create($input->except('_token'));
+        return redirect()->back();
     }
 }
