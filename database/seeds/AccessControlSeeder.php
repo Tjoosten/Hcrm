@@ -40,5 +40,15 @@ class AccessControlSeeder extends Seeder
         Ability::create(['name' => 'edit user']);
         Ability::create(['name' => 'remove user']);
 
+        // Connect abilities to the Admin role.
+        $adminAbilities = [
+            'create customer', 'list customer', 'edit customer', 'remove customer',
+            'create department', 'list department', 'edit department', 'remove department',
+            'create ticket', 'list tickets', 'edit ticket', 'remove ticket',
+            'create user', 'list users', 'edit user', 'remove user'
+        ];
+
+        Bouncer::allow('Admin')->to($adminAbilities);
+
     }
 }
