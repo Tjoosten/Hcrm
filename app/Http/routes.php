@@ -49,6 +49,10 @@ Route::post('/account/update/password', 'AccountController@updateAccountSecurity
 Route::post('/account/api/newKey', 'AccountController@createApiKey')->name('account.create.api');
 Route::post('/account/update/information', 'AccountController@updateAccountInformation')->name('account.update.info');
 
+// Staff routes
+Route::get('/staff/create',  'StaffController@register')->name('staff.register');
+Route::post('/staff/create', 'StaffController@store')->name('staff.store');
+
 // Knowledge routing
 Route::get('/knowledge', 'KnowledgeBaseController@index')->name('knowledge.index');
 Route::get('/knowledge/search', 'KnowledgeBaseController@index')->name('knowledge.search');
