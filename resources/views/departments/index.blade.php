@@ -72,7 +72,7 @@
 
                                 <td>
                                     <a href="" class="label label-default">Show</a>
-                                    <a href="" class="label label-warning">Edit</a>
+                                    <a href="{!! route('department.edit', ['id' => $department->id]) !!}" class="label label-warning">Edit</a>
                                     <a href="{!! route('department.destroy', ['id' => $department->id]) !!}" class="label label-danger">
                                         Delete
                                     </a>

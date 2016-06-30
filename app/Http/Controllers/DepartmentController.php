@@ -87,6 +87,21 @@ class DepartmentController extends Controller
     }
 
     /**
+     * Update view for a specific department.
+     *
+     * @url    GET: /departments/update/{id}
+     * @param  int $id The department id in the database.
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function edit($id)
+    {
+        $data['department']  = Departments::with(['users', 'managers'])->find($id);
+        $data['departments'] = Departments::all();
+        $data['users']       = User::all();
+        return view('departments.update', $data);
+    }
+
+    /**
      * Update a department in the database.
      *
      * @url    POST: /departments/update/{id}
@@ -96,7 +111,12 @@ class DepartmentController extends Controller
      */
     public function update(Requests\DepartmentValidator $input, $id)
     {
-        Departments::find($id)->update($input->except('_token'));
+        $hidden = ['_token', 'users', 'departments'];
+
+        Departments::find($id)->update($input->except($hidden));
+        Departments::find($id)->users()->sync($input->users);
+        Departments::find($id)->managers()->sync($input->managers);
+
         session()->flash('message', 'Department has been updated.');
         return redirect()->back();
     }

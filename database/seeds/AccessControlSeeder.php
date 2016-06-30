@@ -1,5 +1,6 @@
 <?php
 
+use App\User;
 use Illuminate\Database\Seeder;
 use Silber\Bouncer\Database\Role;
 use Silber\Bouncer\Database\Ability;
@@ -49,6 +50,10 @@ class AccessControlSeeder extends Seeder
         ];
 
         Bouncer::allow('Admin')->to($adminAbilities);
+        // $user = User::where('email', 'admin@hcrm.be')->get();
 
+        // if (count($user) === 1) {
+        //    Bouncer::assign('Admin')->to($user);
+        // }
     }
 }

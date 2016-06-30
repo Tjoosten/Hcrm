@@ -30,6 +30,7 @@ Route::get('/home', 'HomeController@index')->name('index');
 // Department routes.
 Route::get('departments', 'DepartmentController@index')->name('department.index');
 Route::get('/departments/search', 'DepartmentController@index')->name('department.search');
+Route::get('/departments/update/{id}', 'DepartmentController@edit')->name('department.edit');
 Route::get('/departments/show/{id}', 'DepartmentController@show')->name('department.specific');
 Route::get('/departments/new', 'DepartmentController@register')->name('department.register');
 Route::get('/departments/delete/{id}', 'DepartmentController@destroy')->name('department.destroy');

@@ -133,6 +133,23 @@ class WebDepartmentsTest extends TestCase
     }
 
     /**
+     * GET: /departments/update/{id}
+     *
+     * @group all
+     * @group departments
+     */
+    public function testDepartmentUpdateView()
+    {
+        $user       = factory(App\User::class)->create();
+        $department = factory(App\Departments::class)->create();
+
+        $this->actingAs($user)
+            ->seeIsAuthenticatedAs($user)
+            ->visit('/departments/update/' . $department->id)
+            ->seeStatusCode(200);
+    }
+
+    /**
      * POST: /departments/update/{id}
      * - Without validation errors.
      *
