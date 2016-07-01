@@ -1,0 +1,17 @@
+linter:
+
+  # PHPCS configuration.
+  # This is laravel bounded.
+  code_sniffer:
+    options:
+      standard: PSR2
+      exclude: './tests/*'
+      exclude: './database/*'
+      exclude: './resources/views/**/*'
+
+  # PHP Mess-detector
+  # this is laravel bounded
+  # https://gist.github.com/slayerfat/2b3cc4faf94d2863b505
+  phpmd:
+      options:
+        rule: phpmd-ruleset.xml
