@@ -51,6 +51,8 @@ Route::post('/account/api/newKey', 'AccountController@createApiKey')->name('acco
 Route::post('/account/update/information', 'AccountController@updateAccountInformation')->name('account.update.info');
 
 // Staff routes
+Route::get('/setup/staff/',  'StaffController@index')->name('staff.index');
+
 Route::get('/staff/create',  'StaffController@register')->name('staff.register');
 Route::post('/staff/create', 'StaffController@store')->name('staff.store');
 

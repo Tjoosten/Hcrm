@@ -36,7 +36,7 @@
               <ul class="col-md-3 col-md-offset-2 list-unstyled">
               <li><strong>Staff management</strong></li>
                <li><a href="{{ route('staff.register') }}">Create employee</a></li>
-               <li><a href="#">Search employee</a></li>
+               <li><a href="{{ route('staff.index') }}">Search employee</a></li>
                <li><a href="{{url('departments')}}">Departments</a></li>
               </ul>
 

@@ -25,6 +25,19 @@ class StaffController extends Controller
     }
 
     /**
+     * List all staff members.
+     *
+     * @url    GET: staff
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function index()
+    {
+        $data['users'] = User::all();
+        $data['departments'] = Departments::all();      
+        return view('staff.index', $data);
+    }
+
+    /**
      * Register form for a new staff member.
      *
      * @url    GET: staff/create
