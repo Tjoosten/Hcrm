@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
         $this->call(TicketsSeeder::class);
         $this->call(AccessControlSeeder::class);
         $this->call(TicketGroupSeeder::class);
+        $this->call(ContactTypesSeeder::class);
 
         if (env('APP_ENV') === 'testing' || env('APP_ENV') === 'local' || env('APP_DEBUG') === 'true' ) {
             // For testing propose
