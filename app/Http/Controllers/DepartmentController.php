@@ -83,6 +83,9 @@ class DepartmentController extends Controller
     public function show($id)
     {
         $data['department'] = Departments::find($id);
+        $data['staff']      = $data['department']->users()->paginate(15);
+        $data['managers']   = $data['department']->managers()->paginate(15);
+        
         return view('departments.show', $data);
     }
 
