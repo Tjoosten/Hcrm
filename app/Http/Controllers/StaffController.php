@@ -80,4 +80,24 @@ class StaffController extends Controller
         session()->flash('message', 'The new staff member has been added');
         return redirect()->back();
     }
+
+    public function show($id)
+    {
+        //
+    }
+
+    public function edit($id)
+    {
+        //
+    }
+
+    public function update($id)
+    {
+        //
+    }
+
+    public function destroy($id)
+    {
+        //
+    }
 }
