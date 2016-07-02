@@ -17,7 +17,11 @@ elixir(function(mix) {
   mix.browserSync({
        proxy: 'homestead.app'
    });
+
+    // Thema
     mix.sass('app.scss');
+
+
     mix.scripts([
             '../../../node_modules/vue/dist/vue.js',
             '../../../node_modules/vue-resource/dist/vue-resource.js'
