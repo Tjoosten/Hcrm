@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Departments;
 use App\User;
+use App\Roles;
+
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -33,7 +35,7 @@ class StaffController extends Controller
     public function index()
     {
         $data['users'] = User::all();
-        $data['departments'] = Departments::all();      
+        $data['departments'] = Departments::all();
         return view('staff.index', $data);
     }
 
@@ -79,5 +81,11 @@ class StaffController extends Controller
 
         session()->flash('message', 'The new staff member has been added');
         return redirect()->back();
+    }
+
+    public function roles()
+    {
+      $data["roles"] = Roles::all();
+      return view('staff.roles', $data);
     }
 }

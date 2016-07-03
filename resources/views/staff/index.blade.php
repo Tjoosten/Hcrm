@@ -51,7 +51,7 @@
                      <tr>
                        <td>{!! $user_item->name !!}</td>
                        <td>{!! $user_item->email !!}</td>
-                       <td>{!! $user_item->department !!}</td>
+                       <td>{!! $user_item->departments !!}</td>
                        <td>{!! $user_item->created_at !!}</td>
                      </tr>
                      @endforeach
