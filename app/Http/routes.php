@@ -94,3 +94,5 @@ Route::get('/setup', 'SetupController@index')->name('setup.index');
 Route::get('/setup/ticketrouting', 'TicketsController@manageRouting')->name('tickets.routing');
 Route::get('/setup/ticketrouting/create', 'TicketsController@addRouting')->name('tickets.addrouting');
 Route::post('/setup/ticketrouting/save', 'TicketsController@saveRouting')->name('tickets.saveRouting');
+
+Route::get('/setup/staff/roles', 'StaffController@roles')->name('staff.roles');
