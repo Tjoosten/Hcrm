@@ -25,6 +25,24 @@ class StaffControllerTest extends TestCase
     }
 
     /**
+     * GET: /staff/destroy/{id}
+     *
+     * @group all
+     * @group staff
+     */
+    public function testDestroyStaff()
+    {
+        $user = factory(App\User::class, 2)->create();
+
+        $this->actingAs($user[0])
+            ->seeIsAuthenticatedAs($user[0])
+            ->seeInDatabase('users', ['name' => $user[1]->name])
+            ->visit('/staff/destroy/' . $user[1]->id)
+            ->dontSeeInDatabase('users', ['name' => $user[1]->name])
+            ->seeStatusCode(200);
+    }
+
+    /**
      * POST: /staff/create
      * - Without validation errors.
      *

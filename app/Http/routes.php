@@ -55,6 +55,7 @@ Route::post('/account/update/information', 'AccountController@updateAccountInfor
 // Staff routes
 Route::get('/setup/staff',  'StaffController@index')->name('staff.index');
 Route::get('/staff/create',  'StaffController@register')->name('staff.register');
+Route::get('/staff/destroy/{id}', 'StaffController@destroy')->name('staff.destroy');
 Route::post('/staff/create', 'StaffController@store')->name('staff.store');
 
 // Knowledge routing
