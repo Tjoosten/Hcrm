@@ -84,7 +84,7 @@ class TicketsController extends Controller
     public function update(Request $request, $id)
     {
         $ticket = Tickets::findOrFail($id);
-        $name = $request->get('name');
+        $name  = $request->get('name');
         $value = $request->get('value');
         $ticket->$name = $value;
         $ticket->save();

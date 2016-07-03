@@ -39,6 +39,7 @@ class StaffControllerTest extends TestCase
             ->seeInDatabase('users', ['name' => $user[1]->name])
             ->visit('/staff/destroy/' . $user[1]->id)
             ->dontSeeInDatabase('users', ['name' => $user[1]->name])
+            ->dontSeeInDatabase('departments_user', ['user_id' => $user[1]->id])
             ->seeStatusCode(200);
     }
 
