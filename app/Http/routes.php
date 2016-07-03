@@ -22,10 +22,10 @@ Route::group(['prefix' => 'api/v1'], function () {
 });
 
 // WEB ROUTES.
+// TODO needs testing
 Route::get('/', 'HomeController@index')->name('index');
-Route::auth();
-
 Route::get('/home', 'HomeController@index')->name('index');
+Route::auth();
 
 // Department routes.
 Route::get('departments', 'DepartmentController@index')->name('department.index');
@@ -39,11 +39,13 @@ Route::post('/departments/update/{id}', 'DepartmentController@update')->name('de
 
 
 // Inbound email routes.
+// TODO: Needs testing.
 Route::get('emails', 'InboundEmail@index')->name('emails.index');
 Route::get('/emails/search', 'InboundEmail@index')->name('emails.search');
 Route::get('/emails/show/{id}', 'InboundEmail@show')->name('emails.specific');
 
 // Account info routes.
+// TODO: Needs testing.
 Route::get('/account/update/{tab}', 'AccountController@Account')->name('account.info');
 Route::get('/account/api/removeKey/{id}', 'AccountController@removeApiKey')->name('account.api.destroy');
 Route::post('/account/update/password', 'AccountController@updateAccountSecurity')->name('account.update.pass');
@@ -51,9 +53,9 @@ Route::post('/account/api/newKey', 'AccountController@createApiKey')->name('acco
 Route::post('/account/update/information', 'AccountController@updateAccountInformation')->name('account.update.info');
 
 // Staff routes
-Route::get('/setup/staff/',  'StaffController@index')->name('staff.index');
-
+Route::get('/setup/staff',  'StaffController@index')->name('staff.index');
 Route::get('/staff/create',  'StaffController@register')->name('staff.register');
+Route::get('/staff/destroy/{id}', 'StaffController@destroy')->name('staff.destroy');
 Route::post('/staff/create', 'StaffController@store')->name('staff.store');
 
 // Knowledge routing
@@ -76,17 +78,17 @@ Route::post('/customer/update/{id}', 'CustomerController@update')->name('custome
 Route::post('/customer/create', 'CustomerController@create')->name('customer.insert');
 
 // Tickets routes
+// TODO: Needs testing
 Route::get('/tickets', 'TicketsController@index')->name('tickets.index');
 Route::get('/tickets/create', 'TicketsController@create')->name('tickets.created');
 Route::get('/tickets/assigned', 'TicketsController@assigned')->name('tickets.assigned');
-
 Route::get('/tickets/details/{id}', 'TicketsController@details')->name('tickets.details');
-
 // Route::post('/tickets/quickUpdateTicket', 'TicketsController@update')->name('tickets.update');
 Route::post('/tickets/quickUpdateTicket/{id}', 'TicketsController@update')->name('tickets.qupdate');
 
 
 // API settings routes
+// TODO: Needs testing.
 Route::get('/api/key/logs/{id}', 'AccountController@getApiLogs')->name('account.api.logs');
 
 // Setup routes

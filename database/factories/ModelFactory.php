@@ -62,6 +62,18 @@ $factory->define(App\Knowledge::class, function (Faker\Generator $faker) {
     ];
 });
 
+$factory->define(App\Tickets::class, function (Faker\Generator $faker) {
+    return [
+        'customer_id' => 1, 
+        'assigned_id' => 1,
+        'status_id'   => 1,
+        'type'        => 'Technical',
+        'priority'    => 'High',
+        'subject'     => 'Support ticket',
+        'description' => 'This is a description'
+    ];
+});
+
 $factory->define(App\TicketAttachments::class, function (Faker\Generator $faker) {
     return [
         'comment_id' => 4,

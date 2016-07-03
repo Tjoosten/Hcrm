@@ -88,4 +88,34 @@ class StaffController extends Controller
       $data["roles"] = Roles::all();
       return view('staff.roles', $data);
     }
+
+    public function show($id)
+    {
+        //
+    }
+
+    public function edit($id)
+    {
+        //
+    }
+
+    public function update($id)
+    {
+        //
+    }
+
+    /**
+     * Delete a staff member.
+     *
+     * @url    /staff/destroy/{id}
+     * @param  int $id The staff member id in the user table.
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function destroy($id)
+    {
+        User::find($id)->departments()->sync([]);
+        User::destroy($id);
+        session()->flash('flash', 'The staff member has been deleted');
+        return redirect()->back();
+    }
 }
