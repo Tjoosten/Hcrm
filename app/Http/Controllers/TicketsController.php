@@ -41,7 +41,7 @@ class TicketsController extends Controller
      */
     public function create()
     {
-        $data['groups'] = TicketGroups::all();
+        $data['groups'] = TicketGroups::orderBy('name', 'ASC')->get();
         return view('tickets.create', $data);
     }
 
