@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="page-header">
- <h2>Create new inbound mailbox</h2>
+ <h2>Create new topic</h2>
 </div>
 
  <div class="clearfix">&nbsp;</div>
@@ -30,7 +30,6 @@
     </select>
  </div>
 </div>
-
 
     <div class="form-group">
      <label for="password" class="col-sm-2 control-label">&nbsp;</label>

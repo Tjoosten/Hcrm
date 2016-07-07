@@ -2,7 +2,7 @@
 @section('content')
 
 <div class="page-header">
- <h2>Manage mailboxes</h2>
+ <h2>Manage topics</h2>
 </div>
 
  <div class="clearfix">&nbsp;</div>
