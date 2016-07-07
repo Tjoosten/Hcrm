@@ -37,7 +37,8 @@
               <li><strong>Staff management</strong></li>
                <li><a href="{{ route('staff.register') }}">Create employee</a></li>
                <li><a href="{{ route('staff.index') }}">Search employee</a></li>
-               <li><a href="{{url('departments')}}">Departments</a></li>
+               <li><a href="{{ url('departments')}}">Departments</a></li>
+               <li><a href="{{ route('staff.roles')}}">Permissions</a></li>
               </ul>
 
               <ul class="col-md-3 list-unstyled">
@@ -45,6 +46,7 @@
                <li><a href="#">knowledge base categories</a></li>
                <li><a href="#">Ticket routing</a></li>
                <li><a href="#">Ticket types</a></li>
+               <li><a href="{{ route('tickets.topics')}}">Ticket topics</a></li>
                <li><a href="#">Ticket statuses</a></li>
               </ul>
 
