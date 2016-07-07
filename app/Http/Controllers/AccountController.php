@@ -79,7 +79,7 @@ class AccountController extends Controller
      */
     public function updateAccountSecurity(Requests\PasswordValidator $input)
     {
-        User::find($$this->userId)->update($input->except(['_token', 'password_confirmation']));
+        User::find($this->userId)->update($input->except(['_token', 'password_confirmation']));
 
         session()->flash('message', 'Your password has been updated');
         return redirect()->route('account.info', ['tab' => 'security']);

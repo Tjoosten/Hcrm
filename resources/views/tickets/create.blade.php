@@ -32,8 +32,17 @@
     <div class="form-group formSep">
      <label for="subject" class="col-md-3 control-label">Topic <span class="text-danger">*</span></label>
        <div class="col-md-6">
-        <select name="subject" class="form-control" id="subject">
+        <select name="subject" id="subject" class="form-control">
          <option value="" selected="selected">-- Please select --</option>
+         @foreach($topics as $topic)
+          <option value="{!! $topic->name !!}" class="{!! $topic->group !!}">{!! $topic->name !!}</option>
+         @endforeach
+         <option value="series-3" class="Support">3 series</option>
+         <option value="series-5" class="Support">5 series</option>
+         <option value="series-6" class="Support">6 series</option>
+         <option value="a3" class="Administration">A3</option>
+         <option value="a4" class="Administration">A4</option>
+         <option value="a5" class="Administration">A5</option>
         </select>
        </div>
     </div>
@@ -78,10 +87,7 @@
 
     <script>
     $(document).ready(function() {
-      var $input = $('.typeahead');
-      $input.typeahead({"item1","item2","item3"},
-                  autoSelect: true
-      });
+      $("#subject").chained("#group");
   });
     </script>
 @endsection

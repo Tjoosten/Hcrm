@@ -20,7 +20,6 @@
 
                                 <div class="col-md-6">
                                     <input id="name" type="text" class="form-control" name="name" placeholder="name" value="{{ old('name') }}">
-
                                     @if ($errors->has('name'))
                                         <span class="help-block">
                                             <strong>{{ $errors->first('name') }}</strong>

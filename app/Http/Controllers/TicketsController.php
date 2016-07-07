@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\TicketGroups;
+use App\TicketTopics;
 use App\Tickets;
+
 use App\InboundMailboxes;
 
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
 
 class TicketsController extends Controller
@@ -41,7 +42,8 @@ class TicketsController extends Controller
      */
     public function create()
     {
-        $data['groups'] = TicketGroups::all();
+        $data['groups'] = TicketGroups::orderBy('name', 'ASC')->get();
+        $data['topics'] = TicketTopics::orderBy('name', 'ASC')->get();
         return view('tickets.create', $data);
     }
 
@@ -83,7 +85,7 @@ class TicketsController extends Controller
     public function update(Request $request, $id)
     {
         $ticket = Tickets::findOrFail($id);
-        $name = $request->get('name');
+        $name  = $request->get('name');
         $value = $request->get('value');
         $ticket->$name = $value;
         $ticket->save();
@@ -147,5 +149,42 @@ class TicketsController extends Controller
     {
         InboundMailboxes::create($input->except('_token'));
         return redirect()->back();
+    }
+
+    /**
+     * List all ticket topics.
+     *
+     * @url    GET: /setup/tickets/topics
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function topics()
+    {
+        $data['topics'] = TicketTopics::orderBy('name', 'ASC')->get();
+        return view('setup.listTicketTopics', $data);
+    }
+
+    /**
+     * Show a form to create a new topic.
+     *
+     * @url    GET: /setup/tickets/topics
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function addTopic()
+    {
+       $data['groups'] = TicketGroups::orderBy('name', 'ASC')->get();
+       return view('setup.createTicketTopic', $data);
+    }
+
+    /**
+     * Save the topic to the database
+     *
+     * @url    POST: /setup/tickets/topics/save
+     * @param  Request $input
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function saveTopic(Request $input)
+    {
+        TicketTopics::create($input->except('_token'));
+        return redirect()->route('tickets.topics');
     }
 }

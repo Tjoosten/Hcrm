@@ -86,6 +86,10 @@ Route::get('/tickets/details/{id}', 'TicketsController@details')->name('tickets.
 // Route::post('/tickets/quickUpdateTicket', 'TicketsController@update')->name('tickets.update');
 Route::post('/tickets/quickUpdateTicket/{id}', 'TicketsController@update')->name('tickets.qupdate');
 
+Route::get('/setup/tickets/topics', 'TicketsController@topics')->name('tickets.topics');
+Route::get('/setup/tickets/topics/register', 'TicketsController@addTopic')->name('tickets.addtopic');
+Route::post('/setup/tickets/topics/save', 'TicketsController@saveTopic')->name('tickets.savetopic');
+
 
 // API settings routes
 // TODO: Needs testing.
@@ -96,3 +100,5 @@ Route::get('/setup', 'SetupController@index')->name('setup.index');
 Route::get('/setup/ticketrouting', 'TicketsController@manageRouting')->name('tickets.routing');
 Route::get('/setup/ticketrouting/create', 'TicketsController@addRouting')->name('tickets.addrouting');
 Route::post('/setup/ticketrouting/save', 'TicketsController@saveRouting')->name('tickets.saveRouting');
+
+Route::get('/setup/staff/roles', 'StaffController@roles')->name('staff.roles');

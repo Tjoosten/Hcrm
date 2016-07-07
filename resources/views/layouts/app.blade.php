@@ -20,6 +20,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.1/bootstrap3-typeahead.js"></script>
 
     <script src="{{ asset('js/bootstrap-editable.js') }}"></script>
+    <script src="{{ asset('js/jquery.chained.js')}}"></script>
 </head>
 <body class="full_width" id="app-layout">
 <div id="maincontainer" class="clearfix">
