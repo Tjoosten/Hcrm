@@ -68,8 +68,7 @@ class TicketsController extends Controller
      */
     public function details($id)
     {
-      $data['ticket']  = Tickets::findOrFail($id);
-
+      $data['ticket'] = Tickets::findOrFail($id);
       return view('tickets.details', $data);
     }
 
@@ -112,6 +111,17 @@ class TicketsController extends Controller
     {
         $data['mailboxes'] = InboundMailboxes::All();
         return view('setup.ticketRoutes', $data);
+    }
+
+    /**
+     * Store a new ticket.
+     *
+     * @url    GET: /tickets/store
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function store()
+    {
+        return redirect()->back();
     }
 
     /**
