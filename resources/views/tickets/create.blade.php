@@ -34,6 +34,9 @@
        <div class="col-md-6">
         <select name="subject" id="subject" class="form-control">
          <option value="" selected="selected">-- Please select --</option>
+         @foreach($topics as $topic)
+          <option value="{!! $topic->name !!}" class="{!! $topic->group !!}">{!! $topic->name !!}</option>
+         @endforeach
          <option value="series-3" class="Support">3 series</option>
          <option value="series-5" class="Support">5 series</option>
          <option value="series-6" class="Support">6 series</option>
