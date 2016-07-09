@@ -19,7 +19,7 @@
         <label for="group" class="col-md-3 control-label ">
         Ticket group <span class="text-danger">*</span></label>
     <div class="col-md-6 ">
-     <select name="group" class="form-control" id="group">
+     <select name="group" class="advanced form-control" id="group">
       <option value="" selected="selected">-- Please select --</option>
          @foreach($groups as $group)
             <option value="{{ $group->name }}"> {{ $group->name }} </option>
@@ -32,17 +32,11 @@
     <div class="form-group formSep">
      <label for="subject" class="col-md-3 control-label">Topic <span class="text-danger">*</span></label>
        <div class="col-md-6">
-        <select name="subject" id="subject" class="form-control">
+        <select name="subject" id="subject" class="advanced form-control">
          <option value="" selected="selected">-- Please select --</option>
          @foreach($topics as $topic)
           <option value="{!! $topic->name !!}" class="{!! $topic->group !!}">{!! $topic->name !!}</option>
          @endforeach
-         <option value="series-3" class="Support">3 series</option>
-         <option value="series-5" class="Support">5 series</option>
-         <option value="series-6" class="Support">6 series</option>
-         <option value="a3" class="Administration">A3</option>
-         <option value="a4" class="Administration">A4</option>
-         <option value="a5" class="Administration">A5</option>
         </select>
        </div>
     </div>
@@ -87,7 +81,8 @@
 
     <script>
     $(document).ready(function() {
+      $(".advanced").select2({theme: "classic"});
       $("#subject").chained("#group");
-  });
+    });
     </script>
 @endsection
