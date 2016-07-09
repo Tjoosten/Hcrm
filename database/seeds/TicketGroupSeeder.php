@@ -16,7 +16,6 @@ class TicketGroupSeeder extends Seeder
         TicketGroups::create(['name' => 'Sales']);
         TicketGroups::create(['name' => 'Security']);
         TicketGroups::create(['name' => 'Administration']);
-        TicketGroups::create(['name' => 'CDN']);
         TicketGroups::create(['name' => 'Feedback']);
     }
 }
