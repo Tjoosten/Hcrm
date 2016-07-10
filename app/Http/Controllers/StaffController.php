@@ -34,6 +34,10 @@ class StaffController extends Controller
      */
     public function index()
     {
+        if (! auth()->user()->can('list users')) {
+            redirect()->back();
+        }
+
         $data['users'] = User::all();
         $data['departments'] = Departments::all();
         return view('staff.index', $data);
@@ -47,6 +51,10 @@ class StaffController extends Controller
      */
     public function register()
     {
+        if (! auth()->user()->can('create user')) {
+            redirect()->back();
+        }
+
         $data['departments'] = Departments::all();
         return view('staff.create', $data);
     }
@@ -60,6 +68,10 @@ class StaffController extends Controller
      */
     public function store(Requests\StaffValidator $input)
     {
+        if (! auth()->user()->can('create user')) {
+            redirect()->back();
+        }
+
         $pass = str_random(16);
 
         $user           = new User;
@@ -91,17 +103,23 @@ class StaffController extends Controller
 
     public function show($id)
     {
-        //
+        if (! auth()->user()->can('edit user')) {
+            redirect()->back();
+        }
     }
 
     public function edit($id)
     {
-        //
+        if (! auth()->user()->can('edit user')) {
+            redirect()->back();
+        }
     }
 
     public function update($id)
     {
-        //
+        if (! auth()->user()->can('edit user')) {
+            redirect()->back();
+        }
     }
 
     /**
@@ -113,6 +131,10 @@ class StaffController extends Controller
      */
     public function destroy($id)
     {
+        if (! auth()->user()->can('remove user')) {
+            redirect()->back();
+        }
+
         User::find($id)->departments()->sync([]);
         User::destroy($id);
         session()->flash('flash', 'The staff member has been deleted');

@@ -81,6 +81,7 @@ Route::post('/customer/create', 'CustomerController@create')->name('customer.ins
 // TODO: Needs testing
 Route::get('/tickets', 'TicketsController@index')->name('tickets.index');
 Route::get('/tickets/create', 'TicketsController@create')->name('tickets.created');
+Route::get('/tickets/destroy/{id}', 'TicketsController@destroy')->name('tickets.destroy');
 Route::get('/tickets/assigned', 'TicketsController@assigned')->name('tickets.assigned');
 Route::get('/tickets/details/{id}', 'TicketsController@details')->name('tickets.details');
 // Route::post('/tickets/quickUpdateTicket', 'TicketsController@update')->name('tickets.update');

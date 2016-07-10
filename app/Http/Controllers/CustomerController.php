@@ -34,6 +34,10 @@ class CustomerController extends Controller
      */
     public function index(Request $input)
     {
+        if (! auth()->user()->can('list customer')) {
+            return redirect()->back();
+        }
+
         $term = $input->get('term');
 
         if (empty($term)) {
@@ -53,6 +57,10 @@ class CustomerController extends Controller
      */
     public function newCustomer()
     {
+        if (! auth()->user()->can('create customer')) {
+            redirect()->back();
+        }
+        
         $data['countries'] = Countries::all();
         return view('customers.create', $data);
     }
@@ -66,6 +74,10 @@ class CustomerController extends Controller
      */
     public function create(Requests\CustomerValidator $input)
     {
+        if (! auth()->user()->can('create customer')) {
+            redirect()->back();
+        }
+        
         Customers::create($input->except('_token'));
         // $this->dispatch(new NotifyNewCustomer(auth()->user()));
 
@@ -82,6 +94,10 @@ class CustomerController extends Controller
      */
     public function edit($id)
     {
+        if (! auth()->user()->can('edit customer')) {
+            redirect()->back();
+        }
+        
         $data['customer']  = Customers::findOrFail($id);
         $data['countries'] = Countries::all();
         return view('customers.update', $data);
@@ -97,6 +113,10 @@ class CustomerController extends Controller
      */
     public function update(Requests\CustomerValidator $input, $id)
     {
+        if (! auth()->user()->can('edit customer')) {
+            redirect()->back();
+        }
+
         Customers::find($id)->update($input->except('_token'));
         // $this->dispatch(new NotifyUpdateCustomer(auth()->user()));
 
@@ -113,6 +133,10 @@ class CustomerController extends Controller
      */
     public function destroy($id)
     {
+        if (auth()->user()->can('remove customer')) {
+
+        }
+
         Customers::destroy($id);
         session()->flash('message', 'customer has been deleted');
         return redirect()->back();

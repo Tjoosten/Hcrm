@@ -30,6 +30,10 @@ class TicketsController extends Controller
      */
     public function index()
     {
+        if (! auth()->user()->can('list tickets')) {
+            redirect()->back();
+        }
+        
         $data['tickets'] = Tickets::paginate(10);
         return view('tickets.index', $data);
     }
@@ -42,6 +46,10 @@ class TicketsController extends Controller
      */
     public function create()
     {
+        if (! auth()->user()->can('create ticket')) {
+            redirect()->back();
+        }
+        
         $data['groups'] = TicketGroups::orderBy('name', 'ASC')->get();
         $data['topics'] = TicketTopics::orderBy('name', 'ASC')->get();
         return view('tickets.create', $data);
@@ -55,6 +63,10 @@ class TicketsController extends Controller
      */
     public function assigned()
     {
+        if (! auth()->user()->can('list tickets')) {
+            redirect()->back();
+        }
+        
         $userId = auth()->user()->id;
         $data['tickets'] = Tickets::where('assigned_id', $userId)->paginate(15);
 
@@ -70,8 +82,12 @@ class TicketsController extends Controller
      */
     public function details($id)
     {
-      $data['ticket'] = Tickets::findOrFail($id);
-      return view('tickets.details', $data);
+        if (! auth()->user()->can('edit ticket')) {
+            redirect()->back();
+        }
+        
+        $data['ticket'] = Tickets::findOrFail($id);
+        return view('tickets.details', $data);
     }
 
     /**
@@ -123,6 +139,11 @@ class TicketsController extends Controller
      */
     public function store()
     {
+        if (! auth()->user()->can('create ticket')) {
+            redirect()->back();
+        }
+
+        // TODO: build up the logic.
         return redirect()->back();
     }
 
@@ -186,5 +207,23 @@ class TicketsController extends Controller
     {
         TicketTopics::create($input->except('_token'));
         return redirect()->route('tickets.topics');
+    }
+
+    /**
+     * Remove a ticket
+     *
+     * @param  int $id The ticket id in the database.
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function destroy($id)
+    {
+        if (! auth()->user()->can('remove ticket')) {
+            redirect()->back();
+        }
+
+        // TODO: build phpunit test.
+        // TODO: Build controller logic.
+
+        return redirect()->back();
     }
 }
