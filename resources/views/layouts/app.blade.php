@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700">
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/select2.css') }}">
 
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
@@ -20,6 +21,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.1/bootstrap3-typeahead.js"></script>
 
     <script src="{{ asset('js/bootstrap-editable.js') }}"></script>
+    <script src="{{ asset('js/select2/select2.js') }}"></script>
+
     <script src="{{ asset('js/jquery.chained.js')}}"></script>
 </head>
 <body class="full_width" id="app-layout">
