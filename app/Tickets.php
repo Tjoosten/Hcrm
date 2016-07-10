@@ -47,6 +47,6 @@ class Tickets extends Model
      */
     public function assigned()
     {
-        return $this->belongsToMany('App\User');
+        return $this->belongsTo('App\User');
     }
 }

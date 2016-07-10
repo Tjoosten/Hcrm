@@ -51,7 +51,11 @@
             <dd><a href="{{url('customers/details')}}/{!! $ticket->customer->id !!}">{!! $ticket->customer->fname !!} {!! $ticket->customer->name !!}</a></dd>
 
             <dt>{{ trans('tickets.assigned') }}</dt>
-            <dd><a href="#" id="ticketType" data-type="select" data-pk="1" data-url="/post" data-title="Enter username"></a></dd>
+            <dd>
+                <a href="#" id="ticketType" data-type="select" data-pk="1" data-url="/post" data-title="Enter username">
+                   {{ $ticket->assigned->name }}
+                </a>
+            </dd>
 
             <dt>{{ trans('tickets.created') }}</dt>
             <dd>{!! $ticket->created_at !!}</dd>
