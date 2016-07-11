@@ -1,7 +1,6 @@
 @extends('layouts.app')
 @section('content')
 
-@can('list-customers')
 <div class="container">
 <div class="row">
 <div class="col-md-12">
@@ -47,7 +46,7 @@
                 <tbody>
                     @foreach($customers as $customer)
                         <tr>
-                            <td><code>#C{{ $customer->id }}</code></td>
+                            <td><a href="{!! url('/customer/update') !!}/{{ $customer->id }}">#C{{ $customer->id }}</a></td>
                             <td>{{ $customer->company }}</td>
                             <td>{{ $customer->fname }} {{ $customer->name }}</td>
                             <td>{{ $customer->email }}</td>
@@ -67,14 +66,4 @@
   </div>
  </div>
 </div>
-
-@else
-<div class="container">
-<div class="col-md-12">
-  <div class="alert alert-danger">
-   <p class="text-danger">You need permission to perform this action</p>
-</div>
-</div>
-</div>
-@endcan
 @endsection
