@@ -18,69 +18,69 @@ class CountrySeeder extends Seeder
             // Countries that begin with A
             [
                 'country'  => 'Afghanistan',
-                'tax_rate' => ''
+                'tax_rate' => '20'
             ],
             [
                 'country'  => 'Albania',
-                'tax_rate' => ''
+                'tax_rate' => '20'
             ],
             [
                 'country'  => 'Algeria',
-                'tax_rate' => ''
+                'tax_rate' => '17'
             ],
             [
                 'country'  => 'American Samoa',
-                'tax_rate' => ''
+                'tax_rate' => '0'
             ],
             [
                 'country'  => 'Andorra',
-                'tax_rate' => ''
+                'tax_rate' => '4,5'
             ],
             [
                 'country'  => 'Angola',
-                'tax_rate' => ''
+                'tax_rate' => '30'
             ],
             [
                 'country'  => 'Anguilla',
-                'tax_rate' => ''
+                'tax_rate' => '10'
             ],
             [
                 'country'  => 'Antartica',
-                'tax_rate' => ''
+                'tax_rate' => '0'
             ],
             [
                 'country'  => 'Antigua and Barbuda',
-                'tax_rate' => ''
+                'tax_rate' => '15'
             ],
             [
                 'country'  => 'Argentina',
-                'tax_rate' => ''
+                'tax_rate' => '21'
             ],
             [
                 'country'  => 'Armenia',
-                'tax_rate' => ''
+                'tax_rate' => '20'
             ],
             [
                 'country'  => 'Aruba',
-                'tax_rate' => ''
+                'tax_rate' => '25'
             ],
             [
                 'country'  => 'Australia',
-                'tax_rate' => ''
+                'tax_rate' => '10'
             ],
             [
                 'country'  => 'Austria',
-                'tax_rate' => ''
+                'tax_rate' => '20'
             ],
             [
                 'country'  => 'Azerbaijan',
-                'tax_rate' => ''
+                'tax_rate' => '18'
             ],
 
             // Countries that begin with B
             [
                 'country'  => 'Bahamas',
-                'tax_rate' => ''
+                'tax_rate' => '7,5'
             ],
             [
                 'country'  => 'Bahrain',
@@ -88,27 +88,27 @@ class CountrySeeder extends Seeder
             ],
             [
                 'country'  => 'Bangladesh',
-                'tax_rate' => ''
+                'tax_rate' => '15'
             ],
             [
                 'country'  => 'Barbados',
-                'tax_rate' => ''
+                'tax_rate' => '17,5'
             ],
             [
                 'country'  => 'Belarus',
-                'tax_rate' => ''
+                'tax_rate' => '20'
             ],
             [
                 'country'  => 'Belgium',
-                'tax_rate' => ''
+                'tax_rate' => '21'
             ],
             [
                 'country'  => 'Belize',
-                'tax_rate' => ''
+                'tax_rate' => '12,5'
             ],
             [
                 'country'  => 'Benin',
-                'tax_rate' => ''
+                'tax_rate' => '18'
             ],
             [
                 'country'  => 'Bermuda',
@@ -120,7 +120,7 @@ class CountrySeeder extends Seeder
             ],
             [
                 'country'  => 'Bolivia',
-                'tax_rate' => ''
+                'tax_rate' => '13'
             ],
             [
                 'country'  => 'Bonaire, Sint Eustatius ans Saba',
@@ -128,11 +128,11 @@ class CountrySeeder extends Seeder
             ],
             [
                 'country'  => 'Bosnia and Herzegovina',
-                'tax_rate' => ''
+                'tax_rate' => '17'
             ],
             [
                 'country'  => 'Botswana',
-                'tax_rate' => ''
+                'tax_rate' => '12'
             ],
             [
                 'country'  => 'Bouvet Island',
@@ -140,7 +140,7 @@ class CountrySeeder extends Seeder
             ],
             [
                 'country'  => 'Brazil',
-                'tax_rate' => ''
+                'tax_rate' => '42'
             ],
             [
                 'country'  => 'British Indian Ocean Territory',
@@ -152,33 +152,33 @@ class CountrySeeder extends Seeder
             ],
             [
                 'country'  => 'Bulgaria',
-                'tax_rate' => ''
+                'tax_rate' => '20'
             ],
             [
                 'country'  => 'Burkina Faso',
-                'tax_rate' => ''
+                'tax_rate' => '18'
             ],
             [
                 'country'  => 'Burundi',
-                'tax_rate' => ''
+                'tax_rate' => '18'
             ],
 
             // Countries that begin with a C.
             [
                 'country'  => 'Cambodia',
-                'tax_rate' => ''
+                'tax_rate' => '10'
             ],
             [
                 'country'  => 'Cameroon',
-                'tax_rate' => ''
+                'tax_rate' => '19,25'
             ],
             [
                 'country'  => 'Canada',
-                'tax_rate' => ''
+                'tax_rate' => '5'
             ],
             [
                 'country'  => 'Cape Verde',
-                'tax_rate' => ''
+                'tax_rate' => '15'
             ],
             [
                 'country'  => 'Cayman Islands',
@@ -186,19 +186,19 @@ class CountrySeeder extends Seeder
             ],
             [
                 'country'  => 'Central African Republic',
-                'tax_rate' => ''
+                'tax_rate' => '19'
             ],
             [
                 'country'  => 'Chad',
-                'tax_rate' => ''
+                'tax_rate' => '18'
             ],
             [
                 'country'  => 'Chile',
-                'tax_rate' => ''
+                'tax_rate' => '19'
             ],
             [
                 'country'  => 'China',
-                'tax_rate' => ''
+                'tax_rate' => '17'
             ],
             [
                 'country'  => 'Christmas Island',
@@ -210,7 +210,7 @@ class CountrySeeder extends Seeder
             ],
             [
                 'country'  => 'Colombia',
-                'tax_rate' => ''
+                'tax_rate' => '16'
             ],
             [
                 'country'  => 'Comoros',
@@ -222,7 +222,7 @@ class CountrySeeder extends Seeder
             ],
             [
                 'country'  => 'Costa Rica',
-                'tax_rate' => ''
+                'tax_rate' => '13'
             ],
             [
                 'country'  => 'Cote de azur',
@@ -230,7 +230,7 @@ class CountrySeeder extends Seeder
             ],
             [
                 'country'  => 'Croatia',
-                'tax_rate' => ''
+                'tax_rate' => '25'
             ],
             [
                 'country'  => 'Cuba',
@@ -242,21 +242,21 @@ class CountrySeeder extends Seeder
             ],
             [
                 'country'  => 'Cyprus',
-                'tax_rate' => ''
+                'tax_rate' => '19'
             ],
             [
                 'country'  => 'Czech Republic',
-                'tax_rate' => ''
+                'tax_rate' => '21'
             ],
 
             // Countries that begin with a D.
             [
                 'country'  => 'Democratic Republic of the congo.',
-                'tax_rate' => ''
+                'tax_rate' => '16'
             ],
             [
                 'country'  => 'Denmark',
-                'tax_rate' => ''
+                'tax_rate' => '25'
             ],
             [
                 'country'  => 'Djibouti',
@@ -264,29 +264,29 @@ class CountrySeeder extends Seeder
             ],
             [
                 'country'  => 'Dominica',
-                'tax_rate' => ''
+                'tax_rate' => '15'
             ],
             [
                 'country'  => 'Dominican Republic',
-                'tax_rate' => ''
+                'tax_rate' => '18'
             ],
 
             // Countries that begin with a E.
             [
                 'country'   => 'Ecuador',
-                'tax_reate' => ''
+                'tax_reate' => '12'
             ],
             [
                 'country'   => 'Egypt',
-                'tax_reate' => ''
+                'tax_reate' => '10'
             ],
             [
                 'country'   => 'El Salvador',
-                'tax_reate' => ''
+                'tax_reate' => '13'
             ],
             [
                 'country'   => 'Equatorial Guinea',
-                'tax_reate' => ''
+                'tax_reate' => '15'
             ],
             [
                 'country'   => 'Eritrea',
@@ -294,11 +294,11 @@ class CountrySeeder extends Seeder
             ],
             [
                 'country'   => 'Estonia',
-                'tax_reate' => ''
+                'tax_reate' => '20'
             ],
             [
                 'country'   => 'Ethiopia',
-                'tax_reate' => ''
+                'tax_reate' => '15'
             ],
 
             // Countries that begin with an F
@@ -308,53 +308,53 @@ class CountrySeeder extends Seeder
             ],
             [
                 'country'  => 'Faroe Islands',
-                'tax_rate' => ''
+                'tax_rate' => '25'
             ],
             [
                 'country'  => 'Fiji',
-                'tax_rate' => ''
+                'tax_rate' => '15'
             ],
             [
                 'country'  => 'Finland',
-                'tax_rate' => ''
+                'tax_rate' => '24'
             ],
             [
                 'country'  => 'France',
-                'tax_rate' => ''
+                'tax_rate' => '20'
             ],
             [
                 'country'  => 'French Guiana',
-                'tax_rate' => ''
+                'tax_rate' => '20'
             ],
             [
                 'country'  => 'French Polynesia',
-                'tax_rate' => ''
+                'tax_rate' => '20'
             ],
             [
                 'country'  => 'French Southern Territory',
-                'tax_rate' => ''
+                'tax_rate' => '20'
             ],
 
             // Countries started with an G.
             [
                 'country'  => 'Gabon',
-                'tax_rate' => ''
+                'tax_rate' => '18'
             ],
             [
                 'country'  => 'Gambia',
-                'tax_rate' => ''
+                'tax_rate' => '15'
             ],
             [
                 'country'  => 'Georgia',
-                'tax_rate' => ''
+                'tax_rate' => '18'
             ],
             [
                 'country'  => 'Germany',
-                'tax_rate' => ''
+                'tax_rate' => '19'
             ],
             [
                 'country'  => 'Ghana',
-                'tax_rate' => ''
+                'tax_rate' => '15'
             ],
             [
                 'country'  => 'Gibraltar',
@@ -362,7 +362,7 @@ class CountrySeeder extends Seeder
             ],
             [
                 'country'  => 'Greece',
-                'tax_rate' => ''
+                'tax_rate' => '24'
             ],
             [
                 'country'  => 'Greenland',
@@ -370,7 +370,7 @@ class CountrySeeder extends Seeder
             ],
             [
                 'country'  => 'Grenada',
-                'tax_rate' => ''
+                'tax_rate' => '15'
             ],
             [
                 'country'  => 'Guadaloupe',
@@ -382,7 +382,7 @@ class CountrySeeder extends Seeder
             ],
             [
                 'country'  => 'Guatamala',
-                'tax_rate' => ''
+                'tax_rate' => '12'
             ],
             [
                 'country'  => 'Guernsey',
@@ -390,21 +390,21 @@ class CountrySeeder extends Seeder
             ],
             [
                 'country'  => 'Guinea',
-                'tax_rate' => ''
+                'tax_rate' => '18'
             ],
             [
                 'country'  => 'Guinea-Bissau',
-                'tax_rate' => ''
+                'tax_rate' => '15'
             ],
             [
                 'country'  => 'Guyana',
-                'tax_rate' => ''
+                'tax_rate' => '16'
             ],
 
             // Countries that started with an H.
             [
                 'country'  => 'Haiti',
-                'tax_rate' => ''
+                'tax_rate' => '10'
             ],
             [
                 'country'  => 'Heard Island and McDonals Island',
@@ -412,7 +412,7 @@ class CountrySeeder extends Seeder
             ],
             [
                 'country'  => 'Honduras',
-                'tax_rate' => ''
+                'tax_rate' => '12'
             ],
             [
                 'country'  => 'Hong Kong',
@@ -420,25 +420,25 @@ class CountrySeeder extends Seeder
             ],
             [
                 'country'  => 'Hungary',
-                'tax_rate' => ''
+                'tax_rate' => '27'
             ],
 
             // Countries that started with an I.
             [
                 'country'  => 'Iceland',
-                'tax_rate' => ''
+                'tax_rate' => '24'
             ],
             [
                 'country'  => 'India',
-                'tax_rate' => ''
+                'tax_rate' => '5,5'
             ],
             [
                 'country'  => 'Indonesia',
-                'tax_rate' => ''
+                'tax_rate' => '10'
             ],
             [
                 'country'  => 'Iran',
-                'tax_rate' => ''
+                'tax_rate' => '9'
             ],
             [
                 'country'  => 'Iraq',
@@ -446,47 +446,47 @@ class CountrySeeder extends Seeder
             ],
             [
                 'country'  => 'Ireland',
-                'tax_rate' => ''
+                'tax_rate' => '23'
             ],
             [
                 'country'  => 'Isle of Man',
-                'tax_rate' => ''
+                'tax_rate' => '20'
             ],
             [
                 'country'  => 'Israel',
-                'tax_rate' => ''
+                'tax_rate' => '17'
             ],
             [
                 'country'  => 'Italy',
-                'tax_rate' => ''
+                'tax_rate' => '22'
             ],
 
             // Countries that started with an J
             [
                 'country'  => 'Jamaica',
-                'tax_rate' => ''
+                'tax_rate' => '12,5'
             ],
             [
                 'country'  => 'Japan',
-                'tax_rate' => ''
+                'tax_rate' => '8'
             ],
             [
                 'country'  => 'Jersey',
-                'tax_rate' => ''
+                'tax_rate' => '5'
             ],
             [
                 'country'  => 'Jordan',
-                'tax_rate' => ''
+                'tax_rate' => '16'
             ],
 
             // Countries that started with an K.
             [
                 'country'  => 'Kazakhstan',
-                'tax_rate' => ''
+                'tax_rate' => '12'
             ],
             [
                 'country'  => 'Kenya',
-                'tax_rate' => ''
+                'tax_rate' => '16'
             ],
             [
                 'country'  => 'Kiribati',
@@ -494,7 +494,7 @@ class CountrySeeder extends Seeder
             ],
             [
                 'country'  => 'Kosovo',
-                'tax_rate' => ''
+                'tax_rate' => '18'
             ],
             [
                 'country'  => 'Kuwait',
@@ -502,25 +502,25 @@ class CountrySeeder extends Seeder
             ],
             [
                 'country'  => 'Kyrgyzstan',
-                'tax_rate' => ''
+                'tax_rate' => '20'
             ],
 
             // Countries that started with an L
             [
                 'country'  => 'Laos',
-                'tax_rate' => '',
+                'tax_rate' => '10',
             ],
             [
                 'country'  => 'Latvia',
-                'tax_rate' => '',
+                'tax_rate' => '21',
             ],
             [
                 'country'  => 'Lebanon',
-                'tax_rate' => '',
+                'tax_rate' => '10',
             ],
             [
                 'country'  => 'Lesotho',
-                'tax_rate' => '',
+                'tax_rate' => '14',
             ],
             [
                 'country'  => 'Liberia',
@@ -532,15 +532,15 @@ class CountrySeeder extends Seeder
             ],
             [
                 'country'  => 'Liechtenstein',
-                'tax_rate' => '',
+                'tax_rate' => '8',
             ],
             [
                 'country'  => 'Lithuania',
-                'tax_rate' => '',
+                'tax_rate' => '21',
             ],
             [
                 'country'  => 'Luxembourg',
-                'tax_rate' => '',
+                'tax_rate' => '17',
             ],
 
             // Countries that started with an M.
@@ -550,31 +550,31 @@ class CountrySeeder extends Seeder
             ],
             [
                 'country'  => 'Macedonia',
-                'tax_rate' => '',
+                'tax_rate' => '18',
             ],
             [
                 'country'  => 'Madagascar',
-                'tax_rate' => '',
+                'tax_rate' => '20',
             ],
             [
                 'country'  => 'Malawi',
-                'tax_rate' => '',
+                'tax_rate' => '16,5',
             ],
             [
                 'country'  => 'Malaysia',
-                'tax_rate' => '',
+                'tax_rate' => '6',
             ],
             [
                 'country'  => 'Maldives',
-                'tax_rate' => '',
+                'tax_rate' => '6',
             ],
             [
                 'country'  => 'Mali',
-                'tax_rate' => '',
+                'tax_rate' => '18',
             ],
             [
                 'country'  => 'Malta',
-                'tax_rate' => '',
+                'tax_rate' => '18',
             ],
             [
                 'country'  => 'Marshall Islands',
@@ -586,11 +586,11 @@ class CountrySeeder extends Seeder
             ],
             [
                 'country'  => 'Mauritinia',
-                'tax_rate' => '',
+                'tax_rate' => '14',
             ],
             [
                 'country'  => 'Mauritius',
-                'tax_rate' => '',
+                'tax_rate' => '15',
             ],
             [
                 'country'  => 'Mayotte',
@@ -598,7 +598,7 @@ class CountrySeeder extends Seeder
             ],
             [
                 'country'  => 'Mexico',
-                'tax_rate' => '',
+                'tax_rate' => '16',
             ],
             [
                 'country'  => 'Micronesia',
@@ -606,19 +606,19 @@ class CountrySeeder extends Seeder
             ],
             [
                 'country'  => 'Moldava',
-                'tax_rate' => '',
+                'tax_rate' => '20',
             ],
             [
                 'country'  => 'Monaco',
-                'tax_rate' => '',
+                'tax_rate' => '19,6',
             ],
             [
                 'country'  => 'Mongolia',
-                'tax_rate' => '',
+                'tax_rate' => '10',
             ],
             [
                 'country'  => 'Montenegro',
-                'tax_rate' => '',
+                'tax_rate' => '19',
             ],
             [
                 'country'  => 'Montserrat',
@@ -626,11 +626,11 @@ class CountrySeeder extends Seeder
             ],
             [
                 'country'  => 'Morocco',
-                'tax_rate' => '',
+                'tax_rate' => '20',
             ],
             [
                 'country'  => 'Mozambique',
-                'tax_rate' => '',
+                'tax_rate' => '17',
             ],
             [
                 'country'  => 'Myanmar (Burma)',
@@ -640,7 +640,7 @@ class CountrySeeder extends Seeder
             // Countries that started with an N
             [
                 'country'  => 'Namibia',
-                'tax_rate' => ''
+                'tax_rate' => '15'
             ],
             [
                 'country'  => 'Nauru',
@@ -648,11 +648,11 @@ class CountrySeeder extends Seeder
             ],
             [
                 'country'  => 'Nepal',
-                'tax_rate' => ''
+                'tax_rate' => '13'
             ],
             [
                 'country'  => 'Netherlands',
-                'tax_rate' => ''
+                'tax_rate' => '21'
             ],
             [
                 'country'  => 'New Caledonia',
@@ -660,23 +660,23 @@ class CountrySeeder extends Seeder
             ],
             [
                 'country'  => 'New Zealand',
-                'tax_rate' => ''
+                'tax_rate' => '15'
             ],
             [
                 'country'  => 'Nicaragua',
-                'tax_rate' => ''
+                'tax_rate' => '15'
             ],
             [
                 'country'  => 'Niger',
-                'tax_rate' => ''
+                'tax_rate' => '19'
             ],
             [
                 'country'  => 'Nigeria',
-                'tax_rate' => ''
+                'tax_rate' => '5'
             ],
             [
                 'country'  => 'Niue',
-                'tax_rate' => ''
+                'tax_rate' => '5'
             ],
             [
                 'country'  => 'Norfolk Island',
@@ -692,7 +692,7 @@ class CountrySeeder extends Seeder
             ],
             [
                 'country'  => 'Norway',
-                'tax_rate' => ''
+                'tax_rate' => '25'
             ],
 
             // Countries started with an O.
@@ -704,7 +704,7 @@ class CountrySeeder extends Seeder
             // Countries started with an P.
             [
                 'country'  => 'Pakistan',
-                'tax_rate' => ''
+                'tax_rate' => '17'
             ],
             [
                 'country'  => 'Palau',
@@ -712,27 +712,27 @@ class CountrySeeder extends Seeder
             ],
             [
                 'country'  => 'Palestine',
-                'tax_rate' => ''
+                'tax_rate' => '16'
             ],
             [
                 'country'  => 'Panama',
-                'tax_rate' => ''
+                'tax_rate' => '7'
             ],
             [
                 'country'  => 'Papua New Guinea',
-                'tax_rate' => ''
+                'tax_rate' => '10'
             ],
             [
                 'country'  => 'Paraguay',
-                'tax_rate' => ''
+                'tax_rate' => '10'
             ],
             [
                 'country'  => 'Peru',
-                'tax_rate' => ''
+                'tax_rate' => '18'
             ],
             [
                 'country'  => 'Phillipines',
-                'tax_rate' => ''
+                'tax_rate' => '12'
             ],
             [
                 'country'  => 'Pitcaim',
@@ -740,11 +740,11 @@ class CountrySeeder extends Seeder
             ],
             [
                 'country'  => 'Poland',
-                'tax_rate' => ''
+                'tax_rate' => '23'
             ],
             [
                 'country'  => 'Portugal',
-                'tax_rate' => ''
+                'tax_rate' => '23'
             ],
             [
                 'country'  => 'Puerto Rico',
@@ -764,15 +764,15 @@ class CountrySeeder extends Seeder
             ],
             [
                 'country'  => 'Romania',
-                'tax_rate' => ''
+                'tax_rate' => '20'
             ],
             [
                 'country'  => 'Russia',
-                'tax_rate' => ''
+                'tax_rate' => '18'
             ],
             [
                 'country'  => 'Rwanda',
-                'tax_rate' => ''
+                'tax_rate' => '18'
             ],
 
             // Countries started with an S.
@@ -786,7 +786,7 @@ class CountrySeeder extends Seeder
             ],
             [
                 'country'  => 'Saint Kitts and Nevis', 
-                'tax_rate' => ''
+                'tax_rate' => '17'
             ],
             [
                 'country'  => 'Saint Lucia', 
@@ -806,7 +806,7 @@ class CountrySeeder extends Seeder
             ],
             [
                 'country'  => 'Samoa', 
-                'tax_rate' => ''
+                'tax_rate' => '15'
             ],
             [
                 'country'  => 'San Marino', 
@@ -822,23 +822,23 @@ class CountrySeeder extends Seeder
             ],
             [
                 'country'  => 'Senegal', 
-                'tax_rate' => ''
+                'tax_rate' => '18'
             ],
             [
                 'country'  => 'Serbia', 
-                'tax_rate' => ''
+                'tax_rate' => '20'
             ],
             [
                 'country'  => 'Seychelles', 
-                'tax_rate' => ''
+                'tax_rate' => '15'
             ],
             [
                 'country'  => 'Sierra Leone', 
-                'tax_rate' => ''
+                'tax_rate' => '15'
             ],
             [
                 'country'  => 'Singapore', 
-                'tax_rate' => ''
+                'tax_rate' => '7'
             ],
             [
                 'country'  => 'Sint Maarten', 
@@ -846,11 +846,11 @@ class CountrySeeder extends Seeder
             ],
             [
                 'country'  => 'Slovakia', 
-                'tax_rate' => ''
+                'tax_rate' => '20'
             ],
             [
                 'country'  => 'Slovenia', 
-                'tax_rate' => ''
+                'tax_rate' => '22'
             ],
             [
                 'country'  => 'Solomon Islands', 
@@ -862,7 +862,7 @@ class CountrySeeder extends Seeder
             ],
             [
                 'country'  => 'South Africa', 
-                'tax_rate' => ''
+                'tax_rate' => '14'
             ],
             [
                 'country'  => 'South Georgia and the South Sandwich Islands', 
@@ -870,19 +870,19 @@ class CountrySeeder extends Seeder
             ],
             [
                 'country'  => 'South Korea', 
-                'tax_rate' => ''
+                'tax_rate' => '10'
             ],
             [
                 'country'  => 'Spain', 
-                'tax_rate' => ''
+                'tax_rate' => '21'
             ],
             [
                 'country'  => 'Sri Lanka', 
-                'tax_rate' => ''
+                'tax_rate' => '12'
             ],
             [
                 'country'  => 'Sudan', 
-                'tax_rate' => ''
+                'tax_rate' => '17'
             ],
             [
                 'country'  => 'Suriname', 
@@ -898,11 +898,11 @@ class CountrySeeder extends Seeder
             ],
             [
                 'country'  => 'Sweden', 
-                'tax_rate' => ''
+                'tax_rate' => '25'
             ],
             [
                 'country'  => 'Switzerland', 
-                'tax_rate' => ''
+                'tax_rate' => '8'
             ],
             [
                 'country'  => 'Syria', 
@@ -912,19 +912,19 @@ class CountrySeeder extends Seeder
             // Countries started with an T.
             [
                 'country'  => 'Taiwan',
-                'tax_rate' => ''
+                'tax_rate' => '5'
             ],
             [
                 'country'  => 'Tajikistan',
-                'tax_rate' => ''
+                'tax_rate' => '20'
             ],
             [
                 'country'  => 'Tanzania',
-                'tax_rate' => ''
+                'tax_rate' => '18'
             ],
             [
                 'country'  => 'Thailand',
-                'tax_rate' => ''
+                'tax_rate' => '10'
             ],
             [
                 'country'  => 'Timor-Leste (East Timot)',
@@ -932,7 +932,7 @@ class CountrySeeder extends Seeder
             ],
             [
                 'country'  => 'Togo',
-                'tax_rate' => ''
+                'tax_rate' => '18'
             ],
             [
                 'country'  => 'Tokelau',
@@ -940,23 +940,23 @@ class CountrySeeder extends Seeder
             ],
             [
                 'country'  => 'Tonga',
-                'tax_rate' => ''
+                'tax_rate' => '15'
             ],
             [
                 'country'  => 'Trinidad and Tobago',
-                'tax_rate' => ''
+                'tax_rate' => '12,5'
             ],
             [
                 'country'  => 'Tunesia',
-                'tax_rate' => ''
+                'tax_rate' => '18'
             ],
             [
                 'country'  => 'Turkey',
-                'tax_rate' => ''
+                'tax_rate' => '18'
             ],
             [
                 'country'  => 'Turkmenistan',
-                'tax_rate' => ''
+                'tax_rate' => '15'
             ],
             [
                 'country'  => 'Turks and Caicos Islands',
@@ -970,11 +970,11 @@ class CountrySeeder extends Seeder
             // Countries started with an U.
             [
                 'country'  => 'Uganda',
-                'tax_rate' => ''
+                'tax_rate' => '18'
             ],
             [
                 'country'  => 'Ukraine',
-                'tax_rate' => ''
+                'tax_rate' => '20'
             ],
             [
                 'country'  => 'United Arab Emirates',
@@ -982,7 +982,7 @@ class CountrySeeder extends Seeder
             ],
             [
                 'country'  => 'United Kingdom',
-                'tax_rate' => ''
+                'tax_rate' => '20'
             ],
             [
                 'country'  => 'United States',
@@ -994,17 +994,17 @@ class CountrySeeder extends Seeder
             ],
             [
                 'country'  => 'Uruguay',
-                'tax_rate' => ''
+                'tax_rate' => '22'
             ],
             [
                 'country'  => 'Uzbekistan',
-                'tax_rate' => ''
+                'tax_rate' => '20'
             ],
 
             // Countries started with an V.
             [
                 'country'  => 'Vanuatu',
-                'tax_rate' => ''
+                'tax_rate' => '13'
             ],
             [
                 'country'  => 'Vatican City',
@@ -1012,11 +1012,11 @@ class CountrySeeder extends Seeder
             ],
             [
                 'country'  => 'Venezuela',
-                'tax_rate' => ''
+                'tax_rate' => '12'
             ],
             [
                 'country'  => 'Vietnam',
-                'tax_rate' => ''
+                'tax_rate' => '10'
             ],
             [
                 'country'  => 'Virigin Islands (British)',
@@ -1046,11 +1046,11 @@ class CountrySeeder extends Seeder
             // Countries started with an Z
             [
                 'country'  => 'Zambia',
-                'tax_rate' => ''
+                'tax_rate' => '16'
             ],
             [
                 'country'  => 'Zimbabwe',
-                'tax_rate' => ''
+                'tax_rate' => '15'
             ]
         ]);
     }
