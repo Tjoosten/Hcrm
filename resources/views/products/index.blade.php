@@ -86,12 +86,12 @@
                             <h4 class="modal-title">New category</h4>
                         </div>
                         <div class="modal-body">
-                            <form method="POST" action="" class="form-horizontal">
+                            <form method="POST" action="{{ route('category.insert') }}" class="form-horizontal">
                                 {{-- CSRF token --}}
                                 {{ csrf_field() }}
 
                                 <div class="form-group">
-                                    <label class="col-sm-3 control-label" for="zipcode">
+                                    <label class="col-sm-3 control-label" for="category">
                                         Category: <span class="text-danger">*</span>
                                     </label>
                                     <div class="col-sm-9">

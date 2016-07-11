@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\products;
+use App\productsCategories;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -49,9 +50,18 @@ class ProductsController extends Controller
 
     }
 
-    public function storeCategory()
+    /**
+     * Create a new product category.
+     *
+     * @url    POST: /products/category/new
+     * @param  Requests\ProductCategoryValidator $input
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function storeCategory(Requests\ProductCategoryValidator $input)
     {
-        
+        productsCategories::create($input->except('_token'));
+        session()->flash('message', 'The new product category has been inserted');
+        return redirect()->back();
     }
 
     /**
@@ -75,6 +85,6 @@ class ProductsController extends Controller
      */
     public function destroy($id)
     {
-
+        $product = products::find($id);
     }
 }
