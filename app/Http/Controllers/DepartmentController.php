@@ -28,6 +28,10 @@ class DepartmentController extends Controller
      */
     public function index(Request $request)
     {
+        if (! auth()->user()->can('list departments')) {
+            return redirect()->back();
+        }
+        
         $rels = ['users', 'managers'];
         $term = $request->get('term');
 
@@ -50,6 +54,10 @@ class DepartmentController extends Controller
      */
     public function register()
     {
+        if (! auth()->user()->can('create department')) {
+            return redirect()->back();
+        }
+
         $data['users'] = User::all(['id', 'name']);
         return view('departments.create', $data);
     }
@@ -63,6 +71,10 @@ class DepartmentController extends Controller
      */
     public function create(Requests\DepartmentValidator $input)
     {
+        if (! auth()->user()->can('create department')) {
+            return redirect()->back();
+        }
+        
         $depId = Departments::create($input->except('_token'))->id;
 
         $department = Departments::findOrFail($depId);
@@ -98,6 +110,10 @@ class DepartmentController extends Controller
      */
     public function edit($id)
     {
+        if (! auth()->user()->can('edit department')) {
+            return redirect()->back();
+        }
+        
         $data['department']  = Departments::with(['users', 'managers'])->find($id);
         $data['departments'] = Departments::all();
         $data['users']       = User::all();
@@ -114,6 +130,10 @@ class DepartmentController extends Controller
      */
     public function update(Requests\DepartmentValidator $input, $id)
     {
+        if (! auth()->user()->can('edit department')) {
+            return redirect()->back();
+        }
+            
         $hidden = ['_token', 'users', 'departments'];
 
         Departments::find($id)->update($input->except($hidden));
@@ -133,6 +153,10 @@ class DepartmentController extends Controller
      */
     public function destroy($id)
     {
+        if (! auth()->user()->can('remove department')) {
+            return redirect()->back();
+        }
+
         $department = Departments::findOrFail($id);
         $department->users()->sync([]);
         $department->managers()->sync([]);

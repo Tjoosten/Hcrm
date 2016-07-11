@@ -31,6 +31,9 @@ class TicketsController extends Controller
      */
     public function index()
     {
+        if (! auth()->user()->can('list tickets')) {
+            redirect()->back();
+        }
         $data['tickets'] = Tickets::orderBy('id', 'DESC')->paginate(10);
         return view('tickets.index', $data);
     }
@@ -43,6 +46,10 @@ class TicketsController extends Controller
      */
     public function create()
     {
+        if (! auth()->user()->can('create ticket')) {
+            redirect()->back();
+        }
+
         $data["customers"] = Customers::orderBy('name', 'ASC')->get();
         $data['groups'] = TicketGroups::orderBy('name', 'ASC')->get();
         $data['topics'] = TicketTopics::orderBy('name', 'ASC')->get();
@@ -70,6 +77,10 @@ class TicketsController extends Controller
      */
     public function assigned()
     {
+        if (! auth()->user()->can('list tickets')) {
+            redirect()->back();
+        }
+
         $userId = auth()->user()->id;
         $data['tickets'] = Tickets::where('assigned_id', $userId)->paginate(15);
 
@@ -85,9 +96,12 @@ class TicketsController extends Controller
      */
     public function details($id)
     {
-      $data['ticket']  = Tickets::findOrFail($id);
+        if (! auth()->user()->can('edit ticket')) {
+            redirect()->back();
+        }
 
-      return view('tickets.details', $data);
+        $data['ticket'] = Tickets::findOrFail($id);
+        return view('tickets.details', $data);
     }
 
     /**
@@ -129,6 +143,22 @@ class TicketsController extends Controller
     {
         $data['mailboxes'] = InboundMailboxes::All();
         return view('setup.ticketRoutes', $data);
+    }
+
+    /**
+     * Store a new ticket.
+     *
+     * @url    GET: /tickets/store
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function store()
+    {
+        if (! auth()->user()->can('create ticket')) {
+            redirect()->back();
+        }
+
+        // TODO: build up the logic.
+        return redirect()->back();
     }
 
     /**
@@ -191,5 +221,23 @@ class TicketsController extends Controller
     {
         TicketTopics::create($input->except('_token'));
         return redirect()->route('tickets.topics');
+    }
+
+    /**
+     * Remove a ticket
+     *
+     * @param  int $id The ticket id in the database.
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function destroy($id)
+    {
+        if (! auth()->user()->can('remove ticket')) {
+            redirect()->back();
+        }
+
+        // TODO: build phpunit test.
+        // TODO: Build controller logic.
+
+        return redirect()->back();
     }
 }
