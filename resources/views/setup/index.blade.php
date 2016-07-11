@@ -43,7 +43,7 @@
 
               <ul class="col-md-3 list-unstyled">
                <li><strong>Support</strong></li>
-               <li><a href="#">knowledge base categories</a></li>
+               <li><a href="{{ route('knowledge.index') }}">knowledge base categories</a></li>
                <li><a href="#">Ticket routing</a></li>
                <li><a href="#">Ticket types</a></li>
                <li><a href="{{ route('tickets.topics')}}">Ticket topics</a></li>
