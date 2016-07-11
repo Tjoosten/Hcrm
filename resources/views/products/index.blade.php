@@ -9,8 +9,21 @@
                 <a class="btn btn-primary" role="button" href="" data-toggle="modal" data-target="#newCat">New category</a>
                 <a class="btn btn-success" role="button" href="">New product</a>
 
+                <div class="clearfix">&nbsp;</div>
+
                 {{-- Search Well --}}
                 <div class="collapse" id="search">
+                    <div class="well">
+                        <form class="form-inline" method="GET" action="">
+                            {{ csrf_field() }}
+                            <div class="form-group">
+                                <input type="text" name="term" class="form-control" placeholder="Product">
+                            </div>
+                            <button type="submit" class="btn btn-danger">
+                                <span class="fa fa-search"></span>
+                            </button>
+                        </form>
+                    </div>
                 </div>
                 {{-- End search well --}}
             </div>
