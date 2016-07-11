@@ -37,6 +37,10 @@ Route::get('/departments/delete/{id}', 'DepartmentController@destroy')->name('de
 Route::post('/departments/create', 'DepartmentController@create')->name('department.store');
 Route::post('/departments/update/{id}', 'DepartmentController@update')->name('department.update');
 
+// Products routing
+// TODO: needs testing
+Route::get('/products', 'ProductsController@index')->name('products.index');
+
 
 // Inbound email routes.
 // TODO: Needs testing.

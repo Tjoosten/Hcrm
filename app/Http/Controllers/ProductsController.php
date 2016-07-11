@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\products;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -22,11 +23,14 @@ class ProductsController extends Controller
     }
 
     /**
+     * Get all the index view for the products.
      *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index()
     {
-        return view('products.index');
+        $data['products'] = products::paginate(15);
+        return view('products.index', $data);
     }
 
     /**
@@ -43,6 +47,11 @@ class ProductsController extends Controller
     public function store()
     {
 
+    }
+
+    public function storeCategory()
+    {
+        
     }
 
     /**
