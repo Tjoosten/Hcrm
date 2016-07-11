@@ -89,3 +89,23 @@ $factory->define(App\FileMessages::class, function (Faker\Generator $faker) {
         'message'   => 'This is a comment message'
     ];
 });
+
+$factory->define(App\productsCategories::class, function (Faker\Generator $faker) {
+    return [
+        'category'    => $faker->word,
+        'description' => $faker->text(200)
+    ];
+});
+
+$factory->define(App\products::class, function (Faker\Generator $faker) {
+    return [
+        'name'             => $faker->word,
+        'category'         => 1,
+        'disk_space'       => '200 MB',
+        'data_traffic'     => '200 MB',
+        'memory'           => '4 GB',
+        'Operating_System' => 'Windows'
+    ];
+});
+
+
