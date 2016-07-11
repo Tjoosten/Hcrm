@@ -7,6 +7,7 @@ use App\TicketTopics;
 use App\Tickets;
 
 use App\InboundMailboxes;
+use App\Customers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests;
@@ -33,8 +34,7 @@ class TicketsController extends Controller
         if (! auth()->user()->can('list tickets')) {
             redirect()->back();
         }
-        
-        $data['tickets'] = Tickets::paginate(10);
+        $data['tickets'] = Tickets::orderBy('id', 'DESC')->paginate(10);
         return view('tickets.index', $data);
     }
 
@@ -49,10 +49,24 @@ class TicketsController extends Controller
         if (! auth()->user()->can('create ticket')) {
             redirect()->back();
         }
-        
+
+        $data["customers"] = Customers::orderBy('name', 'ASC')->get();
         $data['groups'] = TicketGroups::orderBy('name', 'ASC')->get();
         $data['topics'] = TicketTopics::orderBy('name', 'ASC')->get();
         return view('tickets.create', $data);
+    }
+
+    /**
+     * Store the ticket ticket to the database
+     *
+     * @url    POST: /tickets/create
+     * @param  Request $input
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function save(Request $input)
+    {
+        Tickets::create($input->except('_token'));
+        return redirect()->route('tickets.index');
     }
 
     /**
@@ -66,7 +80,7 @@ class TicketsController extends Controller
         if (! auth()->user()->can('list tickets')) {
             redirect()->back();
         }
-        
+
         $userId = auth()->user()->id;
         $data['tickets'] = Tickets::where('assigned_id', $userId)->paginate(15);
 
@@ -85,7 +99,7 @@ class TicketsController extends Controller
         if (! auth()->user()->can('edit ticket')) {
             redirect()->back();
         }
-        
+
         $data['ticket'] = Tickets::findOrFail($id);
         return view('tickets.details', $data);
     }
