@@ -51,8 +51,15 @@ class AccessControlSeeder extends Seeder
 
         Bouncer::allow('Admin')->to($adminAbilities);
 
+        \DB::table('users')->delete();
+
+        $data['name']     = 'Administrator';
+        $data['email']    = 'admin@hcrm.be';
+        $data['password'] = bcrypt('demo123456');
+
+        $user = User::create($data)->id;
+
         \DB::statement('SET FOREIGN_KEY_CHECKS=0;');
-        $user = User::where('email', 'admin@hcrm.be')->get();
         Bouncer::assign('Admin')->to($user);
         \DB::statement('SET FOREIGN_KEY_CHECKS=1;');
 
