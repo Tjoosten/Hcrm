@@ -40,6 +40,7 @@ Route::post('/departments/update/{id}', 'DepartmentController@update')->name('de
 // Products routing
 // TODO: needs testing
 Route::get('/products', 'ProductsController@index')->name('products.index');
+Route::post('/products/category/new', 'ProductsController@storeCategory')->name('category.insert');
 
 
 // Inbound email routes.
