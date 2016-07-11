@@ -50,10 +50,11 @@ class AccessControlSeeder extends Seeder
         ];
 
         Bouncer::allow('Admin')->to($adminAbilities);
-        // $user = User::where('email', 'admin@hcrm.be')->get();
 
-        // if (count($user) === 1) {
-        //    Bouncer::assign('Admin')->to($user);
-        // }
+        \DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+        $user = User::where('email', 'admin@hcrm.be')->get();
+        Bouncer::assign('Admin')->to($user);
+        \DB::statement('SET FOREIGN_KEY_CHECKS=1;');
+
     }
 }
