@@ -65,7 +65,17 @@ class TicketsController extends Controller
      */
     public function save(Request $input)
     {
-        Tickets::create($input->except('_token'));
+        //Tickets::create($input->except('_token'));
+        $ticket = new Tickets;
+        $ticket->customer_id = $input->customer_id;
+        $ticket->assigned_id = '1';        
+        $ticket->status_id   = '1';
+        $ticket->type        = $input->type;
+        $ticket->priority    = 'Low';
+        $ticket->subject     = $input->subject;
+        $ticket->description = $input->message;
+        $ticket->save();
+
         return redirect()->route('tickets.index');
     }
 

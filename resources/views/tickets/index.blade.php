@@ -59,7 +59,7 @@
                 <tbody>
                   @foreach($tickets as $ticket)
                   <tr>
-                    <td><a href="{{url('tickets/details')}}/{!! $ticket->id !!}">{!! $ticket->id !!}</a></td>
+                    <td><a href="{{url('tickets/details')}}/{!! $ticket->id !!}">{!! $ticket["id"] !!}</a></td>
                     <td>{!! $ticket->customer->fname !!} {!! $ticket->customer->name !!}</td>
                     <td>{!! $ticket->type !!}</td>
                     <td><a href="{{url('tickets/details')}}/{!! $ticket->id !!}">{!! $ticket->subject !!}</a></td>

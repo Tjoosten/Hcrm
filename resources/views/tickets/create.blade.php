@@ -6,12 +6,17 @@
 
     <div class="row">
      <div class="col-sm-12 col-xs-12 col-md-12 col-lg-12">
-     <form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
-
+     <form class="form-horizontal" action="{{route('tickets.save')}}" method="post" enctype="multipart/form-data">
+     {{csrf_field()}}
        <div class="form-group formSep">
-        <label for="customer" class="col-md-3 control-label ">Customer <span class="text-danger">*</span>:</label>
+        <label for="customer_id" class="col-md-3 control-label ">Customer <span class="text-danger">*</span>:</label>
         <div class="col-md-6">
-          <input type="text" data-provide="typeahead" class="form-control">
+          <select name="customer_id" class="advanced form-control" id="customer_id">
+           <option value="" selected="selected">-- Please select --</option>
+              @foreach($customers as $customer)
+                 <option value="{{ $customer->id }}"> {{ $customer->name }} {{ $customer->fname }} </option>
+              @endforeach
+          </select>
         </div>
        </div>
 
@@ -19,7 +24,7 @@
         <label for="group" class="col-md-3 control-label ">
         Ticket group <span class="text-danger">*</span></label>
     <div class="col-md-6 ">
-     <select name="group" class="advanced form-control" id="group">
+     <select name="type" class="advanced form-control" id="group">
       <option value="" selected="selected">-- Please select --</option>
          @foreach($groups as $group)
             <option value="{{ $group->name }}"> {{ $group->name }} </option>
