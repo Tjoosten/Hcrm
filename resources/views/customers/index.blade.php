@@ -1,14 +1,18 @@
 @extends('layouts.app')
 @section('content')
 
-<div class="container">
+<div class="container-fluid">
 <div class="row">
 <div class="col-md-12">
+  <div class="page-header">
+      <h2>{{ trans('customers.index') }}</h2>
+  </div>
+
 <a class="btn btn-default" role="button" data-toggle="collapse" href="#search" aria-expanded="false" aria-controls="collapseExample">
   Search customer
 </a>
 
-    <a class="btn btn-default">New Customer.</a>
+    <a href="{{ route('customer.create') }}" class="btn btn-default">New Customer.</a>
 
 <div class="clearfix">&nbsp;</div>
 
@@ -31,7 +35,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="panel panel-default">
-                <div class="panel-heading">customers</div>
+                <div class="panel-heading">{{ trans('customers.index') }}</div>
                 <div class="panel-body">
                 <table class="table table-striped">
                 <thead>

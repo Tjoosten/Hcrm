@@ -462,6 +462,30 @@
          {{ $tickets->render() }}
        </div>
   </div>
+
+    <div id="payments" class="tab-pane fade in">
+      <table class="table table-striped">
+        <thead>
+          <th>Date</th>
+          <th>Amount</th>
+          <th>Payment method</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td>13/7/2016</td>
+            <td>€ 20</td>
+            <td>Bank transfer</td>
+          </tr>
+
+          <tr>
+            <td>13/7/2016</td>
+            <td>€ 20</td>
+            <td>Paypall</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
       </div>
     </div>
   </div>
