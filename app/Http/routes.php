@@ -98,6 +98,10 @@ Route::get('/setup/tickets/topics', 'TicketsController@topics')->name('tickets.t
 Route::get('/setup/tickets/topics/register', 'TicketsController@addTopic')->name('tickets.addtopic');
 Route::post('/setup/tickets/topics/save', 'TicketsController@saveTopic')->name('tickets.savetopic');
 
+Route::get('/setup/servers', 'ServersController@index')->name('servers.index');
+Route::get('/setup/servers/create', 'ServersController@create')->name('servers.create');
+Route::post('/setup/servers/create', 'ServersController@store')->name('servers.save');
+
 
 // API settings routes
 // TODO: Needs testing.
