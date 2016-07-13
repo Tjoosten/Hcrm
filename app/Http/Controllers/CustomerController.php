@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Countries;
 use App\Customers;
+use App\Tickets;
+use App\productsCategories;
+
+
 use App\Jobs\NotifyNewCustomer;
 use App\Jobs\NotifyUpdateCustomer;
 use Illuminate\Foundation\Bus\DispatchesJobs;
@@ -60,7 +64,7 @@ class CustomerController extends Controller
         if (! auth()->user()->can('create customer')) {
             redirect()->back();
         }
-        
+
         $data['countries'] = Countries::all();
         return view('customers.create', $data);
     }
@@ -77,7 +81,7 @@ class CustomerController extends Controller
         if (! auth()->user()->can('create customer')) {
             redirect()->back();
         }
-        
+
         Customers::create($input->except('_token'));
         // $this->dispatch(new NotifyNewCustomer(auth()->user()));
 
@@ -97,8 +101,10 @@ class CustomerController extends Controller
         if (! auth()->user()->can('edit customer')) {
             redirect()->back();
         }
-        
+
         $data['customer']  = Customers::findOrFail($id);
+        $data['tickets']  = Tickets::orderBy('id', 'DESC')->paginate(10);
+        $data['ProductGroups']  = productsCategories::orderBy('category', 'ASC')->get();        
         $data['countries'] = Countries::all();
         return view('customers.update', $data);
     }

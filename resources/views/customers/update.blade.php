@@ -21,6 +21,7 @@
       <li role="presentation"><a href="#invoices" aria-controls="invoices" role="tab" data-toggle="tab">Invoices</a></li>
       <li role="presentation"><a href="#payments" aria-controls="payments" role="tab" data-toggle="tab">Payments</a></li>
       <li role="presentation"><a href="#orders" aria-controls="orders" role="tab" data-toggle="tab">Orders</a></li>
+      <li role="presentation"><a href="#tickets" aria-controls="tickets" role="tab" data-toggle="tab">Tickets</a></li>
 </ul>
 
 
@@ -388,6 +389,78 @@
          </div>
 
      </form>
+  </div>
+
+  <div id="products" class="tab-pane fade in">
+    <form class="form-inline" action="" method="get">
+      <div class="form-group">
+        <label class="control-label">Filter by</label>
+        <select name="group[]" class="form-control">
+          @foreach($ProductGroups as $ProductGroup)
+          <option value="CDN">{!! $ProductGroup["category"] !!}</option>
+          @endforeach
+        </select>
+      </div>
+    </form>
+    <div class="clearfix">&nbsp;</div>
+    <table class="table table-striped">
+     <thead>
+      <tr>
+       <th>Name</th>
+       <th>Description</th>
+       <th>Start date</th>
+       <th>End date</th>
+       <th>Action</th>
+     </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>idevelopment.be</td>
+        <td>Domain names</td>
+        <td>12/07/2016</td>
+        <td>12/07/2016</td>
+        <td>
+          <a href="" data-toggle="tooltip" data-placement="bottom" title="More details"><i class="fa fa-info-circle"></i></a>&nbsp;
+          <a href="" data-toggle="tooltip" data-placement="bottom" title="Cancel"><i class="fa fa-times"></i></a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div id="tickets" class="tab-pane fade in">
+    <div class="table-responsive">
+    <table class="table table-striped table-condensed">
+      <thead>
+        <th>ID</th>
+        <th>{{trans('tickets.requester')}}</th>
+        <th>{{trans('tickets.type')}}</th>
+        <th class="col-xs-4 col-sm-4 col-md-4 col-lg-4">{{trans('tickets.subject')}}</th>
+        <th>{{trans('tickets.priority')}}</th>
+        <th>{{trans('tickets.status')}}</th>
+        <th>{{trans('tickets.created')}}</th>
+        <th>{{trans('tickets.updated')}}</th>
+      </thead>
+      <tbody>
+        @foreach($tickets as $ticket)
+        <tr>
+          <td><a href="{{url('tickets/details')}}/{!! $ticket->id !!}">{!! $ticket->id !!}</a></td>
+          <td>{!! $ticket->customer->fname !!} {!! $ticket->customer->name !!}</td>
+          <td>{!! $ticket->type !!}</td>
+          <td><a href="{{url('tickets/details')}}/{!! $ticket->id !!}">{!! $ticket->subject !!}</a></td>
+
+          <td>{!! $ticket->priority !!}</td>
+          <td>{!! $ticket->status->name !!}</td>
+          <td>{!! $ticket->created_at !!}</td>
+          <td>{!! $ticket->updated_at !!}</td>
+        </tr>
+        @endforeach
+       </tbody>
+     </table>
+   </div>
+     <div class="text-right">
+         {{ $tickets->render() }}
+       </div>
   </div>
       </div>
     </div>
