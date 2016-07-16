@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700">
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{ asset('css/select2.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/jquery.loadmask.css')}}" >
 
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
@@ -22,6 +23,8 @@
 
     <script src="{{ asset('js/bootstrap-editable.js') }}"></script>
     <script src="{{ asset('js/select2/select2.js') }}"></script>
+    <script src="{{ asset('js/jquery.loadmask.js')}}"></script>
+    <script src="{{ asset('js/bootstrap-remote-tabs.js')}}"></script>
 
     <script src="{{ asset('js/jquery.chained.js')}}"></script>
 </head>
