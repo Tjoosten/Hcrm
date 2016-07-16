@@ -62,7 +62,7 @@
                        <li><a href="#">{{ trans('orders.list') }}</a></li>
 
                        <li><a href="#">{{ trans('orders.productGroups') }}</a></li>
-                       <li><a href="#">{{ trans('orders.products') }}</a></li>
+                       <li><a href="{{ route('products.index')}}">{{ trans('orders.products') }}</a></li>
                       </ul>
                     </li>
 
