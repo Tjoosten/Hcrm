@@ -13,15 +13,15 @@
     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Contacts
     <span class="caret"></span></a>
     <ul class="dropdown-menu">
-      <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Customer details</a></li>
-      <li><a href="#">Manage contacts</a></li>
+      <li role="presentation"><a href="#profile"  aria-controls="profile" role="tab" data-toggle="tab">Customer details</a></li>
+      <li role="presentation"><a href="#contacts" aria-controls="contacts" role="tab" data-toggle="tab">Manage contacts</a></li>
     </ul>
   </li>
-      <li role="presentation"><a href="#products" aria-controls="products" role="tab" data-toggle="tab">Products / Services</a></li>
+      <li role="presentation"><a href="#products" aria-controls="products" role="tab" data-toggle="tab">Services</a></li>
       <li role="presentation"><a href="#invoices" aria-controls="invoices" role="tab" data-toggle="tab">Invoices</a></li>
       <li role="presentation"><a href="#payments" aria-controls="payments" role="tab" data-toggle="tab">Payments</a></li>
-      <li role="presentation"><a href="#orders" aria-controls="orders" role="tab" data-toggle="tab">Orders</a></li>
-      <li role="presentation"><a href="#tickets" aria-controls="tickets" role="tab" data-toggle="tab">Tickets</a></li>
+      <li role="presentation"><a href="#orders"   aria-controls="orders"   role="tab" data-toggle="tab">Orders</a></li>
+      <li role="presentation"><a href="#tickets"  aria-controls="tickets"  role="tab" data-toggle="tab">Tickets</a></li>
 </ul>
 
 
@@ -390,6 +390,44 @@
 
      </form>
   </div>
+
+  <div id="contacts" class="tab-pane fade in">
+  <table class="table table-striped">
+   <thead>
+     <th>Type</th>
+     <th>Name</th>
+     <th>Email</th>
+     <th>Phone</th>
+     <th></th>
+   </thead>
+   <tbody>
+     <tr>
+       <td>Administration</td>
+       <td>Glenn Hermans</td>
+       <td><a href="mailto:">demo@hcrm.be</a></td>
+       <td>+32</td>
+       <td><a href="#" data-toggle="tooltip" data-placement="bottom" title="Edit contact"><i class="fa fa-pencil"></i></a></td>
+     </tr>
+
+     <tr>
+       <td>Technical</td>
+       <td>Glenn Hermans</td>
+       <td><a href="mailto:">demo@hcrm.be</a></td>
+       <td>+32</td>
+       <td><a href="#" data-toggle="tooltip" data-placement="bottom" title="Edit contact"><i class="fa fa-pencil"></i></a></td>
+     </tr>
+
+     <tr>
+       <td>Security</td>
+       <td>Glenn Hermans</td>
+       <td><a href="mailto:">demo@hcrm.be</a></td>
+       <td>+32</td>
+       <td><a href="#" data-toggle="tooltip" data-placement="bottom" title="Edit contact"><i class="fa fa-pencil"></i></a></td>
+     </tr>
+   </tbody>
+  </table>
+  </div>
+
 
   <div id="products" class="tab-pane fade in">
     <form class="form-inline" action="" method="get">
