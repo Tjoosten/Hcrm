@@ -12,6 +12,7 @@
 
   <table class="table table-striped">
   <thead>
+    <th>#</th>
       <th>Server name</th>
       <th>Public ip</th>
       <th>Location</th>
@@ -19,12 +20,20 @@
       <th>Actions</th>
   </thead>
   <tbody>
-    <tr>
-      <td><a href="#">IDEV01</a></td>
-      <td><a href="#">dev01.idevelopment.be</a></td>
-      <td>The Netherlands</td>
-      <td class="text-success">Available</td>
-    </tr>
+    @foreach($servers as $server)
+        <tr>
+            <td> #S{!! $server->id !!} </td>
+            <td> {{ $server->name }} </td>
+            <td> {{ $server->public_ip }} </td>
+            <td> {{ $server->location }}</td>
+            <td> {{ $server->location }} </td>
+
+            {{-- Functions --}}
+            <td>
+                <a href="{{ route('server.destroy', ['id' => $server->id]) }}" class="label label-danger">Delete</a>
+            </td>
+        </tr>
+    @endforeach
   </tbody>
 </table>
 

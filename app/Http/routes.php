@@ -82,6 +82,11 @@ Route::get('/customer/update/{id}', 'CustomerController@edit')->name('customer.e
 Route::post('/customer/update/{id}', 'CustomerController@update')->name('customer.update');
 Route::post('/customer/create', 'CustomerController@create')->name('customer.insert');
 
+// Server routes
+Route::get('/servers', 'ServerController@index')->name('server.index');
+Route::get('/servers/destroy/{id}', 'ServerController@destroy')->name('server.destroy');
+Route::get('/servers/create', 'ServerController@register')->name('server.create');
+
 // Tickets routes
 // TODO: Needs testing
 Route::get('/tickets', 'TicketsController@index')->name('tickets.index');
@@ -97,11 +102,6 @@ Route::post('/tickets/quickUpdateTicket/{id}', 'TicketsController@update')->name
 Route::get('/setup/tickets/topics', 'TicketsController@topics')->name('tickets.topics');
 Route::get('/setup/tickets/topics/register', 'TicketsController@addTopic')->name('tickets.addtopic');
 Route::post('/setup/tickets/topics/save', 'TicketsController@saveTopic')->name('tickets.savetopic');
-
-Route::get('/setup/servers', 'ServersController@index')->name('servers.index');
-Route::get('/setup/servers/create', 'ServersController@create')->name('servers.create');
-Route::post('/setup/servers/create', 'ServersController@store')->name('servers.save');
-
 
 // API settings routes
 // TODO: Needs testing.

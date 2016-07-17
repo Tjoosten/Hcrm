@@ -108,4 +108,13 @@ $factory->define(App\products::class, function (Faker\Generator $faker) {
     ];
 });
 
+$factory->define(App\Servers::class, function(Faker\Generator $faker) {
+    return [
+        'name'       => $faker->name,
+        'public_ip'  => $faker->ipv4,
+        'location'   => $faker->locale,
+        'status'     => $faker->name
+    ];
+});
+
 

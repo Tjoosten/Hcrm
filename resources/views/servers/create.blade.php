@@ -10,7 +10,7 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-offset-2 col-sm-10 col-md-10 col-lg-10 col-xs-10">
-      <form action='{{route('servers.save')}}' class="form-horizontal">
+      <form action='' class="form-horizontal">
   <div class="form-group">
     <label for="reference" class="col-sm-2 control-label">Server reference</label>
     <div class="col-sm-6">
