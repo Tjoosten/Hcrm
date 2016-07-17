@@ -102,8 +102,10 @@ class CustomerController extends Controller
             redirect()->back();
         }
 
-        $data['customer']  = Customers::findOrFail($id);
-        $data['tickets']  = Tickets::orderBy('id', 'DESC')->paginate(10);
+        $rels = ['contact'];
+
+        $data['customer']  = Customers::with($rels)->findOrFail($id);
+        $data['tickets']   = Tickets::orderBy('id', 'DESC')->paginate(10);
         $data['ProductGroups']  = productsCategories::orderBy('category', 'ASC')->get();        
         $data['countries'] = Countries::all();
         return view('customers.update', $data);

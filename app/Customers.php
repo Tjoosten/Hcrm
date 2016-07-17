@@ -34,4 +34,14 @@ class Customers extends Model
     {
         return config('crm.tax');
     }
+
+    /**
+     * Customers -> contacts relation.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function contact()
+    {
+        return $this->belongsToMany('App\Contacts')->withTimestamps();
+    }
 }

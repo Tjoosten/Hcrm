@@ -8,21 +8,36 @@
             </div>
 
     <ul class="nav nav-tabs" role="tablist">
-      <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
-      <li class="dropdown">
-    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Contacts
-    <span class="caret"></span></a>
-    <ul class="dropdown-menu">
-      <li role="presentation"><a href="#profile"  aria-controls="profile" role="tab" data-toggle="tab">Customer details</a></li>
-      <li role="presentation"><a href="#contacts" aria-controls="contacts" role="tab" data-toggle="tab">Manage contacts</a></li>
-    </ul>
-  </li>
-      <li role="presentation"><a href="#products" aria-controls="products" role="tab" data-toggle="tab">Services</a></li>
-      <li role="presentation"><a href="#invoices" aria-controls="invoices" role="tab" data-toggle="tab">Invoices</a></li>
+        <li role="presentation" class="active">
+            <a href="#home" aria-controls="home" role="tab" data-toggle="tab">
+                Home
+            </a>
+        </li>
+
+        <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Contacts
+                <span class="caret"></span>
+            </a>
+
+            <ul class="dropdown-menu">
+                <li role="presentation">
+                    <a href="#profile"  aria-controls="profile" role="tab" data-toggle="tab">
+                        Customer details</a>
+                </li>
+                <li role="presentation">
+                    <a href="#contacts" aria-controls="contacts" role="tab" data-toggle="tab">
+                        Manage contacts
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li role="presentation"><a href="#products" aria-controls="products" role="tab" data-toggle="tab">Services</a></li>
+        <li role="presentation"><a href="#invoices" aria-controls="invoices" role="tab" data-toggle="tab">Invoices</a></li>
       <li role="presentation"><a href="#payments" aria-controls="payments" role="tab" data-toggle="tab">Payments</a></li>
       <li role="presentation"><a href="#orders"   aria-controls="orders"   role="tab" data-toggle="tab">Orders</a></li>
       <li role="presentation"><a href="#tickets"  aria-controls="tickets"  role="tab" data-toggle="tab">Tickets</a></li>
-</ul>
+    </ul>
 
 
 <div class="tab-content">
