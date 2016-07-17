@@ -31,4 +31,9 @@ class OrdersController extends Controller
     {
 
     }
+
+    public function deleteOrder()
+    {
+
+    }
 }

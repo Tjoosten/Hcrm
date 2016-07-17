@@ -429,7 +429,6 @@
   </table>
   </div>
 
-
   <div id="products" class="tab-pane fade in">
     <form class="form-inline" action="" method="get">
       <div class="form-group">
