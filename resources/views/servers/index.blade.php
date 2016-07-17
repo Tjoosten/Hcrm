@@ -6,7 +6,7 @@
      <h1>Servers</h1>
   </div>
 
-  <a href="{{ route('servers.create') }}" class="btn btn-primary">Add server</a>
+  <a href="{{ route('server.create') }}" class="btn btn-primary">Add server</a>
 
 <div class="clearfix">&nbsp;</div>
 

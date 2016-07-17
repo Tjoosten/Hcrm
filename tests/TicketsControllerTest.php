@@ -94,6 +94,49 @@ class TicketsControllerTest extends TestCase
     }
 
     /**
+     * POST: /comment/{id}
+     * - without validation errors
+     *
+     * @group all
+     * @group tickets
+     */
+    public function testReplyWithoutErrors()
+    {
+        $user   = factory(App\User::class)->create();
+        $ticket = factory(App\Tickets::class)->create();
+
+        // Input fields
+        $input['comment'] = 'This is a comment';
+
+        // Testing logic
+        $this->actingAs($user)
+            ->seeIsAuthenticatedAs($user)
+            ->post('/comment/' . $ticket->id, $input)
+            ->seeInDatabase('comments', ['comment' => $input['comment'], 'user_id' => $user->id])
+            ->seeInDatabase('comments_tickets', ['tickets_id' => $ticket->id])
+            ->seeStatusCode(302);
+    }
+
+    /**
+     * POST: /comment/{id}
+     * - with validation errors
+     *
+     * @group all
+     * @group tickets
+     */
+    public function testReplyWithErrors()
+    {
+        $user   = factory(App\User::class)->create();
+        $ticket = factory(App\Tickets::class)->create();
+
+        $this->actingAs($user)
+            ->seeIsAuthenticatedAs($user)
+            ->post('/comment/' . $ticket->id, [])
+            ->seeStatusCode(302)
+            ->assertHasOldInput();
+    }
+
+    /**
      * POST: /tickets/quickUpdateTicket/{id}
      * - Has no validation errors
      *

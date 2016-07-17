@@ -107,6 +107,9 @@ Route::post('/setup/tickets/topics/save', 'TicketsController@saveTopic')->name('
 // TODO: Needs testing.
 Route::get('/api/key/logs/{id}', 'AccountController@getApiLogs')->name('account.api.logs');
 
+// ticket comments
+Route::post('/comment/{id}', 'TicketsController@ticketReply')->name('comment.reply');
+
 // Setup routes
 Route::get('/setup', 'SetupController@index')->name('setup.index');
 Route::get('/setup/ticketrouting', 'TicketsController@manageRouting')->name('tickets.routing');

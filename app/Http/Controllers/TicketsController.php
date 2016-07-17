@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Comments;
 use App\TicketGroups;
 use App\TicketTopics;
 use App\Tickets;
@@ -110,7 +111,7 @@ class TicketsController extends Controller
             redirect()->back();
         }
 
-        $data['ticket'] = Tickets::findOrFail($id);
+        $data['ticket'] = Tickets::with('comments')->findOrFail($id);
         return view('tickets.details', $data);
     }
 
@@ -133,13 +134,22 @@ class TicketsController extends Controller
     }
 
     /**
-     * @url    POST: /
+     * @url    POST: /comment/{id}
+     * @param  Requests\TicketComment $input
      * @param  int $id The ticket id in the database.
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function ticketReply($id)
+    public function ticketReply(Requests\TicketComment $input, $id)
     {
-        // TODO build up the logic.
+        // TODO/ Add phpunit test
+        $comment = Comments::create([
+            'comment' => $input->comment,
+            'user_id' => auth()->user()->id
+        ])->id;
+
+        Tickets::find($id)->comments()->attach($comment);
+
+        session()->flash('message', 'comment has been saved');
         return redirect()->back();
     }
 

@@ -49,4 +49,14 @@ class Tickets extends Model
     {
         return $this->belongsTo('App\User');
     }
+
+    /**
+     * Ticket -> comments relation.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function comments()
+    {
+        return $this->belongsToMany('App\Comments')->withTimestamps();
+    }
 }

@@ -117,4 +117,11 @@ $factory->define(App\Servers::class, function(Faker\Generator $faker) {
     ];
 });
 
+$factory->define(App\Comments::class, function(Faker\Generator $faker) {
+    return [
+        'user_id' => 1,
+        'comment' => $faker->words(200)
+    ];
+});
+
 

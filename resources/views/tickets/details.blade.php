@@ -10,7 +10,7 @@
   <div class="col-md-offset-1 col-lg-10">
     <div class="btn-toolbar" role="toolbar" aria-label="...">
      <div class="btn-group" role="group" aria-label="...">
-        <button type="button" class="btn btn-default">{{ trans('tickets.reply') }}</button>
+        <button type="button" data-toggle="modal" data-target="#reply" class="btn btn-default">{{ trans('tickets.reply') }}</button>
         <button type="button" class="btn btn-default" data-toggle="modal" data-target="#responses" data-backdrop="static">{{ trans('tickets.responses') }}</button>
      </div>
      <div class="btn-group" role="group" aria-label="...">
@@ -174,7 +174,6 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title" id="mergeLabel">Merge ticket</h4>
       </div>
-      <form class="form-horizontal">
       <div class="modal-body">
   <div class="form-group">
     <label for="topicGroup" class="col-sm-3 control-label">Topic group</label>
@@ -188,11 +187,35 @@
         <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
         <button type="button" class="btn btn-sm btn-primary">Save changes</button>
       </div>
-    </form>
 
     </div>
   </div>
 </div>
+
+<div class="modal" id="reply" tabindex="-1" role="dialog" aria-labelledby="reply">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="mergeLabel">Reply to this ticket</h4>
+            </div>
+            <form class="form-horizontal" action="{{ url('comment/' . $ticket['id']) }}" method="POST">
+                <div class="modal-body">
+                    {{ csrf_field() }}
+                    <textarea placeholder="Comment" class="form-control" name="comment" cols="30" rows="10"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-sm btn-primary">Save changes</button>
+                    </form>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+
 
 <script>
 $(document).ready(function() {

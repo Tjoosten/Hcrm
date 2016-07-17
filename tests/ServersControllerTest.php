@@ -54,7 +54,7 @@ class ServersControllerTest extends TestCase
         $user = factory(App\User::class)->create();
 
         $this->actingAs($user)
-            ->seeIsAuthenticated($user)
+            ->seeIsAuthenticatedAs($user)
             ->visit('/servers/create')
             ->seeStatusCode(200);
     }
