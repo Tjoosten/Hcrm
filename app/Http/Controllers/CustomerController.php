@@ -142,7 +142,7 @@ class CustomerController extends Controller
     public function destroy($id)
     {
         if (auth()->user()->can('remove customer')) {
-
+            return redirect()->back();
         }
 
         Customers::destroy($id);

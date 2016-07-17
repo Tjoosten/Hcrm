@@ -17,21 +17,33 @@ class OrdersController extends Controller
         $this->middleware('auth');
     }
 
+    /**
+     *
+     */
     public function newOrderView()
     {
         
     }
 
+    /**
+     *
+     */
     public function postNewOrder()
     {
 
     }
 
+    /**
+     *
+     */
     public function allOrders()
     {
 
     }
 
+    /**
+     *
+     */
     public function deleteOrder()
     {
 
