@@ -416,29 +416,15 @@
      <th></th>
    </thead>
    <tbody>
-     <tr>
-       <td>Administration</td>
-       <td>Glenn Hermans</td>
-       <td><a href="mailto:">demo@hcrm.be</a></td>
-       <td>+32</td>
-       <td><a href="#" data-toggle="tooltip" data-placement="bottom" title="Edit contact"><i class="fa fa-pencil"></i></a></td>
-     </tr>
-
-     <tr>
-       <td>Technical</td>
-       <td>Glenn Hermans</td>
-       <td><a href="mailto:">demo@hcrm.be</a></td>
-       <td>+32</td>
-       <td><a href="#" data-toggle="tooltip" data-placement="bottom" title="Edit contact"><i class="fa fa-pencil"></i></a></td>
-     </tr>
-
-     <tr>
-       <td>Security</td>
-       <td>Glenn Hermans</td>
-       <td><a href="mailto:">demo@hcrm.be</a></td>
-       <td>+32</td>
-       <td><a href="#" data-toggle="tooltip" data-placement="bottom" title="Edit contact"><i class="fa fa-pencil"></i></a></td>
-     </tr>
+     @foreach($customer->contact() as $contact)
+         <tr>
+             <td> {type} </td>
+             <td> {{ $contact->fname }} {{ $contact->name }} </td>
+             <td> {{ $contact->phone }} </td>
+             <td> <a href="#" data-toggle="tooltip" data-placement="bottom" title="Edit contact"><i class="fa fa-pencil"></i></a> </td>
+             </td>
+         </tr>
+     @endforeach
    </tbody>
   </table>
   </div>
