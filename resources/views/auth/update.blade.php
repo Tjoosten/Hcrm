@@ -214,7 +214,7 @@
                                             <th>Topic:</th>
                                             <th>Topic group:</th>
                                             <th>Message:</th>
-                                            <th>Actions</th>
+                                            <th>Actions:</th>
                                         </tr>
                                     </thead>
                                     <tbody>

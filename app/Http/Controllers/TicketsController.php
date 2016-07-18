@@ -252,13 +252,14 @@ class TicketsController extends Controller
      */
     public function destroy($id)
     {
+        // TODO: build phpunit test.
+
         if (! auth()->user()->can('remove ticket')) {
             redirect()->back();
         }
 
-        // TODO: build phpunit test.
-        // TODO: Build controller logic.
-
+        Tickets::destroy($id);
+        session()->flash('message', 'Ticket has been closed');
         return redirect()->back();
     }
 }

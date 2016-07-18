@@ -25,6 +25,25 @@ class TicketsControllerTest extends TestCase
     }
 
     /**
+     * GET: /tickets/destroy/{id}
+     *
+     * @group all
+     * @group tickets
+     */
+    public function testTicketDestroy()
+    {
+        $user   = factory(App\User::class)->create();
+        $ticket = factory(App\Tickets::class)->create();
+
+        $this->actingAs($user)
+            ->seeIsAuthenticatedAs($user)
+            ->seeInDatabase('tickets', ['id' => $ticket->id])
+            ->visit('/tickets/destroy/' . $ticket->id)
+            ->dontSeeInDatabase('tickets', ['id' => $ticket->id])
+            ->seeStatusCode(200);
+    }
+
+    /**
      * GET: /tickets/create
      *
      * @group all
