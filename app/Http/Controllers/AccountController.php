@@ -44,6 +44,8 @@ class AccountController extends Controller
             $selector = 'security';
         } elseif($tab == 'api') {
             $selector = 'api';
+        } elseif($tab == 'canned') {
+            $selector = 'canned';
         } else {
             $selector = 'info';
         }

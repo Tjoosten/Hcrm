@@ -128,6 +128,7 @@ class TicketsController extends Controller
         $ticket = Tickets::findOrFail($id);
         $name  = $request->get('name');
         $value = $request->get('value');
+
         $ticket->$name = $value;
         $ticket->save();
         return  redirect()->back();

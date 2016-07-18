@@ -39,7 +39,7 @@ class ProductsController extends Controller
      */
     public function register()
     {
-
+        return view();
     }
 
     /**
