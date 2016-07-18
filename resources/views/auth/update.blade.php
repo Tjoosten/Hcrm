@@ -17,6 +17,10 @@
                         <a href="#api" class="@if($tab == 'api') active @endif list-group-item" aria-controls="api" role="tab" data-toggle="tab">
                             API
                         </a>
+
+                        <a href="#canned" class="@if($tab == 'canned') active @endif list-group-item" aria-controls="canned" role="tab" data-toggle="tab">
+                            Canned responses
+                        </a>
                     </div>
                 </div>
             </div>
@@ -190,6 +194,37 @@
 
                     </div>
                     {{-- END API tab --}}
+
+                    {{-- Canned responses tab --}}
+                    <div role="tabpanel" class="tab-pane fade in @if($tab == 'canned') active @endif" id="canned">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                Canned responses
+                                <span class="pull-right">
+                                    <span class="label label-success">
+                                        Add response
+                                    </span>
+                                </span>
+                            </div>
+
+                            <div class="panel-body">
+                                <table class="table table-condensed table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Topic:</th>
+                                            <th>Topic group:</th>
+                                            <th>Message:</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    {{-- End canned responses tab --}}
 
                 </div>
                 {{-- END tabs --}}
