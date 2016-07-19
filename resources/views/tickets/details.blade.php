@@ -16,9 +16,13 @@
      <div class="btn-group" role="group" aria-label="...">
        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#merge" data-backdrop="static">{{ trans('tickets.merge') }}</button>
      </div>
-     <div class="btn-group" role="group" aria-label="...">
-      <a href="{!! route('tickets.destroy', ['id' => $ticket['id']]) !!}" class="btn btn-danger">{{ trans('tickets.close') }}</a>
-    </div>
+        <div class="btn-group" role="group" aria-label="...">
+     @if($ticket['is_closed'] === 0)
+                <a href="{!! route('tickets.destroy', ['id' => $ticket['id']]) !!}" class="btn btn-danger">{{ trans('tickets.close') }}</a>
+         @else
+                <a href="{{ route('tickets.reopen', ['id' => $ticket['id']])  }}" class="btn btn-success">Reopen</a>
+        @endif
+        </div>
     </div>
   </div>
  </div>

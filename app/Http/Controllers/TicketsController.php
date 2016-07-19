@@ -35,7 +35,7 @@ class TicketsController extends Controller
         if (! auth()->user()->can('list tickets')) {
             redirect()->back();
         }
-        $data['tickets'] = Tickets::orderBy('id', 'DESC')->paginate(10);
+        $data['tickets'] = Tickets::OrderBy('id', 'DESC')->paginate(10);
         return view('tickets.index', $data);
     }
 
@@ -247,6 +247,7 @@ class TicketsController extends Controller
     /**
      * Remove a ticket
      *
+     * @url    /tickets/destroy/{id
      * @param  int $id The ticket id in the database.
      * @return \Illuminate\Http\RedirectResponse
      */
@@ -258,8 +259,28 @@ class TicketsController extends Controller
             redirect()->back();
         }
 
-        Tickets::destroy($id);
+        Tickets::where('id', $id)->update(['is_closed' => 1]);
+
         session()->flash('message', 'Ticket has been closed');
+        return redirect()->back();
+    }
+
+    /**
+     * Re-open a ticket
+     *
+     * @url  /tickets/reopen/{id}
+     * @param  int $id The ticket id in the database.
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function reopen($id)
+    {
+        if (! auth()->user()->can('remove ticket')) {
+            redirect()->back();
+        }
+
+        Tickets::where('id', $id)->update(['is_closed' => 0]);
+
+        session()->flash('message', 'The ticket has been reopen');
         return redirect()->back();
     }
 }

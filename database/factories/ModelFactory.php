@@ -70,7 +70,9 @@ $factory->define(App\Tickets::class, function (Faker\Generator $faker) {
         'type'        => 'Technical',
         'priority'    => 'High',
         'subject'     => 'Support ticket',
-        'description' => 'This is a description'
+        'description' => 'This is a description',
+        'deleted_at'  => '',
+        'is_closed'   => '1'
     ];
 });
 

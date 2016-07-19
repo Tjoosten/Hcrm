@@ -96,6 +96,7 @@ Route::post('/tickets/create', 'TicketsController@save')->name('tickets.save');
 Route::get('/tickets/destroy/{id}', 'TicketsController@destroy')->name('tickets.destroy');
 Route::get('/tickets/assigned', 'TicketsController@assigned')->name('tickets.assigned');
 Route::get('/tickets/details/{id}', 'TicketsController@details')->name('tickets.details');
+Route::get('/tickets/reopen/{id}', 'TicketsController@reopen')->name('tickets.reopen');
 // Route::post('/tickets/quickUpdateTicket', 'TicketsController@update')->name('tickets.update');
 Route::post('/tickets/quickUpdateTicket/{id}', 'TicketsController@update')->name('tickets.qupdate');
 

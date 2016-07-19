@@ -21,6 +21,8 @@ class CreateTicketsTable extends Migration
             $table->string('priority');
             $table->string('subject');
             $table->string('description');
+            $table->integer('is_closed');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
