@@ -111,7 +111,7 @@ class TicketsController extends Controller
             redirect()->back();
         }
 
-        $data['ticket'] = Tickets::with('comments')->findOrFail($id);
+        $data['ticket'] = Tickets::with('comments.user')->findOrFail($id);
         return view('tickets.details', $data);
     }
 
