@@ -15,8 +15,8 @@
   border: 1px solid #ccc;
   border: 1px solid rgba(0, 0, 0, .15);
   border-radius: 4px;
-  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+  -webkit-box-shadow: 0 6px 12px $black2;
+  box-shadow: 0 6px 12px $black2;
   background-clip: padding-box;
 }
 
@@ -103,7 +103,7 @@
   .anchor-block small {
     display: block;
     font-weight: normal;
-    color: #777;
+    color: $gray;
   }
   .dropdown-menu > li > a.anchor-block {
     padding-top: 6px;
@@ -147,7 +147,7 @@
   text-align: right;
   max-width: 60px;
   right: 20px;
-  color: #777;
+  color: $gray;
   overflow: hidden;
   white-space: nowrap;
   word-wrap: normal;
@@ -197,18 +197,18 @@ small.dropmenu-item-content {
 .dropdown-inverse .dropdown-menu > .active > a,
 .dropdown-inverse .dropdown-menu > .active > a:hover,
 .dropdown-inverse .dropdown-menu > .active > a:focus {
-  color: $white;
   background-color: #337ab7;
+  color: $white;
 }
 
 .dropdown-inverse .dropdown-menu > .disabled > a,
 .dropdown-inverse .dropdown-menu > .disabled > a:hover,
 .dropdown-inverse .dropdown-menu > .disabled > a:focus {
-  color: #777;
+  color: $gray;
 }
 
 .dropdown-inverse .dropdown-header {
-  color: #777;
+  color: $gray;
 }
 
 .table > thead > tr > th.col-actions {
@@ -217,7 +217,7 @@ small.dropmenu-item-content {
 }
 
 .table > thead > tr > th.col-actions .dropdown-toggle {
-  color: #777;
+  color: $gray;
 }
 
 .notifications {
@@ -229,8 +229,13 @@ small.dropmenu-item-content {
   display: block;
   padding: 9.6px 12px;
   border-bottom: 1px solid #eee;
-  color: #333333;
+  color: #333;
   text-decoration: none;
+
+  // .notification.active
+  &.active {
+    background-color: #f4f4f4;
+  }
 }
 
 .notification:last-child {
@@ -240,10 +245,6 @@ small.dropmenu-item-content {
 .notification:hover,
 .notification.active:hover {
   background-color: #f9f9f9;
-}
-
-.notification.active {
-  background-color: #f4f4f4;
 }
 
 .notification-title {
@@ -256,7 +257,7 @@ small.dropmenu-item-content {
 }
 
 .notification-meta {
-  color: #777;
+  color: $gray;
 }
 
 a.notification:hover {
