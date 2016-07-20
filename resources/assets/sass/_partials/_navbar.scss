@@ -1,39 +1,71 @@
-.navbar-fixed-top {min-height:40px}
+.navbar-fixed-top {
+  min-height: 40px;
+}
 
-/* header */
+// header
 .navbar .brand {
   width: 200px;
-  padding-bottom:0;
-  padding-top:0;
+  padding-bottom: 0;
+  padding-top: 0;
   font: 100 18px/38px 'PT Sans', sans-serif;
-  text-decoration:none;
+  text-decoration: none;
   color: $navbarText;
-  text-shadow:none
+  text-shadow: none;
 }
-.navbar .nav > li > a {text-shadow:none;padding:10px 10px 9px}
+
+.navbar .nav > li > a {
+  text-shadow: none;
+  padding: 10px 10px 9px;
+}
+
 .navbar .nav li.dropdown.open > .dropdown-toggle,
 .navbar .nav li.dropdown.active > .dropdown-toggle,
-.navbar .nav li.dropdown.open.active > .dropdown-toggle{background:none; color:$navbarText;}
-.navbar-inner {  background: $navbarBackground; color: $navbarText;}
+.navbar .nav li.dropdown.open.active > .dropdown-toggle {
+  background: none;
+  color: $navbarText;
+}
 
-/* link */
-.navbar-default .navbar-nav > li > a
- {
-   color: $navbarText;
-   text-shadow:none;padding:10px 10px 9px;
- }
-.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus
- {
-   color: $navbarLinkActive;
- }
+.navbar-inner {
+  background: $navbarBackground;
+  color: $navbarText;
+}
+
+// link
+.navbar-default .navbar-nav > li > a {
+  color: $navbarText;
+  text-shadow: none;
+  padding: 10px 10px 9px;
+}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: $navbarLinkActive;
+}
+
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
-.navbar-default .navbar-nav > .active > a:focus {color: $navbarText; background-color: $navbarLinkActive;}
+.navbar-default .navbar-nav > .active > a:focus {
+  color: $navbarText;
+  background-color: $navbarLinkActive;
+}
 
 .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .open > a:hover,
-.navbar-default .navbar-nav > .open > a:focus {color: $navbarText; background-color: $navbarLinkActive;}
+.navbar-default .navbar-nav > .open > a:focus {
+  color: $navbarText;
+  background-color: $navbarLinkActive;
+}
 
-.navbar .dropdown-notifications .extra_menu .dropdown-menu {left:0 !important;right:auto !important}
-.navbar .dropdown-notifications .extra_menu .dropdown-menu:after {left:10px !important;right:auto !important}
-.navbar .dropdown-notifications .extra_menu .dropdown-menu:before {left:9px !important;right:auto !important}
+.navbar .dropdown-notifications .extra_menu .dropdown-menu {
+  left: 0 !important;
+  right: auto !important;
+}
+
+.navbar .dropdown-notifications .extra_menu .dropdown-menu:after {
+  left: 10px !important;
+  right: auto !important;
+}
+
+.navbar .dropdown-notifications .extra_menu .dropdown-menu:before {
+  left: 9px !important;
+  right: auto !important;
+}

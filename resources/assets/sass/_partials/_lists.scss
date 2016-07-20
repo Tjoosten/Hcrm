@@ -1,43 +1,43 @@
-.input-group-addon
- {
-   background-color: #fff;
-   border: 0px;
- }
-
-.list-group-item.active, .list-group-item.active:hover
-{
-  background-color: #5c778a;
-  border-color: #5c778a;
-}
-.dl-horizontal dt{
-text-align: left;
-padding-right: 2em;
-
+.input-group-addon {
+  background-color: $white;
+  border: 0;
 }
 
-.dl-horizontal dd{
-margin-left: 0;
-margin-bottom:12px;
-padding-bottom:12px;
-border-bottom:1px dashed #dcdcdc;
+.list-group-item.active,
+.list-group-item.active:hover {
+  background-color: $primary-button;
+  border-color: $primary-button;
 }
 
-.splitScreen{
-  width: 1px;
+.dl-horizontal dt {
+  padding-right: 2em;
+  text-align: left;
+}
+
+.dl-horizontal dd {
+  border-bottom: 1px dashed $list-gray;
+  margin-bottom: 12px;
+  margin-left: 0;
+  padding-bottom: 12px;
+}
+
+// TODO: set .splitScreen to .split-screen
+.splitScreen {
+  border-bottom: 1px dashed $list-gray;
   min-height: 70px;
-  border-bottom:1px dashed #dcdcdc;
+  width: 1px;
 }
 
-.ticketDetails
-{
-list-style-type: none;
-}
+// TODO: set .ticketDetails to .ticket-details
+.ticketDetails {
+  list-style-type: none;
 
-.ticketDetails li
-{
-padding-left: 0;
-margin-left: 0;
-margin-bottom:12px;
-padding-bottom:12px;
-border-bottom:1px dashed #dcdcdc;
+  // .ticketDetails li
+  li {
+    border-bottom: 1px dashed $list-gray;
+    margin-bottom: 12px;
+    margin-left: 0;
+    padding-bottom: 12px;
+    padding-left: 0;
+  }
 }
