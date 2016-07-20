@@ -59,6 +59,17 @@ class Tickets extends Model
         return $this->belongsTo('App\User');
     }
 
+
+    /**
+     * Get the user data for each comment.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function user()
+    {
+        return $this->belongsTo('App\User', 'id', 'user_id');
+    }
+
     /**
      * Ticket -> comments relation.
      *
