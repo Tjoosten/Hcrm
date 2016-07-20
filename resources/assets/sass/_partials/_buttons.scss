@@ -1,16 +1,19 @@
 .btn-primary,
-.btn-primary:hover, .btn-primary:focus,
-.btn-primary:active, .btn-primary.active,
-.open .dropdown-toggle.btn-primary
- {
-   background-color: $primaryButton;
-   border-color: $primaryButton;
- }
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.open .dropdown-toggle.btn-primary {
+  background-color: $primary-button;
+  border-color: $primary-button;
+}
 
-.btn-success, .btn-success:hover,
-.btn-success:focus, .btn-success:active,
-.btn-success.active, .open .dropdown-toggle .btn-primary
- {
-   background-color: $successButton;
-   border-color: $successButton;
- }
+.btn-success,
+.btn-success:hover,
+.btn-success:focus,
+.btn-success:active,
+.btn-success.active,
+.open .dropdown-toggle .btn-primary {
+  background-color: $success-button;
+  border-color: $success-button;
+}
