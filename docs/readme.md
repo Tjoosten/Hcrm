@@ -4,6 +4,7 @@
 
 - [Using GulpJS](Gulpjs.md)
 - [Using Homestead](homestead.md)
+- [Using Valet](Valet.md)
 
 ### API
 
