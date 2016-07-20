@@ -159,17 +159,24 @@
   }
 }
 
-
 @media (min-width: 1440px) {
   body {
     max-width: 1440px;
-    margin: 0 auto !important; }
+    margin: 0 auto !important;
+  }
+
   header .container-fluid, header .container {
     max-width: 1440px;
-    margin: 30 auto; }
+    margin: 30 auto;
+  }
+
   #maincontainer {
     border-right: 1px solid #ccc;
     border-left: 1px solid #ccc;
-    background-color: #fff; }
+    background-color: #fff;
+  }
+
   .main_content {
-    border-left: none; } }
+    border-left: 0;
+  }
+}
