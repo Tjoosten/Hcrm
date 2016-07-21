@@ -58,6 +58,7 @@ Route::post('/account/api/newKey', 'AccountController@createApiKey')->name('acco
 Route::post('/account/update/information', 'AccountController@updateAccountInformation')->name('account.update.info');
 
 // Dedicated servers routes
+// TODO: Needs testing.
 Route::get('/dedicatedservers',  'DedicatedServersController@index')->name('dedicatedservers.index');
 Route::get('/dedicatedservers/register',  'DedicatedServersController@register')->name('dedicatedservers.register');
 Route::post('/dedicatedservers/save', 'DedicatedServersController@store')->name('dedicatedservers.store');
