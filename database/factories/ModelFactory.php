@@ -20,6 +20,25 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
     ];
 });
 
+$factory->define(App\DedicatedServers::class, function (Faker\Generator $faker) {
+    return [
+        'customer_id'    => 1,
+        'server_name'    => $faker->name,
+        'reference'      => $faker->text(200),
+        'status'         => 'running',
+        'provider'       => 'leaseweb',
+        'provider_id'    => 1,
+        'location'       => 'brussel',
+        'diskspace'      => '5GB',
+        'traffic'        => '1GB',
+        'start_date'     => $faker->dateTimeThisMonth,
+        'end_date'       => $faker->dateTime,
+        'sla'            => '90% up',
+        'vendor'         => 'vendor name',
+        'vendor_product' => 'product name'
+    ];
+});
+
 $factory->define(App\ContactTypes::class, function (Faker\Generator $faker) {
     return ['name' => $faker->name];
 });

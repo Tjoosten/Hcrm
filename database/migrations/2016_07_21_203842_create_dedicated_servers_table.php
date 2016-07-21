@@ -30,6 +30,15 @@ class CreateDedicatedServersTable extends Migration
             $table->string('vendor_product');
             $table->timestamps();
         });
+
+        Schema::create('customers_dedicated_servers', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('customers_id')->unsigned()->index();
+            $table->foreign('customers_id')->references('id')->on('customers')->onDelete('cascade');
+            $table->integer('dedicated_servers_id')->unsigned()->index();
+            $table->foreign('dedicated_servers_id')->references('id')->on('dedicated_servers')->onDelete('cascade');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -40,5 +49,6 @@ class CreateDedicatedServersTable extends Migration
     public function down()
     {
         Schema::drop('dedicated_servers');
+        Schema::drop('customers_dedicated_servers');
     }
 }

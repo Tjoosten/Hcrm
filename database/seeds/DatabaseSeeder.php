@@ -14,7 +14,7 @@ class DatabaseSeeder extends Seeder
         $this->call(StatusTableSeeder::class);
         $this->call(UsersTableSeeder::class);
         $this->call(CountrySeeder::class);
-        $this->call(NotificationSeed::class);
+        //$this->call(NotificationSeed::class);
         $this->call(TicketsSeeder::class);
         $this->call(AccessControlSeeder::class);
         $this->call(TicketGroupSeeder::class);
@@ -23,6 +23,7 @@ class DatabaseSeeder extends Seeder
 
         if (env('APP_ENV') === 'testing' || env('APP_ENV') === 'local' || env('APP_DEBUG') === 'true' ) {
             // For testing propose
+            factory(App\DedicatedServers::class)->create();
             factory(App\Customers::class)->create();
             factory(App\Departments::class)->create();
             factory(App\Knowledge::class)->create();
