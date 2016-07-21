@@ -7,7 +7,6 @@
  <div class="page-header">
       <h1>Dedicated servers</h1>
     </div>
-    <input type="hidden" name="operation" value="and">
     <div class="row">
       <div class="col-sm-6">
         <div class="row">
