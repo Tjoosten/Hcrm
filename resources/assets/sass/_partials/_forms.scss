@@ -1,11 +1,10 @@
-.form-horizontal .control-label
- {
-   text-align:left;
- }
- 
-.form-horizontal .formSep
- {
-   margin-bottom:12px;
-   padding-bottom:12px;
-   border-bottom:1px dashed #dcdcdc;
- }
+.form-horizontal .control-label {
+  text-align: left;
+}
+
+// TODO: set .formSep to .form-sep
+.form-horizontal .formSep {
+  border-bottom: 1px dashed $list-gray;
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+}

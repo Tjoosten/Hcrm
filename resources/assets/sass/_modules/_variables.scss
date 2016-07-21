@@ -1,16 +1,25 @@
 // Color palette
+// TODO: Phase out camelcased variable names.
 $primary:            gray;
 $secondary:          #dd4b39;
 $white:              #fff;
-
+$black:              rgba(0, 0, 0, .176);
+$black2:             rgba(0, 0, 0, .175);
+$gray-typography:    #999;
 $bodyBackground:     #efefef;
 $contentBackground:  #fff;
+$panel-white:        #f1f1f1;
 
-$primaryButton:      #5c778a;
-$successButton:      #346E5A;
+$primaryButton:      #5c778a; // phase-out
+$successButton:      #346e5a; // phase-out
+
+$primary-button:     #5c778a;
+$success-button:     #346e5a;
 
 $navbarBackground:   #45484d;
 $navbarText:         #fff;
 $navbarLinkActive:   #e1e1e1;
 
 $panel-default-color: #fff;
+$gray:                #777;
+$list-gray:           #dcdcdc;
