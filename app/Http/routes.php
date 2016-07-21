@@ -13,6 +13,8 @@
 
 // API ROUTES.
 Route::group(['prefix' => 'api/v1'], function () {
+    Route::resource('department', 'ApiV1\DepartmentsController', ['except' => ['edit', 'create']]);
+
     Route::get('customers', 'ApiCustomerController@index');
     Route::get('customers/{id}', 'ApiCustomerController@show');
     Route::put('customers/{id}', 'ApiCustomerController@update');
