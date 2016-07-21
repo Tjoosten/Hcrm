@@ -106,8 +106,11 @@ class CustomerController extends Controller
 
         $data['customer']  = Customers::with($rels)->findOrFail($id);
         $data['tickets']   = Tickets::orderBy('id', 'DESC')->paginate(10);
-        $data['ProductGroups']  = productsCategories::orderBy('category', 'ASC')->get();        
         $data['countries'] = Countries::all();
+
+        // TODO: Implement filter.
+        $data['ProductGroups']  = productsCategories::orderBy('category', 'ASC')->get();
+
         return view('customers.update', $data);
     }
 

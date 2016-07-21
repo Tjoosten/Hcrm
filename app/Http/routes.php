@@ -13,6 +13,8 @@
 
 // API ROUTES.
 Route::group(['prefix' => 'api/v1'], function () {
+    Route::resource('department', 'ApiV1\DepartmentsController', ['except' => ['edit', 'create']]);
+
     Route::get('customers', 'ApiCustomerController@index');
     Route::get('customers/{id}', 'ApiCustomerController@show');
     Route::put('customers/{id}', 'ApiCustomerController@update');
@@ -58,6 +60,7 @@ Route::post('/account/api/newKey', 'AccountController@createApiKey')->name('acco
 Route::post('/account/update/information', 'AccountController@updateAccountInformation')->name('account.update.info');
 
 // Dedicated servers routes
+// TODO: Needs testing.
 Route::get('/dedicatedservers',  'DedicatedServersController@index')->name('dedicatedservers.index');
 Route::get('/dedicatedservers/register',  'DedicatedServersController@register')->name('dedicatedservers.register');
 Route::post('/dedicatedservers/save', 'DedicatedServersController@store')->name('dedicatedservers.store');

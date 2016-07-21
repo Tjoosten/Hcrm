@@ -15,6 +15,8 @@ class CustomerTransformer extends TransformerAbstract
      */
     public function transform(Customers $customer)
     {
+        // TODO: Implement departments relation. -> Create GH issue
+
         return [
             'id'      => (int)    $customer->id,
             'vat'     => (string) $customer->vat,
