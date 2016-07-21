@@ -8,4 +8,4 @@
 
 ### API
 
-- [API authencation](api-authentication.md)
+- [API authentication](api-authentication.md)
