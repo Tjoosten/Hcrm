@@ -7,11 +7,11 @@ in external platform(s)
 
 You can simply create a token following thse steps. 
 
-1) Login in the crm. 
-2) Click on your username. 
-3) Select account configuration & tab API . 
-4) Fill in the form. 
-5) You are done!
+1. Login in the crm. 
+2. Click on your username. 
+3. Select account configuration & tab API . 
+4. Fill in the form. 
+5. You are done!
 
 ## Request authentication `(Curl)`
 
