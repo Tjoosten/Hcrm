@@ -57,6 +57,14 @@ Route::post('/account/update/password', 'AccountController@updateAccountSecurity
 Route::post('/account/api/newKey', 'AccountController@createApiKey')->name('account.create.api');
 Route::post('/account/update/information', 'AccountController@updateAccountInformation')->name('account.update.info');
 
+// Dedicated servers routes
+Route::get('/dedicatedservers',  'DedicatedServersController@index')->name('dedicatedservers.index');
+Route::get('/dedicatedservers/register',  'DedicatedServersController@register')->name('dedicatedservers.register');
+Route::post('/dedicatedservers/save', 'DedicatedServersController@store')->name('dedicatedservers.store');
+Route::get('/dedicatedservers/destroy/{id}', 'DedicatedServersController@destroy')->name('dedicatedservers.destroy');
+
+
+
 // Staff routes
 Route::get('/setup/staff',  'StaffController@index')->name('staff.index');
 Route::get('/staff/create',  'StaffController@register')->name('staff.register');
