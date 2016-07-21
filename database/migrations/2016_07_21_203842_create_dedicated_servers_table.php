@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Support\Facades\DB;
 
 class CreateDedicatedServersTable extends Migration
 {
@@ -48,7 +49,9 @@ class CreateDedicatedServersTable extends Migration
      */
     public function down()
     {
+        DB::statement('SET FOREIGN_KEY_CHECKS = 0');
         Schema::drop('dedicated_servers');
         Schema::drop('customers_dedicated_servers');
+        DB::statement('SET FOREIGN_KEY_CHECKS = 1');
     }
 }

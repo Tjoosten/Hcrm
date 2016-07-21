@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Support\Facades\DB;
 
 class CreateTicketsTable extends Migration
 {
@@ -34,6 +35,8 @@ class CreateTicketsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('tickets');
+        DB::statement('SET FOREIGN_KEY_CHECKS = 0');
+        Schema::dropIfExists('tickets');
+        DB::statement('SET FOREIGN_KEY_CHECKS = 1');
     }
 }

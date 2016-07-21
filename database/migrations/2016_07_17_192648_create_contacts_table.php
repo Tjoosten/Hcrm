@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Support\Facades\DB;
 
 class CreateContactsTable extends Migration
 {
@@ -54,8 +55,10 @@ class CreateContactsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('contacts');
-        Schema::drop('contacts_contact_types');
-        Schema::drop('customers_contacts');
+        DB::statement('SET FOREIGN_KEY_CHECKS = 0');
+        Schema::dropIfExists('contacts');
+        Schema::dropIfExists('contacts_contact_types');
+        Schema::dropIfExists('contacts_customers');
+        DB::statement('SET FOREIGN_KEY_CHECKS = 1');
     }
 }

@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Support\Facades\DB;
 
 class CreateCommentsTable extends Migration
 {
@@ -39,6 +40,9 @@ class CreateCommentsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('comments');
+        DB::statement('SET FOREIGN_KEY_CHECKS = 0');
+        Schema::dropIfExists('comments');
+        Schema::dropIfExists('comments_tickets');
+        DB::statement('SET FOREIGN_KEY_CHECKS = 1');
     }
 }
