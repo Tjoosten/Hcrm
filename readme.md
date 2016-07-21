@@ -1,6 +1,7 @@
 # HCRM
 
 [![Build Status](https://travis-ci.org/idevelopment/Hcrm.svg?branch=development)](https://travis-ci.org/idevelopment/Hcrm)
+[![devDependency Status](https://david-dm.org/idevelopment/Hcrm/dev-status.svg)](https://david-dm.org/idevelopment/Hcrm#info=devDependencies)
 
 is a a complete solution for web hosts, HCRM provides everything to sell web hosting and related services.
 
