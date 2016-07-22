@@ -6,12 +6,15 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
+/**
+ * Class DedicatedServersController
+ * @package App\Http\Controllers
+ */
 class DedicatedServersController extends Controller
 {
     /**
      * DedicatedServersController constructor.
      */
-
     public function __construct()
     {
         $this->middleware('auth');
@@ -44,12 +47,23 @@ class DedicatedServersController extends Controller
      * Save the dedicated server data to the database.
      *
      * @url    POST: /dedicatedservers/save
-     * @param  Requests\DepartmentValidator $input
      * @return \Illuminate\Http\RedirectResponse
      */
     public function store()
     {
 
+    }
+
+    /**
+     * Delete a dedicated server.
+     *
+     * @url    TODO: Set thev url.
+     * @param  int $id The id from the server in the database.
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function destroy($id)
+    {
+        return redirect()->back();
     }
             
 }
