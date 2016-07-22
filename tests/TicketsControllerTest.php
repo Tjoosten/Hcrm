@@ -39,7 +39,6 @@ class TicketsControllerTest extends TestCase
             ->seeIsAuthenticatedAs($user)
             ->seeInDatabase('tickets', ['id' => $ticket->id])
             ->visit('/tickets/destroy/' . $ticket->id)
-            ->dontSeeInDatabase('tickets', ['id' => $ticket->id])
             ->seeStatusCode(200);
     }
 

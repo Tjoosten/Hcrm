@@ -1,0 +1,16 @@
+exclude:
+  - 'resources/assets/sass/_partials/_x-editable.scss'
+  - 'node_modules/**'
+
+linters:
+  VendorPrefix:
+    enabled: false
+
+  IdSelector:
+    enabled: false
+
+  ImportantRule:
+    enabled: false
+
+  SelectorFormat:
+    enabled: false
