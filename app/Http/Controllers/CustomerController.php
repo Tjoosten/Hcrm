@@ -85,7 +85,7 @@ class CustomerController extends Controller
         Customers::create($input->except('_token'));
         // $this->dispatch(new NotifyNewCustomer(auth()->user()));
 
-        session()->flash('message', 'The customer has been created');
+        session()->flash('message', trans('customers.webNewCustomer'));
         return redirect()->back();
     }
 
@@ -131,7 +131,7 @@ class CustomerController extends Controller
         Customers::find($id)->update($input->except('_token'));
         // $this->dispatch(new NotifyUpdateCustomer(auth()->user()));
 
-        session()->flash('message', 'The Customer has been updated');
+        session()->flash('message', trans('customers.webUpdateCustomer'));
         return redirect()->back();
     }
 
@@ -149,7 +149,7 @@ class CustomerController extends Controller
         }
 
         Customers::destroy($id);
-        session()->flash('message', 'customer has been deleted');
+        session()->flash('message', trans('customers.webDestroyCustomer'));
         return redirect()->back();
     }
 }

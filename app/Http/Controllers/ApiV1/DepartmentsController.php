@@ -65,7 +65,7 @@ class DepartmentsController extends ApiGuardController
         }
 
         if (Departments::create($input->all())) {
-            return $this->response->withArray('Department has been added');
+            return $this->response->withArray(trans('departments.apiCreate'));
         } else {
             return $this->response->errorUnprocessable();
         }
@@ -108,7 +108,7 @@ class DepartmentsController extends ApiGuardController
             }
 
             if ($department->update($request->all())) {
-                return $this->response->withArray(['Department has been updated.']);
+                return $this->response->withArray(trans('departments.apiUpdate'));
             } else {
                 return $this->response->errorUnprocessable();
             }
@@ -133,7 +133,7 @@ class DepartmentsController extends ApiGuardController
             $department->delete();
 
             return $this->response->withArray([
-                'message' => 'The department has been deleted'
+                'message' => trans('departments.apiDestroy')
             ]);
         } else {
             return $this->response->errorNotFound();

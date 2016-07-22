@@ -6,12 +6,15 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
+/**
+ * Class DedicatedServersController
+ * @package App\Http\Controllers
+ */
 class DedicatedServersController extends Controller
 {
     /**
      * DedicatedServersController constructor.
      */
-
     public function __construct()
     {
         $this->middleware('auth');
@@ -22,11 +25,9 @@ class DedicatedServersController extends Controller
      * The index view for all the dedicated servers.
      *
      * @url    GET: /dedicatedservers
-     * @param  Request $request
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index()
-
     {
     	return view('dedicatedservers.index');
     }
@@ -35,11 +36,9 @@ class DedicatedServersController extends Controller
      * The index view for all the dedicated servers.
      *
      * @url    GET: /dedicatedservers/register
-     * @param  Request $request
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function register()
-
     {
     	return view('dedicatedservers.register');
     }
@@ -48,14 +47,23 @@ class DedicatedServersController extends Controller
      * Save the dedicated server data to the database.
      *
      * @url    POST: /dedicatedservers/save
-     * @param  Requests\DepartmentValidator $input
      * @return \Illuminate\Http\RedirectResponse
      */
     public function store()
-
     {
 
+    }
 
+    /**
+     * Delete a dedicated server.
+     *
+     * @url    TODO: Set thev url.
+     * @param  int $id The id from the server in the database.
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function destroy($id)
+    {
+        return redirect()->back();
     }
             
 }

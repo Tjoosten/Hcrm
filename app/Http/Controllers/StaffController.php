@@ -91,7 +91,7 @@ class StaffController extends Controller
             $message->to($addedUser['email'])->subject('Your staff account has been created');
         });
 
-        session()->flash('message', 'The new staff member has been added');
+        session()->flash('message', trans('staff.webNewStaff'));
         return redirect()->back();
     }
 
@@ -137,7 +137,7 @@ class StaffController extends Controller
 
         User::find($id)->departments()->sync([]);
         User::destroy($id);
-        session()->flash('flash', 'The staff member has been deleted');
+        session()->flash('flash', trans('web.webDeleteStaff'));
         return redirect()->back();
     }
 }
