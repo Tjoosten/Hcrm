@@ -1,7 +1,7 @@
 <?php
 
 return [
-
+    // View
     'index' => 'Customers',    
     'register' => 'Add new customer',
     'search' => 'Search customer',
@@ -18,4 +18,14 @@ return [
     'status' => 'Status',
     'created' => 'Created at',
     'updated' => 'Last update',
+
+    // Controllers
+    'webNewCustomer'     => 'The customer has been created',
+    'webUpdateCustomer'  => 'The Customer has been updated',
+    'webDestroyCustomer' => 'customer has been deleted',
+
+    // Controllers - API
+    'apiNew'    => 'Customer has been added',
+    'apiUpdate' => 'Customer has been updated.',
+    'apiDelete' => 'The customer was deleted',
 ];

@@ -60,7 +60,7 @@ class ProductsController extends Controller
     public function storeCategory(Requests\ProductCategoryValidator $input)
     {
         productsCategories::create($input->except('_token'));
-        session()->flash('message', 'The new product category has been inserted');
+        session()->flash('message', trans('products.webNewCategory'));
         return redirect()->back();
     }
 

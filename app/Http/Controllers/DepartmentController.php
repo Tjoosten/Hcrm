@@ -81,7 +81,7 @@ class DepartmentController extends Controller
         $department->users()->attach($input->users);
         $department->managers()->attach($input->managers);
 
-        session()->flash('message', 'Department has been created');
+        session()->flash('message', trans('departments.webCreate'));
         return redirect()->back();
     }
 
@@ -117,6 +117,7 @@ class DepartmentController extends Controller
         $data['department']  = Departments::with(['users', 'managers'])->find($id);
         $data['departments'] = Departments::all();
         $data['users']       = User::all();
+
         return view('departments.update', $data);
     }
 
@@ -140,7 +141,7 @@ class DepartmentController extends Controller
         Departments::find($id)->users()->sync($input->users);
         Departments::find($id)->managers()->sync($input->managers);
 
-        session()->flash('message', 'Department has been updated.');
+        session()->flash('message', trans('departments.webUpdate'));
         return redirect()->back();
     }
 
@@ -162,7 +163,7 @@ class DepartmentController extends Controller
         $department->managers()->sync([]);
         $department->delete();
 
-        session()->flash('message', 'Department deleted');
+        session()->flash('message', trans('departments.webDestroy'));
         return redirect()->back();
     }
 }
