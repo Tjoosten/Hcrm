@@ -68,7 +68,7 @@ class AccountController extends Controller
     {
         User::find($this->userId)->update($input->except('_token'));
 
-        session()->flash('message', 'Your account information has been updated');
+        session()->flash('message', trans('account.updateInfo'));
         return redirect()->route('account.info', ['tab' => 'info']);
     }
 
@@ -83,7 +83,7 @@ class AccountController extends Controller
     {
         User::find($this->userId)->update($input->except(['_token', 'password_confirmation']));
 
-        session()->flash('message', 'Your password has been updated');
+        session()->flash('message', trans('account.updatePass'));
         return redirect()->route('account.info', ['tab' => 'security']);
     }
 
@@ -121,7 +121,7 @@ class AccountController extends Controller
     public function removeApiKey($id)
     {
         ApiKey::destroy($id);
-        session()->flash('message', 'API key removed');
+        session()->flash('message', trans('account.delApiKey'));
         return redirect()->route('account.info', ['tab' => 'api']);
     }
 
@@ -140,7 +140,7 @@ class AccountController extends Controller
         $serviceInsert->service = $input->service;
         $serviceInsert->save();
 
-        session()->flash('message', 'API key added');
+        session()->flash('message', trans('account.newApiKey'));
         return redirect()->route('account.info', ['tab' => 'api']);
     }
 }

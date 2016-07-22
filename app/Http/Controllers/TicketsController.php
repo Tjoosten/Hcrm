@@ -150,7 +150,7 @@ class TicketsController extends Controller
 
         Tickets::find($id)->comments()->attach($comment);
 
-        session()->flash('message', 'comment has been saved');
+        session()->flash('message', trans('tickets.newComment'));
         return redirect()->back();
     }
 
@@ -261,7 +261,7 @@ class TicketsController extends Controller
 
         Tickets::where('id', $id)->update(['is_closed' => 1]);
 
-        session()->flash('message', 'Ticket has been closed');
+        session()->flash('message', trans('tickets.messageClose'));
         return redirect()->back();
     }
 
@@ -280,7 +280,7 @@ class TicketsController extends Controller
 
         Tickets::where('id', $id)->update(['is_closed' => 0]);
 
-        session()->flash('message', 'The ticket has been reopen');
+        session()->flash('message', trans('tickets.messageReopen'));
         return redirect()->back();
     }
 }
