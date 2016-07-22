@@ -14,3 +14,16 @@ linters:
 
   SelectorFormat:
     enabled: false
+
+  SelectorDepth:
+    enabled: false
+
+  QualifyingElement:
+    enabled: false
+
+  PseudoElement:
+    enabled: false
+
+  DuplicateProperty:
+    enabled: false
+

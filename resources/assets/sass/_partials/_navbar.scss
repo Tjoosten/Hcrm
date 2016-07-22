@@ -4,55 +4,56 @@
 
 // header
 .navbar .brand {
-  width: 200px;
+  color: $navbar-text;
+  font: 100 18px/38px 'PT Sans', sans-serif;
   padding-bottom: 0;
   padding-top: 0;
-  font: 100 18px/38px 'PT Sans', sans-serif;
   text-decoration: none;
-  color: $navbarText;
   text-shadow: none;
+  width: 200px;
 }
 
 .navbar .nav > li > a {
-  text-shadow: none;
   padding: 10px 10px 9px;
+  text-shadow: none;
 }
 
 .navbar .nav li.dropdown.open > .dropdown-toggle,
 .navbar .nav li.dropdown.active > .dropdown-toggle,
 .navbar .nav li.dropdown.open.active > .dropdown-toggle {
   background: none;
-  color: $navbarText;
+  color: $navbar-text;
 }
 
 .navbar-inner {
-  background: $navbarBackground;
-  color: $navbarText;
+  background: $navbar-background;
+  color: $navbar-text;
 }
 
 // link
 .navbar-default .navbar-nav > li > a {
-  color: $navbarText;
-  text-shadow: none;
+  color: $navbar-text;
   padding: 10px 10px 9px;
+  text-shadow: none;
 }
 
-.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-  color: $navbarLinkActive;
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: $navbar-link-active;
 }
 
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
-  color: $navbarText;
-  background-color: $navbarLinkActive;
+  background-color: $navbar-link-active;
+  color: $navbar-text;
 }
 
 .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .open > a:hover,
 .navbar-default .navbar-nav > .open > a:focus {
-  color: $navbarText;
-  background-color: $navbarLinkActive;
+  background-color: $navbar-link-active;
+  color: $navbar-text;
 }
 
 .navbar .dropdown-notifications .extra_menu .dropdown-menu {

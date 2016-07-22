@@ -1,14 +1,15 @@
 body {
+  background: $body-background;
+  color: $primary;
   font-family: 'Lato';
   font-size: 14px;
   line-height: 1.5;
-  color: $primary;
-  background: $bodyBackground;
-  padding: 0;
   overflow-x: hidden;
+  padding: 0;
 }
 
-html, body {
+html,
+body {
   height: 100%;
 }
 
@@ -29,23 +30,21 @@ html, body {
 }
 
 .main_content {
-  padding: 64px 30px 0px;
-  background: $contentBackground;
+  background: $content-background;
   border-left: 1px solid transparent;
   margin-left: 10px;
-}
+  padding: 64px 30px 0;
 
-.main_content li {
-  line-height: 22px;
-}
+  // .main_content li
+  li {
+    line-height: 22px;
+  }
 
-.main_content .page-header {
-  margin-top: -10px !important;
-  padding-bottom: 20px;
-}
-
-.full_width .container {
-  max-width: 1680px;
+  // .main_content .page-header
+  .page-header {
+    margin-top: -10px !important;
+    padding-bottom: 20px;
+  }
 }
 
 .padding-alert {
