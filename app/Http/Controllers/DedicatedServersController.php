@@ -22,11 +22,9 @@ class DedicatedServersController extends Controller
      * The index view for all the dedicated servers.
      *
      * @url    GET: /dedicatedservers
-     * @param  Request $request
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index()
-
     {
     	return view('dedicatedservers.index');
     }
@@ -35,11 +33,9 @@ class DedicatedServersController extends Controller
      * The index view for all the dedicated servers.
      *
      * @url    GET: /dedicatedservers/register
-     * @param  Request $request
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function register()
-
     {
     	return view('dedicatedservers.register');
     }
@@ -52,9 +48,7 @@ class DedicatedServersController extends Controller
      * @return \Illuminate\Http\RedirectResponse
      */
     public function store()
-
     {
-
 
     }
             
