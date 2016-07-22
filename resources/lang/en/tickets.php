@@ -2,6 +2,11 @@
 
 return [
 
+    // messages
+    'messageClose'  => 'Ticket has been closed',
+    'messageReopen' => 'The ticket has been reopened',
+    'newComment'    => 'comment has been saved',
+
     'index'      => 'Support tickets',
     'register'   => 'Create a new ticket',
     'created'    => 'Created on',
