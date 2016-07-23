@@ -15,6 +15,7 @@ class CreateServerSoftwaresTable extends Migration
         Schema::create('server_softwares', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->string('category');
             $table->string('end_date');
             $table->string('start_date');
             $table->timestamps();
