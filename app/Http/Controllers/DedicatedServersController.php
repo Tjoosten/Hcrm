@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-
+use App\ServerSoftware;
 /**
  * Class DedicatedServersController
  * @package App\Http\Controllers
@@ -40,7 +40,8 @@ class DedicatedServersController extends Controller
      */
     public function register()
     {
-    	return view('dedicatedservers.register');
+      $data["osList"] = ServerSoftware::where('category', 'OS')->get();
+    	return view('dedicatedservers.register', $data);
     }
 
     /**
@@ -65,5 +66,5 @@ class DedicatedServersController extends Controller
     {
         return redirect()->back();
     }
-            
+
 }
