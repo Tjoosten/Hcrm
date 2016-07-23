@@ -101,27 +101,6 @@ class StaffController extends Controller
       return view('staff.roles', $data);
     }
 
-    public function show($id)
-    {
-        if (! auth()->user()->can('edit user')) {
-            redirect()->back();
-        }
-    }
-
-    public function edit($id)
-    {
-        if (! auth()->user()->can('edit user')) {
-            redirect()->back();
-        }
-    }
-
-    public function update($id)
-    {
-        if (! auth()->user()->can('edit user')) {
-            redirect()->back();
-        }
-    }
-
     /**
      * Delete a staff member.
      *
