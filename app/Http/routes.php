@@ -67,6 +67,8 @@ Route::get('/dedicatedservers',  'DedicatedServersController@index')->name('dedi
 Route::get('/dedicatedservers/register',  'DedicatedServersController@register')->name('dedicatedservers.register');
 Route::post('/dedicatedservers/save', 'DedicatedServersController@store')->name('dedicatedservers.store');
 Route::get('/dedicatedservers/destroy/{id}', 'DedicatedServersController@destroy')->name('dedicatedservers.destroy');
+Route::get('/dedicatedservers/update/{id}', 'DedicatedServersController@update')->name('dedicatedservers.update');
+Route::post('/dedicatedservers/update/{id}', 'DedicatedServersController@update')->name('dedicatedservers.update');
 
 
 

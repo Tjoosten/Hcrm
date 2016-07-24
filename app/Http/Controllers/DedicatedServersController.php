@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use App\DedicatedServers;
 use App\ServerSoftware;
+
 /**
  * Class DedicatedServersController
  * @package App\Http\Controllers
@@ -29,7 +31,8 @@ class DedicatedServersController extends Controller
      */
     public function index()
     {
-    	return view('dedicatedservers.index');
+      $data['servers'] = DedicatedServers::all();
+    	return view('dedicatedservers.index', $data);
     }
 
     /**
@@ -53,6 +56,19 @@ class DedicatedServersController extends Controller
     public function store()
     {
 
+    }
+
+    /**
+     * Edit a dedicated server.
+     *
+     * @url    GET: /dedicatedservers/update
+     * @param  int $id The id from the server in the database.
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function update($id)
+    {
+      $data["osList"] = ServerSoftware::where('category', 'OS')->get();
+      return view('dedicatedservers.edit', $data);
     }
 
     /**
