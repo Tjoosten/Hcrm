@@ -2,22 +2,21 @@
 
 namespace App\Http\Controllers\ApiV1;
 
-use App\Departments;
-use App\Transformers\DepartmentTransformer;
+use App\Knowledge;
+use App\Transformers\KnowledgeTransformer;
 use Chrisbjr\ApiGuard\Http\Controllers\ApiGuardController;
-use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 
 /**
- * Class DepartmentsController
+ * Class KnowledgeController
  * @package App\Http\Controllers\ApiV1
  */
-class DepartmentsController extends ApiGuardController
+class KnowledgeController extends ApiGuardController
 {
+
     /**
      * Validation rules.
      *
@@ -26,34 +25,33 @@ class DepartmentsController extends ApiGuardController
     protected $validation;
 
     /**
-     * Departments constructor.
+     * KnowledgeController constructor.
      */
     public function __construct()
     {
         parent::__construct();
 
-        // Validation messages.
-        $this->validation['name']        = 'required';
-        $this->validation['description'] = 'required';
+        // Validation rules
+        $this->validation['question'] = 'required';
+        $this->validation['answer']   = 'required';
     }
-
 
     /**
      * Display a listing of the resource.
      *
-     * @url    GET: /api/v1/department
+     * @url    GET: api/v1/knowledge
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $departments = Departments::paginate(15);
-        return $this->response->withPaginator($departments , new DepartmentTransformer);
+        $items = Knowledge::paginate(15);
+        return $this->response->withPaginator($items, new KnowledgeTransformer);
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @url    POST: api/v1/department
+     * @url    POST: api/v1/knowledge
      * @param  \Illuminate\Http\Request  $input
      * @return \Illuminate\Http\Response
      */
@@ -65,8 +63,8 @@ class DepartmentsController extends ApiGuardController
             return $this->response->errorWrongArgs();
         }
 
-        if (Departments::create($input->all())) {
-            return $this->response->withArray(trans('departments.apiCreate'));
+        if (Knowledge::create($input->all())) {
+            return $this->response->withArray(trans('knowledge.apiNew'));
         } else {
             return $this->response->errorUnprocessable();
         }
@@ -75,15 +73,15 @@ class DepartmentsController extends ApiGuardController
     /**
      * Display the specified resource.
      *
-     * @url    GET: api/v1/department/{department id}
-     * @param  int  $id the department id in the id.
+     * @url    GET: api/v1/knowledge/{knowledge}
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id = null)
     {
         try {
-            $departments = Departments::findOrFail($id);
-            return $this->response->withItem($departments, new DepartmentTransformer);
+            $knowledgeItem = Knowledge::findOrFail($id);
+            return $this->response->withItem($knowledgeItem, new KnowledgeTransformer);
         } catch(ModelNotFoundException $err) {
             return $this->response->errorNotFound();
         }
@@ -92,24 +90,24 @@ class DepartmentsController extends ApiGuardController
     /**
      * Update the specified resource in storage.
      *
-     * @url    PUT|PATCH: api/v1/department/{department}
+     * @url    PUT|PATCH: api/v1/knowledge/{knowledge}
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id The department id in the database.
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id = null)
     {
-        $department = Departments::find($id);
+        $knowledgeItem = Knowledge::find($id);
 
-        if (count($department) === 1) {
+        if (count($knowledgeItem) === 1) {
             $validator = Validator::make($request->all(), $this->validation);
 
             if ($validator->fails()) {
                 return $this->response->errorWrongArgs();
             }
 
-            if ($department->update($request->all())) {
-                return $this->response->withArray(trans('departments.apiUpdate'));
+            if ($knowledgeItem->update($request->all())) {
+                return $this->response->withArray(trans('knowledge.apiUpdate'));
             } else {
                 return $this->response->errorUnprocessable();
             }
@@ -122,19 +120,19 @@ class DepartmentsController extends ApiGuardController
     /**
      * Remove the specified resource from storage.
      *
-     * @url    DELETE: api/v1/department/{department}
-     * @param  int $id The department id in the database.
+     * @url    DELETE: api/v1/knowledge/{knowledge}
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id = null)
     {
-        $department = Departments::find($id);
+        $knowledgeItem = Knowledge::find($id);
 
-        if (count($department) > 0) {
-            $department->delete();
+        if (count($knowledgeItem) > 0) {
+            $knowledgeItem->delete();
 
             return $this->response->withArray([
-                'message' => trans('departments.apiDestroy')
+                'message' => trans('knowledge.apiDestroy')
             ]);
         } else {
             return $this->response->errorNotFound();

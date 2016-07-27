@@ -21,7 +21,7 @@
      </span>
     </div>
   </div>
-</div>          
+</div>
            <div class="form-group">
  <label for="tag" class="control-label col-lg-3 col-md-3 col-sm-3 col-xs-3">Server name</label>
   <div class="input-group col-lg-9 col-md-9 col-sm-9 col-xs-9">
@@ -62,13 +62,13 @@
   <div class="input-group col-lg-9 col-md-9 col-sm-9 col-xs-9">
    <select name="provider" id="provider" class="form-control">
     <option value="" selected="selected"></option>
-    <option value="(none)">(None)</option> 
-    <option value="LSW">LeaseWeb</option> 
+    <option value="(none)">(None)</option>
+    <option value="LSW">LeaseWeb</option>
    </select>
 
   <div class="input-group-addon">
-  <span class="help-inline">   
-    <i class="glyphicon glyphicon-question-sign" data-toggle="tooltip"  data-placement="bottom"  data-container="body" title="Who is providing the dedicated server"></i>    
+  <span class="help-inline">
+    <i class="glyphicon glyphicon-question-sign" data-toggle="tooltip"  data-placement="bottom"  data-container="body" title="Who is providing the dedicated server"></i>
   </span>
  </div>
 </div>
@@ -80,27 +80,27 @@
    <input type="text" name="providerID" class="form-control">
 
   <div class="input-group-addon">
-  <span class="help-inline">   
-    <i class="glyphicon glyphicon-question-sign" data-toggle="tooltip"  data-placement="bottom"  data-container="body" title="Who is providing the dedicated server"></i>    
+  <span class="help-inline">
+    <i class="glyphicon glyphicon-question-sign" data-toggle="tooltip"  data-placement="bottom"  data-container="body" title="Who is providing the dedicated server"></i>
   </span>
  </div>
 </div>
 
 </div>
-          
+
 <div class="form-group">
  <label for="operatingSystem" class="control-label col-lg-3 col-md-3 col-sm-3 col-xs-3">Operating system</label>
   <div class="input-group col-lg-9 col-md-9 col-sm-9 col-xs-9">
    <select name="operatingSystem" id="provider" class="form-control">
-    <option value="" selected="">-- Please select -- </option> 
-    <option value="centos">Centos</option>
-    <option value="Windows.2012">Windows 2012</option> 
-    <option value="Ubuntu.16.04">Ubuntu 16.04</option>     
+    <option value="" selected="">-- Please select -- </option>
+    @foreach($osList as $operatingSystem)
+     <option value="">{!! $operatingSystem->name !!}</option>
+    @endforeach
    </select>
 
   <div class="input-group-addon">
-  <span class="help-inline">   
-    <i class="glyphicon glyphicon-question-sign" data-toggle="tooltip"  data-placement="bottom"  data-container="body" title="Who is providing the dedicated server"></i>    
+  <span class="help-inline">
+    <i class="glyphicon glyphicon-question-sign" data-toggle="tooltip"  data-placement="bottom"  data-container="body" title="Who is providing the dedicated server"></i>
   </span>
  </div>
 </div>
@@ -138,7 +138,7 @@
   </span>
 </div>
 </div>
-</div>      
+</div>
 
 <div class="form-group">
  <label for="sla" class="control-label col-lg-3 col-md-3 col-sm-3 col-xs-3">SLA</label>
@@ -170,8 +170,8 @@
   </select>
 
   <div class="input-group-addon">
-  <span class="help-inline">   
-    <i class="glyphicon glyphicon-question-sign" data-toggle="tooltip"  data-placement="bottom"  data-container="body" title="Who made your spiffy computer?"></i>    
+  <span class="help-inline">
+    <i class="glyphicon glyphicon-question-sign" data-toggle="tooltip"  data-placement="bottom"  data-container="body" title="Who made your spiffy computer?"></i>
   </span>
  </div>
 </div>
@@ -203,7 +203,7 @@
         </div>
       </div>
     </div>
-    
+
 </form>
 </div>
 @endsection
