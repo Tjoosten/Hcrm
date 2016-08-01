@@ -26,4 +26,14 @@ elixir(function(mix) {
             '../../../node_modules/vue/dist/vue.js',
             '../../../node_modules/vue-resource/dist/vue-resource.js'
         ], 'public/js/vue.js');
+
+    // Copy fonts.
+    mix.copy([
+        'node_modules/font-awesome/fonts/FontAwesome.otf',
+        'node_modules/font-awesome/fonts/fontawesome-webfont.eot',
+        'node_modules/font-awesome/fonts/fontawesome-webfont.svg',
+        'node_modules/font-awesome/fonts/fontawesome-webfont.ttf',
+        'node_modules/font-awesome/fonts/fontawesome-webfont.woff',
+        'node_modules/font-awesome/fonts/fontawesome-webfont.woff2'
+    ],  'public/fonts');
 });

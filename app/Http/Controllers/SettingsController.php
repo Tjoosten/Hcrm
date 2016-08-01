@@ -29,7 +29,12 @@ class SettingsController extends Controller
      */
     public function indexBackup()
     {
-        return view();
+        $data[''] = '';
+        $data[''] = '';
+        $data[''] = '';
+        $data[''] = '';
+
+        return view('', $data);
     }
 
     /**

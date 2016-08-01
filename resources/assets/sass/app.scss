@@ -1,4 +1,9 @@
 //@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+// Font awesome
+@import '../../../node_modules/font-awesome/scss/font-awesome.scss';
+
+// Theme
 @import '_modules/variables';
 @import '_partials/general';
 @import '_partials/typography';
