@@ -198,12 +198,13 @@ class TicketsController extends Controller
      * Save the mailbox to the database
      *
      * @url    POST: /setup/ticketrouting/save
-     * @param  Request $input
+     * @param  Requests\MailBoxValidator $input
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function saveRouting(Request $input)
+    public function saveRouting(Requests\MailBoxValidator $input)
     {
         InboundMailboxes::create($input->except('_token'));
+        session()->flash('message', 'Mailbox has been added.');
         return redirect()->back();
     }
 

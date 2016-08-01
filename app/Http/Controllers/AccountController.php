@@ -100,15 +100,18 @@ class AccountController extends Controller
     }
 
     /**
-     * Get the key info.
+     * Get the key info, and sent through mail.
      *
-     * @url   GET: /api/key/info/{id}
-     * @param int $id the database id from the key.
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @url    GET: /api/key/info/{id}
+     * @param  int $id the database id from the key.
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function getApiKeyInfo($id)
     {
-        return view();
+        $apiKeyInfo = '';
+        $userInfo   = '';
+
+        return redirect()->back();
     }
 
     /**

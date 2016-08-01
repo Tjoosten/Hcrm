@@ -130,10 +130,7 @@ class KnowledgeController extends ApiGuardController
 
         if (count($knowledgeItem) > 0) {
             $knowledgeItem->delete();
-
-            return $this->response->withArray([
-                'message' => trans('knowledge.apiDestroy')
-            ]);
+            return $this->response->withArray(['message' => trans('knowledge.apiDestroy')]);
         } else {
             return $this->response->errorNotFound();
         }

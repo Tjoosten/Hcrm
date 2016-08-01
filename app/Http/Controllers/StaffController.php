@@ -40,7 +40,20 @@ class StaffController extends Controller
 
         $data['users'] = User::all();
         $data['departments'] = Departments::all();
+
         return view('staff.index', $data);
+    }
+
+    /**
+     * Get the info about a specific staff member.
+     *
+     * @url    GET /staff/show/id
+     * @param  int $id the staff member id.
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function show($id)
+    {
+       return view('');
     }
 
     /**
@@ -58,6 +71,29 @@ class StaffController extends Controller
         $data['departments'] = Departments::all();
         return view('staff.create', $data);
     }
+
+    /**
+     * Update the user roles.
+     *
+     * @url    POST:
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function updateRoles()
+    {
+        return redirect()->back();
+    }
+
+    /**
+     * Update the user role abilities.
+     *
+     * @url    POST:
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function updateAbilities()
+    {
+        return redirect()->back();
+    }
+
 
     /**
      * Store the new staff member.
@@ -116,6 +152,7 @@ class StaffController extends Controller
 
         User::find($id)->departments()->sync([]);
         User::destroy($id);
+
         session()->flash('flash', trans('web.webDeleteStaff'));
         return redirect()->back();
     }

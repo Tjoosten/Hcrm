@@ -45,8 +45,12 @@ class ServerController extends Controller
         return view('servers.create');
     }
 
+    /**
+     *
+     */
     public function store()
     {
+
     }
 
     /**
