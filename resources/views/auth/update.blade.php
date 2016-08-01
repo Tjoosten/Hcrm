@@ -181,7 +181,7 @@
                                                     <a style="margin-right: 3px;" href="{!! route('account.api.logs', ['id' => $key->id]) !!}" class="label label-info">
                                                         Logs
                                                     </a>
-                                                    <a href="{!! route('account.api.destroy', ['id' => $key->id]) !!}" class="label label-danger">
+                                                    <a href="#" data-toggle="modal" data-target="#myModal-{{ $key->id }}" class="label label-danger">
                                                         Remove
                                                     </a>
                                                 </td>
@@ -231,6 +231,31 @@
 
             </div>
             {{-- END content blocks --}}
+
+            {{-- API delete modal--}}
+            @foreach($keys as $data)
+            <div class="modal fade" id="myModal-{{ $data->id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                        </div>
+                        <div class="modal-body">
+                            Are u sure u want to delete this key? If you delete connected systems
+                            won't recieve any data or perform handlings
+                        </div>
+                        <div class="modal-footer">
+                            <form action="{!! route('account.api.destroy', ['id' => $data->id]) !!}" method="GET">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @endforeach
+            {{-- End API delete modal --}}
         </div>
     </div>
 @endsection
