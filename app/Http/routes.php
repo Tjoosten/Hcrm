@@ -29,7 +29,12 @@ Route::group(['prefix' => 'api/v1'], function () {
 // TODO needs testing
 Route::get('/', 'HomeController@index')->name('index');
 Route::get('/home', 'HomeController@index')->name('index');
-Route::auth();
+
+// Auth routes.
+Route::get('login', 'Auth\AuthController@showLoginForm');
+Route::get('logout', 'Auth\AuthController@logout');
+Route::post('login', 'Auth\AuthController@login');
+//Route::auth();
 
 // Department routes.
 Route::get('departments', 'DepartmentController@index')->name('department.index');
