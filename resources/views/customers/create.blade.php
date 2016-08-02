@@ -1,6 +1,5 @@
 @extends('layouts.app')
 @section('content')
-@can('create-customers')
     <div class="row">
 <div class="container">
         <div class="col-sm-12 col-md-12 col-lg-12 col-xs-12">
@@ -211,13 +210,5 @@
             </form>
         </div>
     </div>
-    @else
-    <div class="container">
-    <div class="col-md-12">
-      <div class="alert alert-danger">
-       <p class="text-danger">You need permission to perform this action</p>
     </div>
-    </div>
-    </div>
-    @endcan
 @endsection
