@@ -51,6 +51,10 @@ Route::post('/departments/update/{id}', 'DepartmentController@update')->name('de
 Route::get('/products', 'ProductsController@index')->name('products.index');
 Route::post('/products/category/new', 'ProductsController@storeCategory')->name('category.insert');
 
+Route::get('password/email', 'Auth\PasswordController@getEmail');
+Route::post('password/email', 'Auth\PasswordController@postEmail');
+Route::get('password/reset/{token}', 'Auth\PasswordController@getReset');
+Route::post('password/reset', 'Auth\PasswordController@postReset');
 
 // Inbound email routes.
 // TODO: Needs testing.

@@ -54,7 +54,9 @@
                                     <i class="fa fa-btn fa-sign-in"></i> Login
                                 </button>
 
-                                <a class="btn btn-link" href="{{ url('/password/reset') }}">Forgot Your Password?</a>
+                                <a class="btn btn-default" data-toggle="modal" data-target=".bs-example-modal-sm" href="#">
+                                    Forgot Your Password?
+                                </a>
                             </div>
                         </div>
                     </form>
@@ -63,4 +65,30 @@
         </div>
     </div>
 </div>
+
+{{-- Password reset modal --}}
+<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Forgot your password?</h4>
+            </div>
+
+            <div class="modal-body">
+                <form action="/password/email" method="POST">
+                    {{ csrf_field() }}
+                    <input type="email" name="email" class="form-control" placeholder="Your email address">
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Reset</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{{-- END password reset modal --}}
+
 @endsection
