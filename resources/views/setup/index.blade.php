@@ -10,6 +10,7 @@
       <ul class="col-md-3 col-md-offset-2 list-unstyled">
         <li><strong>General</strong></li>
           <li><a href="#">Application settings</a></li>
+          <li><a href="{{ route('settings.backup.get') }}">Backup settings</a></li>
           <li><a href="#">Email notifications</a></li>
           <li><a href="#">Order statuses</a></li>
       </ul>

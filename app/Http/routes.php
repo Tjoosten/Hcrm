@@ -75,7 +75,9 @@ Route::get('/dedicatedservers/destroy/{id}', 'DedicatedServersController@destroy
 Route::get('/dedicatedservers/update/{id}', 'DedicatedServersController@update')->name('dedicatedservers.update');
 Route::post('/dedicatedservers/update/{id}', 'DedicatedServersController@update')->name('dedicatedservers.update');
 
-
+// Settings routing
+Route::get('/settings/backup', 'SettingsController@indexBackup')->name('settings.backup.get');
+Route::post('/settings/backup', 'SettingsController@storeBackup')->name('settings.backup.post');
 
 // Staff routes
 Route::get('/setup/staff',  'StaffController@index')->name('staff.index');

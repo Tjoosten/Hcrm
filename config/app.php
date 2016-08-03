@@ -160,6 +160,7 @@ return [
         Fenos\Notifynder\NotifynderServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
         Silber\Bouncer\BouncerServiceProvider::class,
+        Spatie\Backup\BackupServiceProvider::class,
 
     ],
 

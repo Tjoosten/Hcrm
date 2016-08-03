@@ -13,7 +13,9 @@
         "fenos/notifynder": "3.2.12.1",
         "barryvdh/laravel-debugbar": "^2.2",
         "silber/bouncer": "0.1.7",
-        "php-imap/php-imap": "~2.0"
+        "php-imap/php-imap": "~2.0",
+        "spatie/laravel-backup": "^3.8",
+        "larapack/config-writer": "^1.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

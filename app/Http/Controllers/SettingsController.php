@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Illuminate\Support\Facades\Config;
 
 /**
  * Class SettingsController
@@ -24,17 +25,18 @@ class SettingsController extends Controller
     /**
      * Get the change view for the backup settings.
      *
-     * @url    GET:
+     * @url    GET: /settings/backup
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function indexBackup()
     {
-        $data[''] = '';
-        $data[''] = '';
-        $data[''] = '';
-        $data[''] = '';
+        $data['StoreAllBackups']   = Config::get('laravel-backup.cleanup.defaultStrategy.keepAllBackupsForDays');
+        $data['KeepDailyBackups']  = Config::get('laravel-backup.cleanup.defaultStrategy.keepDailyBackupsForDays');
+        $data['WeeklyBackups']     = Config::get('laravel-backup.cleanup.defaultStrategy.keepWeeklyBackupsForWeeks');
+        $data['MonthlyBackups']    = Config::get('laravel-backup.cleanup.defaultStrategy.keepMonthlyBackupsForMonths');
+        $data['KeepYearlyBackups'] = Config::get('laravel-backup.cleanup.defaultStrategy.keepYearlyBackupsForYears');
 
-        return view('', $data);
+        return view('settings.backup', $data);
     }
 
     /**
@@ -51,11 +53,29 @@ class SettingsController extends Controller
     /**
      * Store the backup settings.
      *
-     * @url    GET:
+     * @url    POST: Settings/backup
+     * @param  Requests\BackupSettingValidator $input
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function storeBackup()
+    public function storeBackup(Requests\BackupSettingValidator $input)
     {
+        $config = new \Larapack\ConfigWriter\Repository('laravel-backup');
+        $config->set('cleanup.defaultStrategy.keepAllBackupsForDays',       $input->keepAllBackupsForDaysAll);
+        $config->set('cleanup.defaultStrategy.keepDailyBackupsForDays',     $input->keepAllBackupsForDays);
+        $config->set('cleanup.defaultStrategy.keepWeeklyBackupsForWeeks',   $input->keepWeeklyBackupsForWeeks);
+        $config->set('cleanup.defaultStrategy.keepMonthlyBackupsForMonths', $input->keepMonthlyBackupsForWeeks);
+        $config->set('cleanup.defaultStrategy.keepYearlyBackupsForYears',   $input->keepAllBackupsYearly);
+        $config->save();
+
+        if ($config) {
+            sleep(3);
+            session()->flash('message', 'The backup settings has been updated.');
+            session()->flash('class', 'alert-success');
+        } else {
+            session()->flash('message', 'The backup settings could not be updated.');
+            session()->flash('class', 'alert-danger');
+        }
+
         return redirect()->back();
     }
 
