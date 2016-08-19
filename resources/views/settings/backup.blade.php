@@ -29,7 +29,7 @@
                             Backup Settings
                         </a>
 
-                        <a href="" class="list-group-item">
+                        <a href="{{ route('settings.application') }}" class="list-group-item">
                             Application Settings
                         </a>
                     </div>

@@ -81,7 +81,9 @@ Route::post('/dedicatedservers/update/{id}', 'DedicatedServersController@update'
 
 // Settings routing
 Route::get('/settings/backup', 'SettingsController@indexBackup')->name('settings.backup.get');
+Route::get('Settings/application', 'SettingsController@storeBackup')->name('settings.application');
 Route::post('/settings/backup', 'SettingsController@storeBackup')->name('settings.backup.post');
+Route::post('/settings/backup', 'SettingsController@storeApplication')->name('settings.application.post');
 
 // Staff routes
 Route::get('/setup/staff',  'StaffController@index')->name('staff.index');

@@ -83,7 +83,7 @@ class SettingsController extends Controller
     /**
      * Store the application settings.
      *
-     * @url    POST:
+     * @url    POST: Settings/application
      * @return \Illuminate\Http\RedirectResponse
      */
     public function storeApplication(Requests\AppSettingsValidator $input)
@@ -94,7 +94,7 @@ class SettingsController extends Controller
 
         if ($config) {
             session()->flash('message', 'Application settings has been updated');
-            session()->flash('class', 'alert-success')
+            session()->flash('class', 'alert-success');
         } else {
             session()->flash('message', 'The application settings could not be updated');
             session()->flash('class', 'alert-danger');
