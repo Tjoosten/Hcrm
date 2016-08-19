@@ -47,7 +47,8 @@ class SettingsController extends Controller
      */
     public function indexApplication()
     {
-        return view('');
+        $data['tax'] = Config::get('crm.tax');
+        return view('settings.application', $data);
     }
 
     /**
@@ -85,8 +86,20 @@ class SettingsController extends Controller
      * @url    POST:
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function storeApplication()
+    public function storeApplication(Requests\AppSettingsValidator $input)
     {
+        $config = new \Larapack\ConfigWriter\Repository('crm');
+        $config->set('tax', $input->tax);
+        $config->save();
+
+        if ($config) {
+            session()->flash('message', 'Application settings has been updated');
+            session()->flash('class', 'alert-success')
+        } else {
+            session()->flash('message', 'The application settings could not be updated');
+            session()->flash('class', 'alert-danger');
+        }
+
         return redirect()->back();
     }
 }
