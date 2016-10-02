@@ -49,9 +49,7 @@ class CreateDedicatedServersTable extends Migration
      */
     public function down()
     {
-        DB::statement('SET FOREIGN_KEY_CHECKS = 0');
         Schema::drop('dedicated_servers');
         Schema::drop('customers_dedicated_servers');
-        DB::statement('SET FOREIGN_KEY_CHECKS = 1');
     }
 }
