@@ -141,6 +141,14 @@
 
     <div id="contentwrapper">
       <div class="main_content">
+          @if(Session::has('class') && Session::has('message'))
+              <div class="row">
+                  <div class="{{ Session::get('class') }} col-sm-12">
+                      {{ Session::get('message') }}
+                  </div>
+              </div>
+          @endif
+
         @yield('content')
      </div>
     </div>
