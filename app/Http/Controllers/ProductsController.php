@@ -84,11 +84,19 @@ class ProductsController extends Controller
      * Update the product.
      *
      * @url    POST:
+     * @param  Requests\ProductCategoryValidator $input
      * @param  int $id the product id.
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function update($id)
+    public function update(Requests\ProductCategoryValidator $input, $id)
     {
+        $update = products::find($id)->update($input->except('_token'));
+
+        if ($update) {
+            session()->flash('class', 'alert alert-success');
+            session()->flash('message', trans('products.webUpdate'));
+        }
+
         return redirect()->back();
     }
 
